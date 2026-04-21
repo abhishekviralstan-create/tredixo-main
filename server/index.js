@@ -20,11 +20,25 @@ const DB_URL = process.env.MONGO_URI;
 // DB connect
 connectDB(DB_URL);
 
+// Allowed origins
+const allowedOrigins = [
+  'https://tredixo.netlify.app',
+  'http://localhost:5173',
+  'http://localhost:3000'
+];
+
 // Middlewares
 app.use(express.json());
 app.use(cookieParser());
+
 app.use(cors({
-  origin: process.env.CLIENT_URL,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
 }));
 
