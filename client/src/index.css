@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ql-editor {
+  font-size: 1rem;
+}
+.blog-content h1 {
+  font-size: 33px;
+  margin: 20px 0;
+}
+.blog-content h2 {
+  font-size: 30px;
+  margin: 20px 0;
+}
+
+.blog-content h3 {
+  font-size: 24px;
+  margin: 15px;
+}
+
+
+.blog-content p {
+  line-height: 2;
+}
+
+.blog-content a {
+  color: rgb(85, 85, 201);
+}
+.blog-content a:hover {
+  text-decoration: underline;
+}
+.blog-content {
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+.editor-dark .ql-toolbar.ql-snow {
+  border: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: #0f141b !important;
+  padding: 12px !important;
+}
+
+.editor-dark .ql-container.ql-snow {
+  border: none !important;
+  background: #11161d !important;
+  color: #ffffff !important;
+  min-height: 360px !important;
+}
+
+.editor-dark .ql-editor {
+  min-height: 360px !important;
+  color: #ffffff !important;
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+}
+
+.editor-dark .ql-editor.ql-blank::before {
+  color: rgba(255, 255, 255, 0.35) !important;
+  font-style: normal !important;
+}
+
+.editor-dark .ql-snow .ql-stroke {
+  stroke: rgba(255, 255, 255, 0.75) !important;
+}
+
+.editor-dark .ql-snow .ql-fill {
+  fill: rgba(255, 255, 255, 0.75) !important;
+}
+
+.editor-dark .ql-snow .ql-picker {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.editor-dark .ql-snow .ql-picker-options {
+  background: #11161d !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+}
+
+.editor-dark .ql-snow .ql-picker-item:hover,
+.editor-dark .ql-snow .ql-picker-label:hover,
+.editor-dark .ql-snow button:hover {
+  color: #22d3ee !important;
+}
+
+.editor-dark .ql-snow .ql-picker-item.ql-selected,
+.editor-dark .ql-snow .ql-picker-label.ql-active,
+.editor-dark .ql-snow button.ql-active {
+  color: #22d3ee !important;
+}
+
+.editor-dark .ql-editor blockquote {
+  border-left: 4px solid #22d3ee !important;
+  padding-left: 16px !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  margin: 18px 0 !important;
+}
+
+.editor-dark .ql-editor img {
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 14px !important;
+  margin: 12px 0 !important;
+}
+
+.ql-font-sans-serif {
+  font-family: sans-serif;
+}
+
+.ql-font-serif {
+  font-family: serif;
+}
+
+.ql-font-monospace {
+  font-family: monospace;
+}
+
+.ql-font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.ql-font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.ql-font-inter {
+  font-family: 'Inter', sans-serif;
+}
