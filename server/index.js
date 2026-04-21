@@ -28,6 +28,21 @@ app.use(cors({
   credentials: true,
 }));
 
+// Test Routes
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    message: 'Tredixo backend is running successfully'
+  });
+});
+
+app.get('/api/health', (req, res) => {
+  res.json({
+    success: true,
+    message: 'API is healthy'
+  });
+});
+
 // API Routes
 app.use('/api/user', userRouter);
 app.use('/api/blog', blogRouter);
