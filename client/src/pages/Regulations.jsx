@@ -44,7 +44,32 @@ const Regulations = () => {
     return (
         <>
             <Helmet>
-                <title>Regulations - Tredixo</title>
+                <title>Tredixo Regulations | Trade with Confidence</title>
+                <meta
+                    name="description"
+                    content="Understand Tredixo's compliance with global trading regulations. Trade securely with a platform that prioritizes transparency and reliability."
+                />
+                <meta
+                    name="keywords"
+                    content="Tredixo regulations, regulated trading platform, CFD trading compliance India, safe trading platform India, licensed trading platform"
+                />
+                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href="https://www.tredixo.com/blogs" />
+
+                <meta property="og:title" content="Tredixo Regulations | Trade with Confidence" />
+                <meta
+                    property="og:description"
+                    content="Understand Tredixo's compliance with global trading regulations. Trade securely with a platform that prioritizes transparency and reliability."
+                />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.tredixo.com/blogs" />
+
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Tredixo Regulations | Trade with Confidence" />
+                <meta
+                    name="twitter:description"
+                    content="Understand Tredixo's compliance with global trading regulations. Trade securely with a platform that prioritizes transparency and reliability."
+                />
             </Helmet>
 
             <div className="bg-black text-white">

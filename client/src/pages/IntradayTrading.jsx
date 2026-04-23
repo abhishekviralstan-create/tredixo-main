@@ -4,10 +4,31 @@ const IntradayTrading = () => {
   return (
     <>
       <Helmet>
-        <title>Intraday Trading - Tredixo</title>
+        <title>Intraday Trading Platform India | Zero Brokerage Same-Day Trades — Tredixo</title>
         <meta
           name="description"
-          content="Learn about intraday trading with Tredixo and explore a modern trading environment designed for active market engagement."
+          content="Do intraday trading on NSE, MCX & Forex with 500X leverage and zero brokerage on Tredixo. Real-time charts, economic calendar & live news feed built in."
+        />
+        <meta
+          name="keywords"
+          content="intraday trading platform India, zero brokerage intraday trading,best intraday trading app India, intraday trading for beginners, NSE intraday 500x leverage"
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="http://tredixo.info/live-markets" />
+
+        <meta property="og:title" content="Intraday Trading Platform India | Zero Brokerage Same-Day Trades — Tredixo" />
+        <meta
+          property="og:description"
+          content="Do intraday trading on NSE, MCX & Forex with 500X leverage and zero brokerage on Tredixo. Real-time charts, economic calendar & live news feed built in."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.tredixo.com/blogs" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Intraday Trading Platform India | Zero Brokerage Same-Day Trades — Tredixo" />
+        <meta
+          name="twitter:description"
+          content="Do intraday trading on NSE, MCX & Forex with 500X leverage and zero brokerage on Tredixo. Real-time charts, economic calendar & live news feed built in."
         />
       </Helmet>
 

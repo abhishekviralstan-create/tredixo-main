@@ -79,27 +79,32 @@ const sections = [
 const PrivacyPolicy = () => {
   return (
     <>
-      <Helmet>
-        <title>Privacy Policy - Tredixo Educational Platform</title>
+        <Helmet>
+        <title>Tredixo Privacy Policy | Your Data, Our Priority</title>
         <meta
           name="description"
-          content="Read the official Tredixo Privacy Policy to understand how personal data is collected, used, stored, protected, and managed across our educational platform."
+          content="Read Tredixo's privacy policy to learn how we protect your data and ensure a secure trading experience."
         />
         <meta
           name="keywords"
-          content="Tredixo Privacy Policy, privacy policy, user data, cookies, data protection, educational platform privacy"
+          content="Tredixo privacy policy, trading platform data security,trading platform GDPR, safe data trading app, trading account privacy India"
         />
-        <meta property="og:title" content="Privacy Policy - Tredixo Educational Platform" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.tredixo.com/blogs" />
+
+        <meta property="og:title" content="Tredixo Privacy Policy | Your Data, Our Priority" />
         <meta
           property="og:description"
-          content="Understand how Tredixo collects, uses, stores, and protects user information through its educational platform and communications."
+          content="Read Tredixo's privacy policy to learn how we protect your data and ensure a secure trading experience."
         />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.tredixo.com/blogs" />
+
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Privacy Policy - Tredixo Educational Platform" />
+        <meta name="twitter:title" content="Tredixo Privacy Policy | Your Data, Our Priority" />
         <meta
           name="twitter:description"
-          content="Read the Tredixo Privacy Policy covering data collection, communication consent, cookies, user rights, and security practices."
+          content="Read Tredixo's privacy policy to learn how we protect your data and ensure a secure trading experience."
         />
       </Helmet>
 

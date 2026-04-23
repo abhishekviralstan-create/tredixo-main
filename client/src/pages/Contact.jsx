@@ -327,10 +327,31 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Us | Tredixo</title>
+        <title>Contact Tredixo | 24/7 Support for Traders</title>
         <meta
           name="description"
-          content="Contact Tredixo for account guidance, trading support, and platform assistance."
+          content="Need help? Contact Tredixo's 24/7 support team via live chat, WhatsApp, or email. We're here to assist you with all your trading needs."
+        />
+        <meta
+          name="keywords"
+          content="contact Tredixo, trading platform support, 24/7 trading support, WhatsApp trading help, trading platform customer service"
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.tredixo.com/blogs" />
+
+        <meta property="og:title" content="Contact Tredixo | 24/7 Support for Traders" />
+        <meta
+          property="og:description"
+          content="Need help? Contact Tredixo's 24/7 support team via live chat, WhatsApp, or email. We're here to assist you with all your trading needs."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.tredixo.com/blogs" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Tredixo | 24/7 Support for Traders" />
+        <meta
+          name="twitter:description"
+          content="Need help? Contact Tredixo's 24/7 support team via live chat, WhatsApp, or email. We're here to assist you with all your trading needs."
         />
       </Helmet>
 

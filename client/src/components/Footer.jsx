@@ -12,26 +12,30 @@ import {
 
 const Footer = () => {
   const socialLinks = [
-    { icon: <FaFacebookF />, href: '#' },
-    { icon: <FaInstagram />, href: '#' },
-    { icon: <FaTwitter />, href: '#' },
-    { icon: <FaTelegramPlane />, href: '#' },
+    { icon: <FaFacebookF />, href: 'https://www.facebook.com/tredixofb' },
+    { icon: <FaInstagram />, href: 'https://www.instagram.com/tredixo_official/' },
+    { icon: <FaTwitter />, href: 'https://x.com/tredixo' },
+    { icon: <FaTelegramPlane />, href: 'https://t.me/Tredixo_official' },
   ];
 
   const aboutLinks = [
-    { label: 'Why Tredixo', path: '/why-tredixo' },
-    { label: 'Become An Affiliate', path: '/become-an-affiliate' },
-    { label: 'Privacy Policy', path: '/privacy-policy' },
-    { label: 'Terms & Conditions', path: '/terms-conditions' },
+    { label: "About Us", path: "/about-us" },
+    { label: "Why Tredixo", path: "/why-tredixo" },
+    { label: "Brokerage Calculator", path: "/brokerage-calculator" },
+    { label: "Become An Affiliate", path: "/become-an-affiliate" },
+    { label: "Privacy Policy", path: "/privacy-policy" },
+    { label: "Terms & Conditions", path: "/terms-conditions" },
   ];
 
   const knowledgeLinks = [
-    { label: 'Trading', path: '/trading' },
-    { label: 'Equity Trading', path: '/equity-trading' },
-    { label: 'Dabba Trading', path: '/dabba-trading' },
-    { label: 'Commodity Trading', path: '/commodity-trading' },
-    { label: 'Margin Trading', path: '/margin-trading' },
-    { label: 'Intraday Trading', path: '/intraday-trading' },
+    { label: "Crypto Trading", path: "/crypto-trading" },
+    { label: "NSE Trading", path: "/nse-trading" },
+    { label: "MCX Trading", path: "/mcx-trading" },
+    { label: "Forex Trading", path: "/forex-trading" },
+    { label: "Margin Trading", path: "/margin-trading" },
+    { label: "Dabba Trading", path: "/dabba-trading" },
+    { label: "Intraday Trading", path: "/intraday-trading" },
+    { label: "Live Markets", path: "/live-markets" },
   ];
 
   const quickLinks = [
@@ -48,7 +52,6 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10">
           {/* LEFT SECTION */}
           <div>
-            {/* Logo */}
             <div className="flex items-center gap-2 mb-6">
               <img
                 src="/logo.png"
@@ -63,7 +66,6 @@ const Footer = () => {
               </span>
             </div>
 
-            {/* Social */}
             <div className="flex gap-4 mb-8">
               {socialLinks.map((item, index) => (
                 <a
@@ -78,64 +80,57 @@ const Footer = () => {
               ))}
             </div>
 
-            {/* APP DOWNLOAD + QR IN ONE LINE */}
-            <div className="flex flex-wrap gap-4 items-start">
+            <div className="mt-6 flex flex-col gap-6">
               {/* IOS */}
-              <div className="flex items-start gap-3 bg-[#0f0f0f] border border-white/10 rounded-2xl px-4 py-4 hover:border-[#39FF14] transition-all duration-300">
-                <a
-                  href="https://shorturl.at/iwtWj"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-3 min-w-[170px]"
-                >
-                  <FaApple className="text-xl" />
-                  <div>
-                    <p className="text-xs text-white/50">Download on</p>
-                    <h3 className="text-sm font-semibold">App Store</h3>
-                  </div>
-                </a>
+              <div className="flex items-center justify-between bg-[#0b0b0b] border border-white/10 rounded-2xl px-5 py-4 hover:border-[#39FF14] transition-all duration-300">
 
                 <a
                   href="https://shorturl.at/iwtWj"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-[95px] h-[95px] rounded-xl overflow-hidden border border-white/10 bg-white shrink-0"
+                  className="flex items-center gap-4"
                 >
-                  <img
-                    src={IQR}
-                    alt="iOS QR"
-                    className="w-full h-full object-cover"
-                  />
+                  <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center">
+                    <FaApple className="text-xl" />
+                  </div>
+
+                  <div>
+                    <p className="text-xs text-white/50">Download on</p>
+                    <h3 className="text-base font-semibold">App Store</h3>
+                  </div>
                 </a>
+
+                <img
+                  src={IQR}
+                  alt="iOS QR"
+                  className="w-[85px] h-[85px] rounded-lg border border-white/10 bg-white object-cover"
+                />
               </div>
 
               {/* ANDROID */}
-              <div className="flex items-start gap-3 bg-[#0f0f0f] border border-white/10 rounded-2xl px-4 py-4 hover:border-[#39FF14] transition-all duration-300">
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.tredixo.tredixo&pcampaignid=web_share"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-3 min-w-[170px]"
-                >
-                  <FaGooglePlay className="text-[#39FF14]" />
-                  <div>
-                    <p className="text-xs text-white/50">Get it on</p>
-                    <h3 className="text-sm font-semibold">Google Play</h3>
-                  </div>
-                </a>
+              <div className="flex items-center justify-between bg-[#0b0b0b] border border-white/10 rounded-2xl px-5 py-4 hover:border-[#39FF14] transition-all duration-300">
 
                 <a
                   href="https://play.google.com/store/apps/details?id=com.tredixo.tredixo&pcampaignid=web_share"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-[95px] h-[95px] rounded-xl overflow-hidden border border-white/10 bg-white shrink-0"
+                  className="flex items-center gap-4"
                 >
-                  <img
-                    src={PQR}
-                    alt="Playstore QR"
-                    className="w-full h-full object-cover"
-                  />
+                  <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center">
+                    <FaGooglePlay className="text-[#39FF14]" />
+                  </div>
+
+                  <div>
+                    <p className="text-xs text-white/50">Get it on</p>
+                    <h3 className="text-base font-semibold">Google Play</h3>
+                  </div>
                 </a>
+
+                <img
+                  src={PQR}
+                  alt="Playstore QR"
+                  className="w-[85px] h-[85px] rounded-lg border border-white/10 bg-white object-cover"
+                />
               </div>
             </div>
           </div>
@@ -189,8 +184,38 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Risk Notice */}
+        <div className="border-t border-white/10 mt-10 pt-8">
+          <h3 className="text-base md:text-lg font-semibold text-white mb-4">
+            Risk Notice
+          </h3>
+
+          <div className="space-y-4 text-sm md:text-[15px] leading-7 text-white/70">
+            <p>
+              Trading CFDs involves a high degree of risk. Leveraged positions can
+              magnify both gains and losses, and in some cases, losses may exceed
+              your original investment. These products aren't suitable for everyone.
+              Please consider your financial situation and experience before trading.
+              We recommend reviewing your financial goals and understanding the
+              mechanics and risks of CFD trading before proceeding. Past outcomes do
+              not guarantee future performance. The information presented on this
+              website is designed for general informational purposes only and should
+              not be interpreted as personalized financial advice.
+            </p>
+
+            <p>
+              Detailed explanations of risks and terms are available in our legal
+              documentation. Tredixo services are not offered in countries where
+              such activities may breach local regulations, including the United
+              States, Singapore, Russia, and those under FATF or international
+              sanctions. We operate under licensed entities that adhere to strict
+              regulatory oversight within their respective jurisdictions.
+            </p>
+          </div>
+        </div>
+
         {/* Bottom */}
-        <div className="border-t border-white/10 mt-10 pt-5 text-center text-white/50 text-sm">
+        <div className="border-t border-white/10 mt-8 pt-5 text-center text-white/50 text-sm">
           © 2026 Tredixo. All rights reserved.
         </div>
       </div>

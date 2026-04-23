@@ -128,7 +128,7 @@ const Home = () => {
         />
         <meta
           name="keywords"
-          content="Tredixo blogs, trading blogs, market news, stock market analysis, forex insights, commodity updates, crypto news, trading articles"
+          content="Tredixo blogs, trading blogs, market news, stock market analysis, forex insights, commodity updates, crypto news, trading articles, trading news India, market insights blog, Nifty market news, MCX commodity news, forex trading tips, crypto market update"
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.tredixo.com/blogs" />
@@ -136,7 +136,7 @@ const Home = () => {
         <meta property="og:title" content="Tredixo Blogs | Latest Market News & Trading Insights" />
         <meta
           property="og:description"
-          content="Explore premium market insights, trading stories, and the latest analysis from Tredixo."
+          content="Stay updated with Tredixo's blog. Get the latest news, market trends, and trading tips to enhance your trading journey."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.tredixo.com/blogs" />

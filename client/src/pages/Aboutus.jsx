@@ -85,11 +85,29 @@ const AboutUs = () => {
   return (
     <>
       <Helmet>
-        <title>About Us - Tredixo</title>
+        <title>About Tredixo | Your Trusted Trading Platform</title>
         <meta
           name="description"
-          content="Learn more about Tredixo, our mission, vision, and why traders choose our modern, reliable, and fast trading experience."
+          content=" Learn about Tredixo, a reliable trading platform offering forex, commodities, crypto, and US stocks trading."
         />
+          <meta
+          name="keywords"
+          content="about Tredixo, trusted trading platform, online trading platform India, CFD trading platform, trading for beginners India"
+        />
+        <meta property="og:title" content="About Tredixo | Your Trusted Trading Platform" />
+        <meta
+          property="og:description"
+          content="Learn about Tredixo, a reliable trading platform offering forex, commodities, crypto, and US stocks trading."
+        />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Tredixo Trading Platform" />
+        <meta
+          name="twitter:description"
+          content="Learn about Tredixo, a reliable trading platform offering forex, commodities, crypto, and US stocks trading."
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.tredixo.com/" />
       </Helmet>
 
       <div className="min-h-screen bg-black text-white overflow-hidden">

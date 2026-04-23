@@ -99,7 +99,7 @@ const Widget = ({ id, script }) => {
     if (script === "symbol-overview") {
       scriptEl.innerHTML = JSON.stringify({
         symbols: [
-          ["NASDAQ:IXIC|1D"],
+        
           ["BINANCE:BTCUSDT|1D"],
           ["TVC:GOLD|1D"],
           ["FX_IDC:USDINR|1D"]
@@ -157,11 +157,32 @@ const Widget = ({ id, script }) => {
 const LiveMarkets = () => {
   return (
     <>
-      <Helmet>
-        <title>Live Markets - Tredixo</title>
+     <Helmet>
+        <title>Advanced Trading Tools | Tredixo Platform</title>
         <meta
           name="description"
-          content="Track live market rates, forex, crypto, commodities, indices, and market movement in real time on Tredixo."
+          content="Access real-time charts, indicators, live news feeds, and an economic calendar. Tredixo equips you with the tools for successful trading."
+        />
+        <meta
+          name="keywords"
+          content="trading tools India, real-time trading charts,economic calendar trading, technical indicators platform, live market news feed India"
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="http://tredixo.info/live-markets" />
+
+        <meta property="og:title" content="Advanced Trading Tools | Tredixo Platform" />
+        <meta
+          property="og:description"
+          content="Access real-time charts, indicators, live news feeds, and an economic calendar. Tredixo equips you with the tools for successful trading."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.tredixo.com/blogs" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Advanced Trading Tools | Tredixo Platform" />
+        <meta
+          name="twitter:description"
+          content="Access real-time charts, indicators, live news feeds, and an economic calendar. Tredixo equips you with the tools for successful trading."
         />
       </Helmet>
 

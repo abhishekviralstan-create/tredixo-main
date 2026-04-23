@@ -59,11 +59,12 @@ const Header = () => {
     ];
 
     const knowledgeLinks = [
-        { label: "Trading", path: "/trading" },
-        { label: "Equity Trading", path: "/equity-trading" },
-        { label: "Dabba Trading", path: "/dabba-trading" },
-        { label: "Commodity Trading", path: "/commodity-trading" },
+        { label: "Crypto Trading", path: "/crypto-trading" },
+        { label: "NSE Trading", path: "/nse-trading" },
+        { label: "MCX Trading", path: "/mcx-trading" },
+        { label: "Forex Trading", path: "/forex-trading" },
         { label: "Margin Trading", path: "/margin-trading" },
+        { label: "Dabba Trading", path: "/dabba-trading" },
         { label: "Intraday Trading", path: "/intraday-trading" },
         { label: "Live Markets", path: "/live-markets" },
     ];
@@ -121,9 +122,8 @@ const Header = () => {
                                         setDesktopAboutOpen(!desktopAboutOpen);
                                         setDesktopKnowledgeOpen(false);
                                     }}
-                                    className={`pr-3 py-3 transition-all duration-200 ${
-                                        isAboutActive ? "text-[#ff6b4a]" : "text-white hover:text-[#ff6b4a]"
-                                    }`}
+                                    className={`pr-3 py-3 transition-all duration-200 ${isAboutActive ? "text-[#ff6b4a]" : "text-white hover:text-[#ff6b4a]"
+                                        }`}
                                 >
                                     <IoChevronDownOutline
                                         size={16}
@@ -163,9 +163,8 @@ const Header = () => {
                                         setDesktopKnowledgeOpen(!desktopKnowledgeOpen);
                                         setDesktopAboutOpen(false);
                                     }}
-                                    className={`pr-3 py-3 transition-all duration-200 ${
-                                        isKnowledgeActive ? "text-[#ff6b4a]" : "text-white hover:text-[#ff6b4a]"
-                                    }`}
+                                    className={`pr-3 py-3 transition-all duration-200 ${isKnowledgeActive ? "text-[#ff6b4a]" : "text-white hover:text-[#ff6b4a]"
+                                        }`}
                                 >
                                     <IoChevronDownOutline
                                         size={16}

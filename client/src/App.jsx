@@ -6,10 +6,9 @@ import Whytredixo from './pages/whytredixo';
 import BecomeAnAffiliate from './pages/BecomeAnAffiliate';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
-import Trading from './pages/Trading';
-import EquityTrading from './pages/EquityTrading';
+import CryptoTrading from './pages/CryptoTrading';
+import ForexTrading from './pages/ForexTrading';
 import DabbaTrading from './pages/DabbaTrading';
-import CommodityTrading from './pages/CommodityTrading';
 import MarginTrading from './pages/MarginTrading';
 import IntradayTrading from './pages/IntradayTrading';
 import Contact from './pages/Contact';
@@ -36,6 +35,8 @@ import Regulations from './pages/Regulations';
 import BrokerageCalculator from './pages/BrokerageCalculator';
 import AboutUs from './pages/Aboutus';
 import LiveMarkets from "./pages/LiveMarkets";
+import NSE from './pages/NSEtrading';
+import MCX from './pages/MCXtrading';
 
 const persistor = persistStore(store);
 
@@ -56,10 +57,9 @@ const App = () => {
                   <Route path="/become-an-affiliate" element={<BecomeAnAffiliate />} />
                   <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                   <Route path="/terms-conditions" element={<TermsConditions />} />
-                  <Route path="/trading" element={<Trading />} />
-                  <Route path="/equity-trading" element={<EquityTrading />} />
+                  <Route path="/crypto-trading" element={<CryptoTrading />} />
+                  <Route path="/forex-trading" element={<ForexTrading />} />
                   <Route path="/dabba-trading" element={<DabbaTrading />} />
-                  <Route path="/commodity-trading" element={<CommodityTrading />} />
                   <Route path="/margin-trading" element={<MarginTrading />} />
                   <Route path="/intraday-trading" element={<IntradayTrading />} />
                   <Route path="/contact" element={<Contact />} />
@@ -73,6 +73,8 @@ const App = () => {
                   <Route path="/brokerage-calculator" element={<BrokerageCalculator />} />
                   <Route path="/about-us" element={<AboutUs />} />
                   <Route path="/live-markets" element={<LiveMarkets />} />
+                  <Route path="/nse-trading" element={<NSE />} />
+                  <Route path="/mcx-trading" element={<MCX/>}/>
                   <Route element={<PrivateRoute />}>
                     <Route path="/dashboard" element={<Dashboard />} />
                   </Route>

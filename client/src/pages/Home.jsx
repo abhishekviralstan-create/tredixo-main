@@ -1,9 +1,16 @@
-import { motion, animate } from 'framer-motion';
+import { motion, animate, useInView } from 'framer-motion';
 import axios from 'axios';
-import { useEffect, useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Spinner from '../assests/spinner/Spinner';
+import { BsCurrencyBitcoin } from "react-icons/bs";
+import { ImBlog } from "react-icons/im";
+import { MdOutlineContactSupport } from "react-icons/md";
 import { Helmet } from 'react-helmet-async';
+import upiIcon from '../assests/upi.png';
+import cardIcon from '../assests/card.png';
+import cryptoIcon from '../assests/crypto.png';
+import binanceIcon from '../assests/binance.png'
 import {
   FiTrendingUp,
   FiShield,
@@ -23,10 +30,19 @@ const formatMoney = (num) => {
   }).format(num);
 };
 
-const AnimatedCounter = ({ value, suffix = '', prefix = '', decimals = 0, className = '' }) => {
+const AnimatedCounter = ({
+  value,
+  suffix = '',
+  prefix = '',
+  decimals = 0,
+  className = '',
+  startAnimation = false,
+}) => {
   const [displayValue, setDisplayValue] = useState(0);
 
   useEffect(() => {
+    if (!startAnimation) return;
+
     const controls = animate(0, value, {
       duration: 2.2,
       ease: 'easeOut',
@@ -36,7 +52,7 @@ const AnimatedCounter = ({ value, suffix = '', prefix = '', decimals = 0, classN
     });
 
     return () => controls.stop();
-  }, [value]);
+  }, [value, startAnimation]);
 
   return (
     <span className={className}>
@@ -47,7 +63,36 @@ const AnimatedCounter = ({ value, suffix = '', prefix = '', decimals = 0, classN
   );
 };
 
+const StatCard = ({ item, fadeUp }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.45 });
+
+  return (
+    <motion.div ref={ref} {...fadeUp} className="text-center md:text-left">
+      <h3
+        className={`text-3xl md:text-4xl font-bold ${
+          item.green ? 'text-[#52ff1f]' : 'text-slate-100'
+        }`}
+      >
+        <AnimatedCounter
+          value={item.value}
+          prefix={item.prefix || ''}
+          suffix={item.suffix || ''}
+          decimals={item.decimals || 0}
+          startAnimation={isInView}
+        />
+      </h3>
+
+      <p className="text-[10px] uppercase tracking-[0.22em] text-gray-500 mt-2">
+        {item.label}
+      </p>
+    </motion.div>
+  );
+};
+
 const Home = () => {
+  const navigate = useNavigate();
+
   const [recentBlogs, setRecentBlogs] = useState([]);
   const [loading, setLoading] = useState(false);
   const [isWhatsAppOpen, setIsWhatsAppOpen] = useState(false);
@@ -57,18 +102,26 @@ const Home = () => {
 
   const [perView, setPerView] = useState(3);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const [activeMarket, setActiveMarket] = useState('crypto');
+
+  const marketOptions = [
+    { label: 'crypto', path: '/crypto-trading' },
+    { label: 'NSE Trading', path: '/nse-trading' },
+    { label: 'Dabba Trading', path: '/dabba-trading' },
+    { label: 'Live Market', path: '/live-markets' },
+  ];
 
   const testimonials = [
     {
       id: 1,
       name: 'Ravi S ',
       role: 'Corporate Trainer & Traveler',
-      text:"The whole process of getting into trading always felt complicated, especially since I'm often switching between different devices and time zones while training clients. I started with Tredixo's demo platform, and it immediately clicked. It's so clean and intuitive.",
+      text: "The whole process of getting into trading always felt complicated, especially since I'm often switching between different devices and time zones while training clients. I started with Tredixo's demo platform, and it immediately clicked. It's so clean and intuitive.",
     },
     {
       id: 2,
       name: 'Priya S',
-      role: ' Small Business Owner',
+      role: 'Small Business Owner',
       text: "I run a small export business, so my schedule is crazy. I needed a way to understand the share market but I didn't want to risk my capital while learning. Tredixo’s simulated trading is exactly what I needed. The best part? The support team is 24/7. Seriously, I had a small login hiccup at 2 AM IST, and they sorted it in minutes. It makes managing my learning journey so much less stressful.",
     },
     {
@@ -184,33 +237,38 @@ const Home = () => {
       id: 1,
       label: 'UPI',
       sub: 'Instant bank transfer',
-      icon: '₹',
-      accent: 'from-[#0f1720] to-[#0a0d12]',
+      image: upiIcon,
+      link: 'https://crm.tredixo.co.in/auth-pages/create-account/step1?accountType=real',
     },
     {
       id: 2,
       label: 'Card',
       sub: 'Visa / Mastercard',
-      icon: '💳',
-      accent: 'from-[#111723] to-[#0a0d12]',
+      image: cardIcon,
+      link: 'https://crm.tredixo.co.in/auth-pages/create-account/step1?accountType=real',
     },
     {
       id: 3,
       label: 'Crypto',
       sub: 'BTC / ETH / USDT',
-      icon: '₿',
-      accent: 'from-[#111925] to-[#0a0d12]',
+      image: cryptoIcon,
+      link: 'https://crm.tredixo.co.in/auth-pages/create-account/step1?accountType=real',
     },
     {
       id: 4,
       label: 'Binance Pay',
       sub: 'Fast wallet payments',
-      icon: '◆',
-      accent: 'from-[#101821] to-[#0a0d12]',
+      image: binanceIcon,
+      link: 'https://crm.tredixo.co.in/auth-pages/create-account/step1?accountType=real',
     },
   ];
 
   const maxDotIndex = Math.max(0, testimonials.length - perView);
+
+  const handleMarketClick = (market) => {
+    setActiveMarket(market.label);
+    navigate(market.path);
+  };
 
   return (
     <>
@@ -222,12 +280,12 @@ const Home = () => {
         />
         <meta
           name="keywords"
-          content="tredixo, trading platform, forex trading, crypto trading, stock market, commodities trading"
+          content="no KYC trading platform, low brokerage trading platform, paper trading India, virtual trading platform, 500x leverage trading, zero commission trading, tredixo, trading in india, best trading app in india, top trading app, trending trading app"
         />
-        <meta property="og:title" content="Tredixo - Advanced Trading Platform" />
+        <meta property="og:title" content="Low Brokerage & No KYC Trading Platform | Tredixo" />
         <meta
           property="og:description"
-          content="Experience ultra-fast trading with advanced charting tools."
+          content="Access global markets with Tredixo's no KYC, low brokerage platform. Enjoy 500X leverage, zero commissions, and instant deposits. Start trading today!"
         />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -240,41 +298,40 @@ const Home = () => {
         <link rel="canonical" href="https://www.tredixo.com/" />
       </Helmet>
 
-      <div className="bg-[#05070b] text-white min-h-screen">
-
+      <div className="bg-[#05070b] text-white min-h-screen overflow-x-hidden">
         {/* HERO */}
         <section className="relative overflow-hidden border-b border-white/5">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(57,255,20,0.14),_transparent_28%),radial-gradient(circle_at_top_right,_rgba(0,180,255,0.08),_transparent_22%)]" />
           <div className="absolute inset-0 opacity-20 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
-          <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-10 items-center">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-14 md:py-20 lg:py-24 grid lg:grid-cols-2 gap-10 items-center">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-6"
+              className="space-y-5 text-center lg:text-left"
             >
-              <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-cyan-300 font-semibold">
+              <p className="text-[9px] sm:text-[10px] md:text-xs tracking-[0.26em] uppercase text-cyan-300 font-semibold">
                 Free Demo for Financial Markets
               </p>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.02]">
+              <h1 className="text-[2rem] leading-[1.02] sm:text-[2.5rem] md:text-5xl lg:text-6xl font-bold">
                 <span className="text-slate-100">Zero Brokerage</span>
                 <br />
                 <span className="text-[#52ff1f]">Trading Platform.</span>
               </h1>
 
-              <p className="text-sm md:text-base text-gray-300 max-w-xl leading-7">
+              <p className="text-sm sm:text-[15px] md:text-base text-gray-300 max-w-xl leading-7 mx-auto lg:mx-0">
                 Explore the world of financial markets with Tredixo. 99% on-time
                 deposits & withdrawals with a cleaner and faster trading experience.
               </p>
 
-              <div className="flex flex-wrap gap-4 pt-2">
+              <div className="flex flex-col sm:flex-row gap-4 pt-2 justify-center lg:justify-start items-center">
                 <a
                   href="https://crm.tredixo.co.in/auth-pages/create-account/step1?accountType=real"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-[#52ff1f] text-black font-semibold px-10 py-4 rounded-full shadow-[0_0_35px_rgba(82,255,31,0.22)] hover:scale-[1.02] transition-all"
+                  className="inline-flex w-full sm:w-auto min-w-[190px] items-center justify-center bg-[#52ff1f] text-black font-semibold px-8 py-3.5 rounded-full shadow-[0_0_35px_rgba(82,255,31,0.22)] hover:scale-[1.02] transition-all"
                 >
                   Start Trading Now
                 </a>
@@ -283,30 +340,61 @@ const Home = () => {
                   href="https://crm.tredixo.co.in/auth-pages/create-account/step1?accountType=demo"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-[#52ff1f] text-black font-semibold px-10 py-4 rounded-full shadow-[0_0_35px_rgba(82,255,31,0.22)] hover:scale-[1.02] transition-all"
+                  className="inline-flex w-full sm:w-auto min-w-[190px] items-center justify-center bg-[#52ff1f] text-black font-semibold px-8 py-3.5 rounded-full shadow-[0_0_35px_rgba(82,255,31,0.22)] hover:scale-[1.02] transition-all"
                 >
                   Demo Account
                 </a>
               </div>
 
-              <div className="flex items-center gap-5 pt-4 text-gray-400 text-xl">
-                <FiShield />
-                <FiGlobe />
-                <FiBarChart2 />
-                <FiBookOpen />
-              </div>
+            <div className="flex items-center gap-3 pt-3 text-gray-400 text-xl justify-center lg:justify-start flex-wrap">
+  <Link
+    to="/crypto-trading"
+    className="w-11 h-11 rounded-full border border-white/10 bg-white/5 flex items-center justify-center hover:text-[#52ff1f] hover:border-[#52ff1f]/40 hover:bg-[#52ff1f]/10 transition-all duration-300"
+    aria-label="Crypto Trading"
+    title="Crypto Trading"
+  >
+    <BsCurrencyBitcoin />
+  </Link>
+
+  <Link
+    to="/live-markets"
+    className="w-11 h-11 rounded-full border border-white/10 bg-white/5 flex items-center justify-center hover:text-[#52ff1f] hover:border-[#52ff1f]/40 hover:bg-[#52ff1f]/10 transition-all duration-300"
+    aria-label="Live Markets"
+    title="Live Markets"
+  >
+    <FiBarChart2 />
+  </Link>
+
+  <Link
+    to="/blogs"
+    className="w-11 h-11 rounded-full border border-white/10 bg-white/5 flex items-center justify-center hover:text-[#52ff1f] hover:border-[#52ff1f]/40 hover:bg-[#52ff1f]/10 transition-all duration-300"
+    aria-label="Blogs"
+    title="Blogs"
+  >
+    <ImBlog />
+  </Link>
+
+  <Link
+    to="/contact"
+    className="w-11 h-11 rounded-full border border-white/10 bg-white/5 flex items-center justify-center hover:text-[#52ff1f] hover:border-[#52ff1f]/40 hover:bg-[#52ff1f]/10 transition-all duration-300"
+    aria-label="Contact Support"
+    title="Contact Support"
+  >
+    <MdOutlineContactSupport />
+  </Link>
+</div>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 40, rotate: -4 }}
-              animate={{ opacity: 1, x: 0, rotate: -3 }}
+              initial={{ opacity: 0, x: 40, rotate: -2 }}
+              animate={{ opacity: 1, x: 0, rotate: -1.5 }}
               transition={{ duration: 0.9 }}
-              className="relative"
+              className="relative max-w-[560px] mx-auto w-full"
             >
-              <div className="absolute -inset-10 bg-[radial-gradient(circle,_rgba(82,255,31,0.15),_transparent_55%)] blur-2xl" />
+              <div className="absolute -inset-6 sm:-inset-8 md:-inset-10 bg-[radial-gradient(circle,_rgba(82,255,31,0.15),_transparent_55%)] blur-2xl" />
 
-              <div className="relative rounded-[28px] border border-[#193126] bg-gradient-to-br from-[#081018] to-[#0d1117] p-4 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
-                <div className="rounded-[22px] overflow-hidden border border-white/5 bg-[#0a0f14]">
+              <div className="relative rounded-[24px] sm:rounded-[28px] border border-[#193126] bg-gradient-to-br from-[#081018] to-[#0d1117] p-3 sm:p-4 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
+                <div className="rounded-[20px] sm:rounded-[22px] overflow-hidden border border-white/5 bg-[#0a0f14]">
                   <div className="h-10 px-4 flex items-center gap-2 border-b border-white/5 bg-[#0e1319]">
                     <div className="w-2.5 h-2.5 rounded-full bg-red-400/70" />
                     <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/70" />
@@ -314,21 +402,39 @@ const Home = () => {
                     <span className="text-xs text-gray-400 ml-3">Tredixo</span>
                   </div>
 
-                  <div className="p-4 md:p-6">
-                    <div className="grid grid-cols-4 gap-3 mb-4">
-                      {['Indices', 'Forex', 'Commodities', 'Crypto'].map((item) => (
-                        <motion.div
-                          key={item}
-                          whileHover={{ y: -2, scale: 1.02 }}
-                          className="rounded-xl bg-white/[0.03] border border-white/5 p-3 text-center text-xs text-gray-300"
-                        >
-                          {item}
-                        </motion.div>
-                      ))}
+                  <div className="p-3 sm:p-4 md:p-6">
+                    <div className="grid grid-cols-4 gap-2 sm:gap-3 mb-4">
+                      {marketOptions.map((item) => {
+                        const isActive = activeMarket === item.label;
+
+                        return (
+                          <motion.button
+                            key={item.label}
+                            type="button"
+                            whileHover={{ y: -2, scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            onClick={() => handleMarketClick(item)}
+                            className={`rounded-xl border px-2 py-2.5 sm:p-3 text-center text-[10px] sm:text-xs transition-all duration-300 ${
+                              isActive
+                                ? 'bg-[#52ff1f]/10 border-[#52ff1f]/40 text-[#52ff1f] shadow-[0_0_18px_rgba(82,255,31,0.12)]'
+                                : 'bg-white/[0.03] border-white/5 text-gray-300 hover:border-white/15 hover:bg-white/[0.05]'
+                            }`}
+                            aria-pressed={isActive}
+                          >
+                            <span className="block truncate">{item.label}</span>
+                          </motion.button>
+                        );
+                      })}
                     </div>
 
-                    <div className="relative h-72 rounded-2xl bg-gradient-to-b from-[#10161d] to-[#0b1016] border border-white/5 overflow-hidden">
+                    <div className="relative h-56 sm:h-64 md:h-72 rounded-2xl bg-gradient-to-b from-[#10161d] to-[#0b1016] border border-white/5 overflow-hidden">
                       <div className="absolute inset-0 opacity-20 bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:40px_40px]" />
+
+                      <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10">
+                        <span className="text-[10px] sm:text-xs text-white/80 bg-black/40 border border-white/10 px-3 py-1 rounded-full">
+                          {activeMarket}
+                        </span>
+                      </div>
 
                       <motion.div
                         className="absolute inset-y-0 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/10 to-transparent blur-2xl"
@@ -420,12 +526,12 @@ const Home = () => {
                       </svg>
 
                       <motion.div
-                        className="absolute bottom-4 left-4 bg-black/70 border border-white/10 rounded-2xl px-4 py-3 shadow-xl"
+                        className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 bg-black/70 border border-white/10 rounded-2xl px-3 sm:px-4 py-2.5 sm:py-3 shadow-xl"
                         animate={{ y: [0, -3, 0] }}
                         transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
                       >
-                        <p className="text-xs text-gray-300">Latest Withdrawal</p>
-                        <p className="text-sm text-white font-semibold">
+                        <p className="text-[10px] sm:text-xs text-gray-300">Latest Withdrawal</p>
+                        <p className="text-xs sm:text-sm text-white font-semibold">
                           Success:{' '}
                           <span className="text-[#52ff1f] tabular-nums">
                             {formatMoney(withdrawalAmount)}
@@ -434,7 +540,7 @@ const Home = () => {
                       </motion.div>
 
                       <motion.div
-                        className="absolute top-4 right-4 bg-white/10 border border-white/10 rounded-2xl px-4 py-3 backdrop-blur-sm"
+                        className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-white/10 border border-white/10 rounded-2xl px-3 sm:px-4 py-2.5 sm:py-3 backdrop-blur-sm"
                         animate={{
                           y: [0, 2, 0],
                           boxShadow: [
@@ -445,8 +551,8 @@ const Home = () => {
                         }}
                         transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
                       >
-                        <p className="text-[11px] text-gray-300 uppercase">Trustscore</p>
-                        <p className="text-sm font-bold text-[#52ff1f] tabular-nums">
+                        <p className="text-[9px] sm:text-[11px] text-gray-300 uppercase">Trustscore</p>
+                        <p className="text-xs sm:text-sm font-bold text-[#52ff1f] tabular-nums">
                           +{trustScore.toFixed(1)}%
                         </p>
                       </motion.div>
@@ -462,22 +568,7 @@ const Home = () => {
         <section className="border-b border-white/5">
           <div className="max-w-7xl mx-auto px-4 md:px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((item, index) => (
-              <motion.div key={index} {...fadeUp} className="text-center md:text-left">
-                <h3
-                  className={`text-3xl md:text-4xl font-bold ${item.green ? 'text-[#52ff1f]' : 'text-slate-100'
-                    }`}
-                >
-                  <AnimatedCounter
-                    value={item.value}
-                    prefix={item.prefix || ''}
-                    suffix={item.suffix || ''}
-                    decimals={item.decimals || 0}
-                  />
-                </h3>
-                <p className="text-[10px] uppercase tracking-[0.22em] text-gray-500 mt-2">
-                  {item.label}
-                </p>
-              </motion.div>
+              <StatCard key={index} item={item} fadeUp={fadeUp} />
             ))}
           </div>
         </section>
@@ -507,8 +598,14 @@ const Home = () => {
                   Experience a charting engine that updates in real-time with over 100+
                   technical indicators and drawing tools directly in your browser.
                 </p>
-                <div className="mt-8 text-sm font-semibold text-white inline-flex items-center gap-2">
-                  Explore Analytics <FiArrowRight />
+
+                <div className="mt-8">
+                  <Link
+                    to="/live-markets"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:border-[#52ff1f]/40 hover:bg-[#52ff1f]/10 hover:text-[#52ff1f]"
+                  >
+                    Explore Analytics <FiArrowRight />
+                  </Link>
                 </div>
               </div>
 
@@ -689,136 +786,109 @@ const Home = () => {
           <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
             <motion.div {...fadeUp} className="text-center max-w-3xl mx-auto">
               <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-cyan-300 font-semibold mb-3">
-                Withdrawal Deposit
+                Deposit
               </p>
 
-              <h2 className="text-3xl md:text-5xl font-bold text-slate-100 leading-tight">
+              <h2 className="text-[1.9rem] sm:text-4xl md:text-5xl font-bold text-slate-100 leading-[1.15]">
                 Quick Deposit
                 <br className="hidden sm:block" />
                 <span className="text-[#52ff1f]"> with local payment options</span>
               </h2>
+
+              <p className="text-sm md:text-base text-gray-400 mt-5 leading-7 px-2">
+                Choose your preferred payment method for fast and secure deposits.
+              </p>
             </motion.div>
 
-            {/* Desktop / tablet */}
-            <div className="hidden md:flex justify-center items-end mt-14 overflow-x-auto pb-4">
-              {paymentOptions.map((item, index) => {
-                const isFeatured = item.featured;
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-12">
+              {paymentOptions.map((item, index) => (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="group relative rounded-[24px] border border-white/10 bg-gradient-to-br from-[#101722] to-[#0a0f14] p-5 md:p-6 min-h-[215px] md:min-h-[250px] overflow-hidden shadow-[0_12px_35px_rgba(0,0,0,0.28)]"
+                >
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(82,255,31,0.10),transparent_35%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 border border-white/5 rounded-[24px]" />
+                  <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-[#52ff1f]/5 blur-2xl group-hover:bg-[#52ff1f]/10 transition-all duration-300" />
 
-                return (
-                  <motion.div
-                    key={item.id}
-                    initial={{ opacity: 0, y: 40, rotate: isFeatured ? 0 : -6 }}
-                    whileInView={{ opacity: 1, y: 0, rotate: isFeatured ? 0 : -6 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.55, delay: index * 0.08 }}
-                    whileHover={{
-                      rotate: 0,
-                      y: -10,
-                      scale: isFeatured ? 1.03 : 1.06,
-                    }}
-                    className={`relative shrink-0 cursor-pointer transition-all duration-300 ${isFeatured
-                      ? 'w-[250px] h-[300px] z-20 ml-3 rounded-[28px] border border-white/10 shadow-[0_20px_55px_rgba(0,0,0,0.5)]'
-                      : 'w-[135px] h-[250px] -mr-2 rounded-[24px] border border-white/5'
-                      }`}
-                    style={
-                      isFeatured
-                        ? {}
-                        : {
-                          clipPath:
-                            'polygon(0 8%, 86% 14%, 100% 20%, 100% 80%, 86% 86%, 0 92%)',
-                        }
-                    }
-                  >
-                    <div
-                      className={`absolute inset-0 rounded-[inherit] bg-gradient-to-br ${item.accent}`}
-                    />
-                    <div className="absolute inset-0 rounded-[inherit] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_45%)]" />
-                    <div className="absolute inset-0 rounded-[inherit] border border-white/5" />
+                  <div className="relative z-10 h-full flex flex-col items-center justify-center text-center">
+                    <div className="w-[72px] h-[72px] md:w-[84px] md:h-[84px] rounded-[20px] border border-white/10 bg-white/5 flex items-center justify-center overflow-hidden mb-5 group-hover:border-[#52ff1f]/30 group-hover:bg-white/[0.07] transition-all duration-300">
+                      <img
+                        src={item.image}
+                        alt={item.label}
+                        className="w-9 h-9 md:w-11 md:h-11 object-contain"
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none';
+                        }}
+                      />
+                    </div>
 
-                    <div className="relative z-10 h-full w-full flex flex-col items-center justify-center text-center px-4">
-                      <div
-                        className={`flex items-center justify-center rounded-full border border-white/10 bg-white/5 mb-5 ${isFeatured ? 'w-16 h-16 text-2xl' : 'w-12 h-12 text-lg'
-                          }`}
+                    <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-[#52ff1f] transition-colors duration-300">
+                      {item.label}
+                    </h3>
+
+                    <p className="text-sm md:text-base text-gray-400 mt-3 leading-7 max-w-[220px]">
+                      {item.sub}
+                    </p>
+
+                    <div className="mt-6">
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 rounded-full border border-[#52ff1f]/30 bg-[#52ff1f]/10 px-5 py-2.5 text-sm font-semibold text-[#52ff1f] transition-all duration-300 hover:bg-[#52ff1f] hover:text-black"
                       >
-                        <span className={isFeatured ? 'text-[#52ff1f]' : 'text-white'}>
-                          {item.icon}
+                        Deposit Now
+                        <span className="transition-transform duration-300 group-hover:translate-x-1">
+                          →
                         </span>
-                      </div>
-
-                      <h3
-                        className={`font-bold tracking-tight ${isFeatured ? 'text-white text-[28px]' : 'text-white text-[17px]'
-                          }`}
-                      >
-                        {item.label}
-                      </h3>
-
-                      <p
-                        className={`mt-3 text-white/60 leading-6 ${isFeatured ? 'text-sm max-w-[170px]' : 'text-[11px] max-w-[100px]'
-                          }`}
-                      >
-                        {item.sub}
-                      </p>
+                      </a>
                     </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            {/* Mobile manual slide */}
-            <div className="md:hidden mt-10 -mx-4 px-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
-              <div className="flex gap-4 w-max pr-4">
-                {paymentOptions.map((item, index) => (
-                  <motion.div
-                    key={item.id}
-                    initial={{ opacity: 0, y: 25 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.45, delay: index * 0.06 }}
-                    whileHover={{ rotate: 0, y: -4, scale: 1.02 }}
-                    className={`snap-start shrink-0 w-[220px] h-[150px] rounded-[24px] border transition-all duration-300 ${item.featured
-                      ? 'border-white/15 bg-gradient-to-br from-[#151b26] to-[#0a0d12] shadow-[0_10px_30px_rgba(0,0,0,0.35)]'
-                      : 'border-white/10 bg-gradient-to-br from-[#121821] to-[#0a0d12]'
-                      }`}
-                  >
-                    <div className="h-full flex flex-col items-start justify-between p-5">
-                      <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-xl text-[#52ff1f]">
-                        {item.icon}
-                      </div>
-
-                      <div>
-                        <h3 className={`font-bold ${item.featured ? 'text-xl' : 'text-lg'}`}>
-                          {item.label}
-                        </h3>
-                        <p className="mt-1 text-white/60 text-sm leading-6">{item.sub}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="max-w-7xl mx-auto px-6 md:px-10 py-20">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-16 md:py-20">
           <motion.div
             {...fadeUp}
-            className="rounded-[34px] overflow-hidden border border-[#21451f] bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.14),_transparent_0%),linear-gradient(90deg,rgba(255,255,255,0.18),rgba(82,255,31,0.22))] min-h-[290px] flex items-center justify-center text-center px-6"
+            className="relative overflow-hidden rounded-[28px] md:rounded-[34px] border border-[#21451f] bg-[linear-gradient(135deg,#1b1f24_0%,#102914_45%,#0a2508_100%)] min-h-[320px] flex items-center justify-center text-center px-5 sm:px-6 md:px-10 py-12 shadow-[0_25px_80px_rgba(0,0,0,0.35)]"
           >
-            <div className="max-w-3xl">
-              <h2 className="text-4xl md:text-6xl font-bold leading-tight mt-4">
-                Ready to join the <span className="text-[#52ff1f]">precisionists?</span>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(82,255,31,0.12),transparent_35%)]" />
+            <div className="absolute -top-10 left-10 h-40 w-40 rounded-full bg-white/5 blur-3xl" />
+            <div className="absolute -bottom-10 right-10 h-48 w-48 rounded-full bg-[#52ff1f]/10 blur-3xl" />
+
+            <div className="relative z-10 max-w-3xl mx-auto">
+              <span className="inline-flex items-center rounded-full border border-[#52ff1f]/30 bg-[#52ff1f]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-[#52ff1f]">
+                Start in Seconds
+              </span>
+
+              <h2 className="text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.08] mt-5">
+                Ready to join the
+                <br />
+                <span className="text-[#52ff1f] drop-shadow-[0_0_20px_rgba(82,255,31,0.22)]">
+                  precisionists?
+                </span>
               </h2>
-              <p className="text-gray-200 text-sm md:text-base leading-7 mt-6 max-w-2xl mx-auto">
+
+              <p className="text-gray-200 text-sm md:text-base leading-7 mt-5 max-w-2xl mx-auto">
                 Sign up in 30 seconds and get a ₹10,000 demo account to practice your
                 strategies with real-time market data.
               </p>
-              <div className="mt-8 mb-4">
+
+              <div className="mt-8 mb-2 flex justify-center">
                 <a
                   href="https://crm.tredixo.co.in/auth-pages/create-account/step1?accountType=real"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-[#52ff1f] text-black font-semibold px-10 py-4 rounded-full shadow-[0_0_35px_rgba(82,255,31,0.22)] hover:scale-[1.02] transition-all"
+                  className="inline-flex w-full sm:w-auto min-w-[230px] items-center justify-center rounded-full bg-[#52ff1f] px-8 py-3.5 text-base font-semibold text-black shadow-[0_0_40px_rgba(82,255,31,0.28)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_55px_rgba(82,255,31,0.38)]"
                 >
                   Create Free Account
                 </a>
@@ -881,17 +951,17 @@ const Home = () => {
               </motion.div>
             </div>
 
-            {/* Dots */}
             <div className="flex justify-center gap-2 mt-8">
               {Array.from({ length: maxDotIndex + 1 }).map((_, index) => (
                 <button
                   key={index}
                   type="button"
                   onClick={() => setTestimonialIndex(index)}
-                  className={`h-2.5 rounded-full transition-all duration-300 ${testimonialIndex === index
-                    ? 'w-8 bg-[#52ff1f]'
-                    : 'w-2.5 bg-white/20 hover:bg-white/40'
-                    }`}
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
+                    testimonialIndex === index
+                      ? 'w-8 bg-[#52ff1f]'
+                      : 'w-2.5 bg-white/20 hover:bg-white/40'
+                  }`}
                   aria-label={`Go to testimonial slide ${index + 1}`}
                 />
               ))}

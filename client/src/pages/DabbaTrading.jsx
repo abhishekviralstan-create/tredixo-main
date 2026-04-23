@@ -202,13 +202,35 @@ const Section = ({ title, children }) => (
 const DabbaTrading = () => {
   return (
     <>
-      <Helmet>
-        <title>Dabba Trading - Market Awareness | Tredixo</title>
+            <Helmet>
+        <title>Dabba Trading</title>
         <meta
           name="description"
-          content="Learn about dabba trading, how it works, features, risks, platform considerations and broader trading insights."
+          content=""
+        />
+        <meta
+          name="keywords"
+          content=""
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="http://tredixo.info/live-markets" />
+
+        <meta property="og:title" content="" />
+        <meta
+          property="og:description"
+          content="Do intraday trading on NSE, MCX & Forex with 500X leverage and zero brokerage on Tredixo. Real-time charts, economic calendar & live news feed built in."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.tredixo.com/blogs" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="" />
+        <meta
+          name="twitter:description"
+          content=""
         />
       </Helmet>
+
 
       <div className="min-h-screen bg-[#05070b] text-white overflow-x-hidden">
         <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.07),transparent_24%),radial-gradient(circle_at_top_right,rgba(82,255,31,0.06),transparent_20%)]" />
