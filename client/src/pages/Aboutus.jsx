@@ -2,18 +2,99 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 35 },
   show: (i = 0) => ({
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.6,
-      delay: i * 0.08,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.6, delay: i * 0.08, ease: "easeOut" },
   }),
 };
 
+const TradingChartSvg = ({ className = "" }) => {
+  const greenPath =
+    "M0 318 L28 292 L55 300 L83 254 L112 268 L142 228 L174 236 L205 204 L236 214 L268 182 L300 190 L330 160 L362 170 L394 142 L426 156 L458 130 L490 142 L522 116 L554 130 L586 104 L618 116 L650 96 L682 110 L714 98 L746 122 L778 145 L806 188 L834 132 L862 70 L884 82 L900 76";
+
+  return (
+    <svg
+      viewBox="0 0 900 420"
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="none"
+    >
+      <defs>
+        <linearGradient id="chartBgRun" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#061216" />
+          <stop offset="100%" stopColor="#02080b" />
+        </linearGradient>
+
+        <linearGradient id="chartFillRun" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#39FF14" stopOpacity="0.45" />
+          <stop offset="70%" stopColor="#39FF14" stopOpacity="0.12" />
+          <stop offset="100%" stopColor="#39FF14" stopOpacity="0" />
+        </linearGradient>
+
+        <filter id="chartGlowRun">
+          <feGaussianBlur stdDeviation="5" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      <rect width="900" height="420" fill="url(#chartBgRun)" />
+
+      {[70, 135, 200, 265, 330].map((y) => (
+        <line key={y} x1="0" y1={y} x2="900" y2={y} stroke="#ffffff" strokeOpacity="0.06" />
+      ))}
+
+      {[120, 260, 400, 540, 680, 820].map((x) => (
+        <line key={x} x1={x} y1="0" x2={x} y2="420" stroke="#ffffff" strokeOpacity="0.035" />
+      ))}
+
+      <motion.path
+        d={`${greenPath} L900 420 L0 420 Z`}
+        fill="url(#chartFillRun)"
+        animate={{ opacity: [0.5, 0.85, 0.5] }}
+        transition={{ duration: 2.5, repeat: Infinity }}
+      />
+
+      <motion.path
+        d={greenPath}
+        fill="none"
+        stroke="#39FF14"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        filter="url(#chartGlowRun)"
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: [0, 1, 1], strokeWidth: [5, 7, 5] }}
+        transition={{ duration: 4, repeat: Infinity, repeatDelay: 0.4 }}
+      />
+
+      <motion.circle
+        cx="305"
+        cy="190"
+        r="8"
+        fill="#39FF14"
+        filter="url(#chartGlowRun)"
+        animate={{ scale: [1, 1.5, 1], opacity: [1, 0.55, 1] }}
+        transition={{ duration: 1.2, repeat: Infinity }}
+      />
+
+      <motion.line
+        x1="305"
+        y1="0"
+        x2="305"
+        y2="420"
+        stroke="#ffffff"
+        strokeOpacity="0.18"
+        animate={{ opacity: [0.2, 0.6, 0.2] }}
+        transition={{ duration: 1.5, repeat: Infinity }}
+      />
+    </svg>
+  );
+};
 const whyChoose = [
   {
     title: "Free Demo Account",
@@ -88,9 +169,9 @@ const AboutUs = () => {
         <title>About Tredixo | Your Trusted Trading Platform</title>
         <meta
           name="description"
-          content=" Learn about Tredixo, a reliable trading platform offering forex, commodities, crypto, and US stocks trading."
+          content="Learn about Tredixo, a reliable trading platform offering forex, commodities, crypto, and US stocks trading."
         />
-          <meta
+        <meta
           name="keywords"
           content="about Tredixo, trusted trading platform, online trading platform India, CFD trading platform, trading for beginners India"
         />
@@ -110,65 +191,105 @@ const AboutUs = () => {
         <link rel="canonical" href="https://www.tredixo.com/" />
       </Helmet>
 
-      <div className="min-h-screen bg-black text-white overflow-hidden">
+      <div className="min-h-screen bg-[#02080b] text-white overflow-hidden">
         {/* HERO */}
-        <section className="relative border-b border-white/10 overflow-hidden bg-black">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(57,255,20,0.14),transparent_40%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(0,195,255,0.10),transparent_40%)]" />
-          <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:42px_42px]" />
+        <section className="relative overflow-hidden border-b border-[#39FF14]/20 bg-[#02080b]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_30%,rgba(57,255,20,0.16),transparent_35%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_35%,rgba(0,195,255,0.08),transparent_35%)]" />
 
-          <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12 py-20 md:py-28">
-            <motion.p
-              variants={fadeUp}
-              initial="hidden"
-              animate="show"
-              className="text-[#00c3ff] tracking-[4px] text-sm font-semibold mb-4 uppercase"
-            >
-              Institutional Grade Tech
-            </motion.p>
+          <div className="relative z-10 max-w-[1500px] mx-auto px-4 md:px-8 lg:px-12 py-20 md:py-28">
+            <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-14 items-center">
+              <motion.div variants={fadeUp} initial="hidden" animate="show">
+                <p className="text-[#00c3ff] tracking-[4px] text-sm font-semibold mb-5 uppercase">
+                  Institutional Grade Tech
+                </p>
 
-            <motion.h1
-              variants={fadeUp}
-              initial="hidden"
-              animate="show"
-              custom={1}
-              className="text-5xl md:text-7xl font-black leading-[0.95] tracking-[-0.03em]"
-            >
-              <span className="text-white">About</span>
-             &nbsp;
-              <span className="text-[#39FF14]">Tredixo</span>
-            </motion.h1>
+                <h1 className="text-5xl md:text-7xl font-black leading-[0.95] tracking-[-0.04em]">
+                  About <span className="text-[#39FF14]">Tredixo</span>
+                </h1>
 
-            <motion.p
-              variants={fadeUp}
-              initial="hidden"
-              animate="show"
-              custom={2}
-              className="mt-8 max-w-4xl text-white/75 text-base md:text-xl leading-8 md:leading-9"
-            >
-            Tredixo is built for one reason — to make global trading easier for everyone. We're not just another trading platform; we're your gateway to the world's financial markets, designed with simplicity and power in mind.
-            </motion.p>
+                <p className="mt-7 max-w-2xl text-white/75 text-base md:text-xl leading-8 md:leading-9">
+                  Tredixo is built for one reason — to make global trading easier for
+                  everyone. We’re your gateway to the world’s financial markets with
+                  simplicity and power.
+                </p>
 
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              animate="show"
-              custom={3}
-              className="mt-10 flex flex-wrap gap-4"
-            >
-              <a
-                href="https://crm.tredixo.co.in/auth-pages/create-account/step1?accountType=real"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center min-w-[220px] h-[58px] rounded-full bg-[#39FF14] text-black font-bold text-lg hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(57,255,20,0.28)]"
+                <a
+                  href="https://crm.tredixo.co.in/auth-pages/create-account/step1?accountType=real"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-9 inline-flex items-center justify-center min-w-[220px] h-[58px] rounded-full bg-[#39FF14] text-black font-black text-base hover:scale-105 transition-all duration-300 shadow-[0_0_35px_rgba(57,255,20,0.35)]"
+                >
+                  Start Trading Now
+                </a>
+              </motion.div>
+
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                animate="show"
+                custom={2}
+                className="relative hidden sm:flex items-center justify-center min-h-[430px] group"
               >
-                Start Trading Now
-              </a>
-            </motion.div>
+                <motion.div
+                  className="absolute w-[580px] h-[300px] bg-[#39FF14]/10 blur-[90px] rounded-full"
+                  animate={{ scale: [1, 1.12, 1], opacity: [0.55, 0.9, 0.55] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                />
+
+                {/* LAPTOP */}
+                <motion.div
+                  className="relative w-[650px]"
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  whileHover={{ scale: 1.035, rotateX: 3, rotateY: -4 }}
+                >
+                  <div className="relative rounded-[28px] border-[7px] border-[#242424] bg-[#050b0f] p-3 shadow-[0_35px_100px_rgba(0,0,0,0.75)] transition-all duration-500 group-hover:shadow-[0_35px_120px_rgba(57,255,20,0.25)]">
+                    <div className="absolute top-2 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-black border border-white/10" />
+
+                    <div className="rounded-[18px] overflow-hidden bg-[#02080b] border border-white/10">
+                      <TradingChartSvg className="w-full h-[310px]" />
+                    </div>
+
+                    <motion.div
+                      className="absolute top-5 left-6 px-4 py-2 rounded-xl bg-black/55 backdrop-blur-md border border-white/10"
+                      whileHover={{ scale: 1.08 }}
+                    >
+                      <p className="text-white text-sm font-black">Tredixo</p>
+                    </motion.div>
+                  </div>
+
+                  <div className="mx-auto h-5 w-[92%] bg-gradient-to-r from-[#2b2b2b] via-[#9b9b9b] to-[#2b2b2b] rounded-b-full shadow-[0_15px_35px_rgba(0,0,0,0.6)]" />
+                  <div className="mx-auto h-3 w-[22%] bg-[#4b4b4b] rounded-b-xl" />
+                </motion.div>
+
+                {/* PHONE */}
+                <motion.div
+                  className="absolute right-0 top-[92px] w-[175px]"
+                  animate={{ y: [0, 12, 0] }}
+                  transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+                  whileHover={{ scale: 1.08, rotate: 2 }}
+                >
+                  <div className="relative rounded-[38px] border-[7px] border-[#252525] bg-[#050b0f] p-2 shadow-[0_35px_80px_rgba(0,0,0,0.8)] transition-all duration-500 hover:shadow-[0_30px_90px_rgba(57,255,20,0.28)]">
+                    <div className="absolute top-3 left-1/2 -translate-x-1/2 w-14 h-2 rounded-full bg-black z-20" />
+
+                    <div className="rounded-[28px] overflow-hidden bg-[#02080b] border border-white/10">
+                      <TradingChartSvg className="w-full h-[275px]" />
+                    </div>
+
+                    <motion.div
+                      className="absolute bottom-5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-[#39FF14] text-black text-[10px] font-black"
+                      animate={{ scale: [1, 1.08, 1] }}
+                      transition={{ duration: 1.3, repeat: Infinity }}
+                    >
+                      Tredixo
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </div>
           </div>
         </section>
-
-      
 
         {/* MISSION */}
         <section className="max-w-5xl mx-auto px-4 md:px-8 lg:px-12 py-16 md:py-20 text-center">
@@ -177,7 +298,7 @@ const AboutUs = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-[#00c3ff]"
+            className="text-3xl md:text-5xl font-bold text-[#39FF14]"
           >
             Our Mission
           </motion.h2>
@@ -228,10 +349,11 @@ const AboutUs = () => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold text-[#00c3ff]"
+              className="text-3xl md:text-5xl font-bold text-[#39FF14]"
             >
               Why Choose Tredixo?
             </motion.h2>
+
             <motion.p
               variants={fadeUp}
               initial="hidden"
@@ -253,12 +375,13 @@ const AboutUs = () => {
                 whileInView="show"
                 viewport={{ once: true }}
                 custom={index}
-                className="rounded-[28px] border border-white/10 bg-[#05070d] p-6 hover:border-[#39FF14]/40 hover:shadow-[0_0_24px_rgba(57,255,20,0.08)] hover:-translate-y-1 transition-all duration-300"
+                className="rounded-[28px] border border-[#39FF14]/15 bg-[#050b0f] p-6 hover:border-[#39FF14]/45 hover:shadow-[0_0_28px_rgba(57,255,20,0.12)] hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="w-14 h-14 rounded-full bg-[#0d1d3d] flex items-center justify-center text-2xl mb-5 border border-white/10">
+                <div className="w-14 h-14 rounded-full bg-[#07160d] flex items-center justify-center text-2xl mb-5 border border-[#39FF14]/20">
                   {item.icon}
                 </div>
-                <h3 className="text-lg font-bold">{item.title}</h3>
+
+                <h3 className="text-lg font-bold text-white">{item.title}</h3>
                 <p className="mt-3 text-white/65 text-sm leading-7">{item.desc}</p>
               </motion.div>
             ))}
@@ -266,17 +389,19 @@ const AboutUs = () => {
         </section>
 
         {/* PROFIT / LEVERAGE */}
-        <section className="py-16 md:py-24 border-y border-white/10 bg-[#03050a]">
+        <section className="py-16 md:py-24 border-y border-[#39FF14]/15 bg-[#03080b]">
           <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
             <motion.div
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="rounded-[32px] border border-white/10 bg-[linear-gradient(135deg,#0a1c44_0%,#12307d_100%)] p-8 md:p-12 text-center"
+              className="rounded-[32px] border border-[#39FF14]/20 bg-[linear-gradient(135deg,#07160d_0%,#051015_100%)] p-8 md:p-12 text-center"
             >
-              <h2 className="text-3xl md:text-5xl font-bold">Profit Without Penalty.</h2>
-              <p className="mt-4 text-white/85">
+              <h2 className="text-3xl md:text-5xl font-bold text-white">
+                Profit Without Penalty.
+              </h2>
+              <p className="mt-4 text-white/75">
                 Trade smart with a cleaner and more efficient trading environment.
               </p>
             </motion.div>
@@ -287,7 +412,7 @@ const AboutUs = () => {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className="text-3xl md:text-5xl font-bold text-[#00c3ff]"
+                className="text-3xl md:text-5xl font-bold text-[#39FF14]"
               >
                 Trade More with Less Capital
               </motion.h3>
@@ -325,28 +450,31 @@ const AboutUs = () => {
                 whileInView="show"
                 viewport={{ once: true }}
                 custom={3}
-                className="mt-10 overflow-x-auto rounded-[24px] border border-white/10"
+                className="mt-10 overflow-x-auto rounded-[24px] border border-[#39FF14]/20"
               >
                 <table className="w-full min-w-[700px] text-left">
-                  <thead className="bg-[#0f2d73] text-white">
+                  <thead className="bg-[#07160d] text-white">
                     <tr>
                       <th className="px-5 py-4">Your Capital</th>
                       <th className="px-5 py-4">Leverage</th>
                       <th className="px-5 py-4">Buying Power</th>
                     </tr>
                   </thead>
-                  <tbody className="bg-[#05070d]">
-                    <tr className="border-t border-white/10">
+
+                  <tbody className="bg-[#050b0f]">
+                    <tr className="border-t border-[#39FF14]/15">
                       <td className="px-5 py-4">₹500</td>
                       <td className="px-5 py-4 text-[#39FF14] font-bold">100X</td>
                       <td className="px-5 py-4">₹50,000</td>
                     </tr>
-                    <tr className="border-t border-white/10">
+
+                    <tr className="border-t border-[#39FF14]/15">
                       <td className="px-5 py-4">₹1,000</td>
                       <td className="px-5 py-4 text-[#39FF14] font-bold">500X</td>
                       <td className="px-5 py-4">₹5,00,000</td>
                     </tr>
-                    <tr className="border-t border-white/10">
+
+                    <tr className="border-t border-[#39FF14]/15">
                       <td className="px-5 py-4">₹10,000</td>
                       <td className="px-5 py-4 text-[#39FF14] font-bold">500X</td>
                       <td className="px-5 py-4">₹50,00,000</td>
@@ -366,10 +494,11 @@ const AboutUs = () => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold text-[#00c3ff]"
+              className="text-3xl md:text-5xl font-bold text-[#39FF14]"
             >
               Compare Tredixo vs Other Platforms
             </motion.h2>
+
             <motion.p
               variants={fadeUp}
               initial="hidden"
@@ -388,19 +517,20 @@ const AboutUs = () => {
             whileInView="show"
             viewport={{ once: true }}
             custom={2}
-            className="overflow-x-auto rounded-[24px] border border-white/10"
+            className="overflow-x-auto rounded-[24px] border border-[#39FF14]/20"
           >
             <table className="w-full min-w-[900px] text-left">
               <thead>
                 <tr>
-                  <th className="px-5 py-4 bg-[#0f2d73] text-white">Feature</th>
+                  <th className="px-5 py-4 bg-[#07160d] text-white">Feature</th>
                   <th className="px-5 py-4 bg-[#39FF14] text-black">Tredixo</th>
-                  <th className="px-5 py-4 bg-[#0f2d73] text-white">Others</th>
+                  <th className="px-5 py-4 bg-[#07160d] text-white">Others</th>
                 </tr>
               </thead>
-              <tbody className="bg-[#05070d]">
+
+              <tbody className="bg-[#050b0f]">
                 {compareRows.map((row, i) => (
-                  <tr key={i} className="border-t border-white/10">
+                  <tr key={i} className="border-t border-[#39FF14]/15">
                     <td className="px-5 py-4 text-white/85">{row[0]}</td>
                     <td className="px-5 py-4 text-[#39FF14] font-bold">{row[1]}</td>
                     <td className="px-5 py-4 text-white/65">{row[2]}</td>
@@ -419,10 +549,11 @@ const AboutUs = () => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold text-[#00c3ff]"
+              className="text-3xl md:text-5xl font-bold text-[#39FF14]"
             >
               Trade All Markets, One Powerful Platform!
             </motion.h2>
+
             <motion.p
               variants={fadeUp}
               initial="hidden"
@@ -444,11 +575,12 @@ const AboutUs = () => {
                 whileInView="show"
                 viewport={{ once: true }}
                 custom={index}
-                className="rounded-[28px] border border-white/10 bg-[#05070d] p-6 hover:border-[#39FF14]/40 transition-all duration-300"
+                className="rounded-[28px] border border-[#39FF14]/15 bg-[#050b0f] p-6 hover:border-[#39FF14]/45 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-full bg-[#0f2d73] flex items-center justify-center text-xl mb-4 border border-white/10">
+                <div className="w-12 h-12 rounded-full bg-[#07160d] flex items-center justify-center text-xl mb-4 border border-[#39FF14]/20">
                   📈
                 </div>
+
                 <h3 className="text-xl font-bold text-[#39FF14]">{item.title}</h3>
                 <p className="mt-2 text-white/65 text-sm">{item.desc}</p>
               </motion.div>
@@ -494,14 +626,15 @@ const AboutUs = () => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="rounded-[32px] overflow-hidden border border-white/10 bg-[linear-gradient(135deg,#0f2d73_0%,#1a49b8_100%)] px-8 md:px-16 py-14 md:py-20"
+              className="rounded-[32px] overflow-hidden border border-[#39FF14]/20 bg-[linear-gradient(135deg,#07160d_0%,#051015_100%)] px-8 md:px-16 py-14 md:py-20"
             >
               <div className="grid md:grid-cols-2 gap-10 items-center">
                 <div>
                   <h2 className="text-3xl md:text-5xl font-bold leading-tight">
                     Ready to start trading with Tredixo?
                   </h2>
-                  <p className="mt-6 text-white/85 text-base md:text-lg leading-8 max-w-xl">
+
+                  <p className="mt-6 text-white/80 text-base md:text-lg leading-8 max-w-xl">
                     Join traders who choose Tredixo for a cleaner, faster, and more
                     confident trading journey.
                   </p>
@@ -526,4 +659,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default AboutUs; 
