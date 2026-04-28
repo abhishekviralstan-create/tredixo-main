@@ -12,7 +12,6 @@ import cardIcon from '../assests/card.png';
 import cryptoIcon from '../assests/crypto.png';
 import binanceIcon from '../assests/binance.png';
 import global from '../assests/global-comodities.png'
-import nse from '../assests/nse-mcx.png';
 import comex from '../assests/comex-forex.png';
 import usIndi from '../assests/Us-Indices.png';
 import cryptoA from '../assests/cypto.png';
@@ -51,12 +50,15 @@ const AnimatedCounter = ({
   startAnimation = false,
 }) => {
   const [displayValue, setDisplayValue] = useState(0);
+  const safeValue = Number(String(value).replace(/,/g, ''));
 
   useEffect(() => {
-    if (!startAnimation) return;
+    if (!startAnimation || Number.isNaN(safeValue)) return;
 
-    const controls = animate(0, value, {
-      duration: 2.2,
+    setDisplayValue(0);
+
+    const controls = animate(0, safeValue, {
+      duration: 2.6,
       ease: 'easeOut',
       onUpdate(latest) {
         setDisplayValue(latest);
@@ -64,12 +66,17 @@ const AnimatedCounter = ({
     });
 
     return () => controls.stop();
-  }, [value, startAnimation]);
+  }, [safeValue, startAnimation]);
+
+  const formattedValue = Number(displayValue.toFixed(decimals)).toLocaleString('en-IN', {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals,
+  });
 
   return (
     <span className={className}>
       {prefix}
-      {displayValue.toFixed(decimals)}
+      {formattedValue}
       {suffix}
     </span>
   );
@@ -80,9 +87,15 @@ const StatCard = ({ item, fadeUp }) => {
   const isInView = useInView(ref, { once: true, amount: 0.45 });
 
   return (
-    <motion.div ref={ref} {...fadeUp} className="text-center md:text-left">
+    <motion.div
+      ref={ref}
+      {...fadeUp}
+      whileHover={{ y: -6, scale: 1.04 }}
+      transition={{ duration: 0.35 }}
+      className="text-center rounded-2xl px-3 py-4"
+    >
       <h3
-        className={`text-3xl md:text-4xl font-bold ${item.green ? 'text-[#52ff1f]' : 'text-slate-100'
+        className={`text-2xl sm:text-3xl md:text-4xl font-extrabold tabular-nums ${item.green ? 'text-[#52ff1f]' : 'text-slate-100'
           }`}
       >
         <AnimatedCounter
@@ -116,7 +129,7 @@ const Home = () => {
   const [activeMarket, setActiveMarket] = useState('crypto');
 
   const marketOptions = [
-    { label: 'crypto', path: '/crypto-trading' },
+    { label: 'Crypto', path: '/crypto-trading' },
     { label: 'NSE Trading', path: '/nse-trading' },
     { label: 'Dabba Trading', path: '/dabba-trading' },
     { label: 'Live Market', path: '/live-markets' },
@@ -125,33 +138,33 @@ const Home = () => {
   const testimonials = [
     {
       id: 1,
-      name: 'Ravi S ',
-      role: 'Corporate Trainer & Traveler',
-      text: "The whole process of getting into trading always felt complicated, especially since I'm often switching between different devices and time zones while training clients. I started with Tredixo's demo platform, and it immediately clicked. It's so clean and intuitive.",
+      name: 'Ravi Sharma',
+      role: 'Intraday Trader',
+      text: 'Tredixo made my trading routine simple and fast. The dashboard feels clean, deposits are smooth, and I can track markets without confusion. For daily practice and quick decisions, the overall experience feels reliable, modern, and beginner friendly.',
     },
     {
       id: 2,
-      name: 'Priya S',
+      name: 'Priya Mehta',
       role: 'Small Business Owner',
-      text: "I run a small export business, so my schedule is crazy. I needed a way to understand the share market but I didn't want to risk my capital while learning. Tredixo’s simulated trading is exactly what I needed. The best part? The support team is 24/7. Seriously, I had a small login hiccup at 2 AM IST, and they sorted it in minutes. It makes managing my learning journey so much less stressful.",
+      text: 'I wanted a platform that helped me understand markets without making the process complicated. Tredixo feels easy to use, quick to access, and supportive. The layout is clear, and the demo experience helped me build confidence.',
     },
     {
       id: 3,
-      name: 'Neha R',
-      role: 'Corporate Trainer & Traveler',
-      text: "As a consultant, I’m constantly on flights and in different cities-sometimes the network is patchy, and I certainly don't have time for slow platforms. Tredixo’s 10-second registration and super-fast deposits were a lifesaver. It’s the easiest way to keep my market skills active without being tied to a desktop. Highly recommended for any road warrior!",
+      name: 'Neha Rajput',
+      role: 'Crypto Trader',
+      text: 'The best part about Tredixo is how smooth everything feels on mobile and desktop. I can check movements, explore assets, and practice strategies easily. The interface is neat, responsive, and comfortable for regular trading sessions.',
     },
     {
       id: 4,
       name: 'Vikas Mehra',
-      role: 'Intraday Trader',
-      text: 'Real-time feel aur speed ka combination impressive hai. Platform stable lagta hai aur day trading ke liye suitable hai.',
+      role: 'Market Learner',
+      text: 'Tredixo helped me learn market flow in a practical way. The speed, simple navigation, and real-time feel make it useful for beginners. I like that important details are easy to find without too many confusing steps.',
     },
     {
       id: 5,
-      name: 'Neha Singh',
-      role: 'Crypto Trader',
-      text: 'Trading journey kaafi easy ho gayi. Layout modern hai, aur mujhe market movement track karna kaafi comfortable lagta hai.',
+      name: 'Aman Verma',
+      role: 'Forex Enthusiast',
+      text: 'Using Tredixo feels straightforward and professional. I can explore forex, commodities, and other markets from one place. The platform looks premium, works smoothly, and gives a strong trading-style experience without making things difficult.',
     },
   ];
 
@@ -235,13 +248,24 @@ const Home = () => {
 
   const stats = useMemo(
     () => [
-      { value: 2.5, label: 'Active Traders', suffix: 'M+', green: false, decimals: 1 },
-      { value: 150, label: 'Monthly Volume', prefix: '₹', suffix: 'M', green: true, decimals: 0 },
-      { value: 0.01, label: 'Execution Speed', suffix: 's', green: false, decimals: 2 },
-      { value: 24, label: 'Global Support', suffix: '/7', green: true, decimals: 0 },
+      { value: 1000000, label: 'Brokerage Saved', prefix: '₹', suffix: '', green: false, decimals: 0 },
+      { value: 150000, label: 'Happy Traders', suffix: '', green: true, decimals: 0 },
+      { value: 5328987, label: 'Withdrawals Processed', prefix: '₹', suffix: '', green: false, decimals: 0 },
+      { value: 930200, label: 'Active Trades', suffix: '', green: true, decimals: 0 },
     ],
     []
   );
+
+  const trustBadges = [
+    { icon: <GiTakeMyMoney />, title: 'Brokerage', sub: 'without Tax' },
+    { icon: <BsGraphUpArrow />, title: '500X', sub: 'Margin' },
+    { icon: <FiZap />, title: 'Referral', sub: 'Bonus' },
+    { icon: <MdOutlineSupportAgent />, title: '24/7', sub: 'Support' },
+    { icon: <FiGlobe />, title: 'Indian', sub: 'Markets' },
+    { icon: <FiBarChart2 />, title: '500+', sub: 'Products' },
+    { icon: <FiArrowRight />, title: '10Sec', sub: 'To Register' },
+    { icon: <MdOutlineContactSupport />, title: 'RM', sub: 'Available' },
+  ];
 
   const paymentOptions = [
     {
@@ -275,54 +299,32 @@ const Home = () => {
   ];
 
 
-  // New section images:
-  // 1) Import your image at top, example:
-  // import nseMarketImg from '../assests/nse-market.png';
-  // 2) Put that imported variable in image field below, example:
-  // image: nseMarketImg
 
-  const marketAccessCards = [
-    {
-      title: 'NSE & MCX Futures',
-      desc: 'Indian markets can be traded with max. 500× margin for the highest exposure.',
-      image: nse,
-    },
-    {
-      title: 'Comex & Forex',
-      desc: "Don't miss out on global commodities and currency markets with powerful leverage options.",
-      image: comex,
-    },
-    {
-      title: 'Options Trading',
-      desc: 'Use margin for your options strategies.',
-      image: option,
-    },
-  ];
 
   const tradingInstrumentCards = [
     {
       title: 'Indian Markets (NSE & MCX)',
-      desc: 'Futures, options, commodities',
+      desc: '',
       image: indian,
     },
     {
       title: 'Forex Markets',
-      desc: 'Currency Pairs: Major, Minor and Exotic',
+      desc: '',
       image: forex,
     },
     {
       title: 'Global Commodities (Comex)',
-      desc: 'Gold, silver, oil, and more',
+      desc: '',
       image: global,
     },
     {
       title: 'US Indices & Stocks',
-      desc: 'S&P 500, Nasdaq, Dow Jones',
+      desc: '',
       image: usIndi,
     },
     {
       title: 'Crypto Assets',
-      desc: 'Bitcoin, Ethereum, and more',
+      desc: '',
       image: cryptoA,
     },
   ];
@@ -427,7 +429,7 @@ const Home = () => {
               </h1>
 
               <p className="text-sm sm:text-[15px] md:text-base text-gray-300 max-w-xl leading-7 mx-auto lg:mx-0">
-                Enter international markets with lightning speed, no brokerage and up to 500× leverage, all on one powerful platform.
+                Enter international markets with lightning speed, Low brokerage and up to 500× leverage, all on one powerful platform.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-2 justify-center lg:justify-start items-center">
@@ -519,8 +521,8 @@ const Home = () => {
                             whileTap={{ scale: 0.98 }}
                             onClick={() => handleMarketClick(item)}
                             className={`rounded-xl border px-2 py-2.5 sm:p-3 text-center text-[10px] sm:text-xs transition-all duration-300 ${isActive
-                                ? 'bg-[#52ff1f]/10 border-[#52ff1f]/40 text-[#52ff1f] shadow-[0_0_18px_rgba(82,255,31,0.12)]'
-                                : 'bg-white/[0.03] border-white/5 text-gray-300 hover:border-white/15 hover:bg-white/[0.05]'
+                              ? 'bg-[#52ff1f]/10 border-[#52ff1f]/40 text-[#52ff1f] shadow-[0_0_18px_rgba(82,255,31,0.12)]'
+                              : 'bg-white/[0.03] border-white/5 text-gray-300 hover:border-white/15 hover:bg-white/[0.05]'
                               }`}
                             aria-pressed={isActive}
                           >
@@ -667,12 +669,59 @@ const Home = () => {
           </div>
         </section>
 
-        {/* STATS */}
-        <section className="border-b border-white/5">
-          <div className="max-w-7xl mx-auto px-4 md:px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((item, index) => (
-              <StatCard key={index} item={item} fadeUp={fadeUp} />
-            ))}
+        {/* STATS + TRUST BADGES COMBINED */}
+        <section className="bg-[#05060a] text-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-10">
+            {/* TRUST BADGES */}
+            <motion.div
+              className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-4"
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={{
+                hidden: {},
+                show: { transition: { staggerChildren: 0.06 } },
+              }}
+            >
+              {trustBadges.map((item, index) => (
+                <motion.div
+                  key={`${item.title}-${index}`}
+                  variants={{
+                    hidden: { opacity: 0, y: 20, scale: 0.95 },
+                    show: { opacity: 1, y: 0, scale: 1 },
+                  }}
+                  transition={{ duration: 0.45 }}
+                  whileHover={{ y: -6, scale: 1.05 }}
+                  className="group flex flex-col items-center text-center rounded-xl px-2 py-3 transition-all duration-300 hover:bg-white/5"
+                >
+                  <motion.div
+                    className="text-[22px] sm:text-[26px] md:text-[30px] mb-2 text-[#52FF1F]"
+                    animate={{ y: [0, -4, 0] }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      delay: index * 0.1,
+                    }}
+                  >
+                    {item.icon}
+                  </motion.div>
+
+                  <h4 className="text-[11px] sm:text-xs font-semibold text-white">
+                    {item.title}
+                  </h4>
+                  <p className="text-[10px] sm:text-[11px] text-gray-400 mt-1">
+                    {item.sub}
+                  </p>
+                </motion.div>
+              ))}
+            </motion.div>
+            <div className="w-full h-[1px] bg-white/10 my-6" />
+            {/* STATS */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              {stats.map((item, index) => (
+                <StatCard key={index} item={item} fadeUp={fadeUp} />
+              ))}
+            </div>
           </div>
         </section>
 
@@ -682,23 +731,23 @@ const Home = () => {
             {...fadeUp}
             className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-[#52ff1f] font-semibold mb-3"
           >
-          TRUST SECTION
+            TRUST SECTION
           </motion.p>
 
           <motion.h2 {...fadeUp} className="text-3xl md:text-5xl font-bold text-slate-100 mb-10">
-           Trusted by traders worldwide.
+            Trusted By Traders World-Wide.
           </motion.h2>
 
           <div className="grid lg:grid-cols-3 gap-6">
             <motion.div
               {...fadeUp}
-              className="lg:col-span-2 rounded-[26px] border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] overflow-hidden"
+              className="lg:col-span-2 rounded-[26px] border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] overflow-visible"
             >
               <div className="p-7 md:p-8">
                 <FiTrendingUp className="text-white text-2xl mb-4" />
                 <h3 className="text-3xl font-bold mb-3">Become A Part</h3>
                 <p className="text-gray-300 max-w-xl leading-7 text-sm md:text-base">
-                 of an emerging ecosystem of traders who value speed, accuracy and security. Tredixo provides a trading experience that suits both beginners and professionals.
+                  of an emerging ecosystem of traders who value speed, accuracy and security. Tredixo provides a trading experience that suits both beginners and professionals.
 
                 </p>
 
@@ -707,7 +756,7 @@ const Home = () => {
                     to="/contact"
                     className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:border-[#52ff1f]/40 hover:bg-[#52ff1f]/10 hover:text-[#52ff1f]"
                   >
-                  Connect Now <FiArrowRight />
+                    Connect Now <FiArrowRight />
                   </Link>
                 </div>
               </div>
@@ -802,95 +851,119 @@ const Home = () => {
           </div>
         </section>
 
-        {/* MARKET ACCESS / OFFERINGS */}
-        <section className="border-t border-white/5">
-          <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
-            <motion.div {...fadeUp} className="text-center max-w-3xl mx-auto mb-12">
+        {/* TRADING INSTRUMENTS - DARK PILL STYLE RESPONSIVE */}
+        <section className="relative border-t border-white/5 bg-[#0b1118] overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(82,255,31,0.08),transparent_35%)]" />
+
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-16 md:py-24">
+            <motion.div {...fadeUp} className="text-center max-w-3xl mx-auto mb-14">
               <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-[#52ff1f] font-semibold mb-3">
-                Market Access / Offerings
-              </p>
-
-              <h2 className="text-3xl md:text-5xl font-bold text-slate-100 leading-tight">
-                Access Global Markets on a Single Platform
-              </h2>
-
-              <p className="text-sm md:text-base text-gray-400 mt-5 leading-7">
-                Trade on top exchanges & asset classes with extreme flexibility and leverage.
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {marketAccessCards.map((item, index) => (
-                <motion.div
-                  key={item.title}
-                  {...fadeUp}
-                  transition={{ duration: 0.7, delay: index * 0.08 }}
-                  whileHover={{ y: -8, scale: 1.01 }}
-                  className="group relative rounded-[26px] border border-white/10 bg-gradient-to-br from-[#101722] to-[#0a0f14] p-6 min-h-[300px] overflow-hidden text-center"
-                >
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(82,255,31,0.12),transparent_38%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-[#52ff1f]/5 blur-3xl group-hover:bg-[#52ff1f]/12 transition-all duration-300" />
-
-                  <div className="relative z-10 flex h-full flex-col items-center justify-center">
-                    <div className="w-24 h-24 rounded-[26px] border border-white/10 bg-white/[0.04] flex items-center justify-center mb-6 overflow-hidden group-hover:border-[#52ff1f]/40 transition-all duration-300">
-                      {item.image ? (
-                        <img src={item.image} alt={item.title} className="w-16 h-16 object-contain" />
-                      ) : (
-                        <FiGlobe className="text-4xl text-[#52ff1f]" />
-                      )}
-                    </div>
-
-                    <h3 className="text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-[#52ff1f] transition-colors">
-                      {item.title}
-                    </h3>
-
-                    <p className="text-gray-400 text-sm leading-7">
-                      {item.desc}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* TRADING INSTRUMENTS */}
-        <section className="border-t border-white/5 bg-[#06090f]">
-          <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
-            <motion.div {...fadeUp} className="text-center max-w-3xl mx-auto mb-12">
-              <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-cyan-300 font-semibold mb-3">
                 Trading Instruments
               </p>
 
-              <h2 className="text-3xl md:text-5xl font-bold text-slate-100">
-                Trade All Major Markets
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+                Trade All Exchanges In
+                <br className="hidden sm:block" />
+                One Platform
               </h2>
             </motion.div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {tradingInstrumentCards.map((item, index) => (
+            <div className="space-y-7 md:space-y-12">
+              {[
+                {
+                  title: 'NSE',
+                  points: ['India’s leading exchange for stocks trading'],
+                  image: indian,
+                  reverse: false,
+                },
+                {
+                  title: 'Commodity',
+                  points: ['Trade metals, energy, and commodity futures'],
+                  image: global,
+                  reverse: true,
+                },
+                {
+                  title: 'Forex',
+                  points: ['Trade global currencies with fast market execution'],
+                  image: forex,
+                  reverse: false,
+                },
+                {
+                  title: 'Comex',
+                  points: ['Trade gold, silver, oil, global commodities'],
+                  image: comex,
+                  reverse: true,
+                },
+                {
+                  title: 'US Stocks Indices',
+                  points: ['Trade top US indices and global stocks easily'],
+                  image: usIndi,
+                  reverse: false,
+                },
+                {
+                  title: 'Crypto',
+                  points: ['Trade Bitcoin, Ethereum, and digital assets'],
+                  image: cryptoA,
+                  reverse: true,
+                },
+              ].map((item, index) => (
                 <motion.div
                   key={item.title}
                   {...fadeUp}
-                  transition={{ duration: 0.7, delay: index * 0.07 }}
-                  whileHover={{ y: -6 }}
-                  className="rounded-[24px] border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-6 min-h-[260px] flex flex-col items-center justify-center text-center"
+                  transition={{ duration: 0.7, delay: index * 0.06 }}
+                  className={`flex ${item.reverse ? 'lg:justify-end' : 'lg:justify-start'}`}
                 >
-                  <div className="w-20 h-20 rounded-2xl border border-white/10 bg-black/20 flex items-center justify-center mb-5 overflow-hidden">
-                    {item.image ? (
-                      <img src={item.image} alt={item.title} className="w-14 h-14 object-contain" />
-                    ) : (
-                      <FiBarChart2 className="text-3xl text-[#52ff1f]" />
-                    )}
+                  <div
+                    className={`relative w-full lg:w-[82%] h-[125px] sm:h-[145px] md:h-[190px] rounded-[28px] md:rounded-[46px] bg-[#0b1118] overflow-hidden ${item.reverse ? 'lg:mr-10' : 'lg:ml-10'
+                      }`}
+                  >
+                    {/* inner pill */}
+                    <div className="absolute top-1/2 left-3 right-3 md:left-5 md:right-5 h-[78px] sm:h-[90px] md:h-[115px] -translate-y-1/2 rounded-[24px] md:rounded-[40px] bg-[#102817]" />
+
+                    {/* title circle */}
+                    <div
+                      className={`absolute z-20 top-1/2 -translate-y-1/2 w-[82px] h-[82px] sm:w-[105px] sm:h-[105px] md:w-[155px] md:h-[155px] rounded-full bg-[#05070b] border border-[#52ff1f]/40 flex items-center justify-center text-center px-2 ${item.reverse ? 'right-3 md:right-7' : 'left-3 md:left-7'
+                        }`}
+                    >
+                      <h3 className="text-[#52ff1f] font-extrabold text-sm sm:text-lg md:text-2xl leading-tight break-words">
+                        {item.title}
+                      </h3>
+                    </div>
+
+                    {/* image */}
+                    <div
+                      className={`absolute z-20 top-1/2 -translate-y-1/2 ${item.reverse ? 'left-2 sm:left-4 md:left-9' : 'right-2 sm:right-4 md:right-9'
+                        }`}
+                    >
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-[82px] h-[70px] sm:w-[120px] sm:h-[100px] md:w-[220px] md:h-[175px] object-contain drop-shadow-[0_12px_22px_rgba(0,0,0,0.6)]"
+                      />
+                    </div>
+
+                    {/* text */}
+                    <div
+                      className={`relative z-20 h-full flex items-center ${item.reverse
+                        ? 'pl-[95px] pr-[95px] sm:pl-[145px] sm:pr-[125px] md:pl-[285px] md:pr-[210px]'
+                        : 'pl-[95px] pr-[95px] sm:pl-[125px] sm:pr-[145px] md:pl-[210px] md:pr-[285px]'
+                        }`}
+                    >
+                      <ul className="space-y-2">
+                        {item.points.map((point) => (
+                          <li
+                            key={point}
+                            className="flex items-start gap-2 sm:gap-3 text-white font-semibold text-[11px] sm:text-sm md:text-lg leading-snug"
+                          >
+                            <span className="text-[#52ff1f] text-sm sm:text-lg md:text-xl mt-[1px]">
+                              ✓
+                            </span>
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-
-                  <h3 className="text-lg md:text-xl font-bold text-white mb-3">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-sm text-gray-400 leading-7">
-                    {item.desc}
-                  </p>
                 </motion.div>
               ))}
             </div>
@@ -906,7 +979,7 @@ const Home = () => {
               </p>
 
               <h2 className="text-3xl md:text-5xl font-bold text-slate-100">
-                Start Trading in Seconds
+                Start Trading In Seconds
               </h2>
             </motion.div>
 
@@ -956,7 +1029,7 @@ const Home = () => {
               </p>
 
               <h2 className="text-3xl md:text-5xl font-bold text-slate-100">
-                Built for Fast, Secure & Smarter Practice
+                Built For Fast, Secure & Smarter Practice
               </h2>
 
               <p className="text-sm md:text-base text-gray-400 mt-5 leading-7">
@@ -1087,7 +1160,7 @@ const Home = () => {
               <h2 className="text-[1.9rem] sm:text-4xl md:text-5xl font-bold text-slate-100 leading-[1.15]">
                 Quick Deposit
                 <br className="hidden sm:block" />
-                <span className="text-[#52ff1f]"> with local payment options</span>
+                <span className="text-[#52ff1f]"> With Local Payment Options</span>
               </h2>
 
               <p className="text-sm md:text-base text-gray-400 mt-5 leading-7 px-2">
@@ -1166,10 +1239,10 @@ const Home = () => {
               </span>
 
               <h2 className="text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.08] mt-5">
-                Ready to join the
+                Ready To Join The
                 <br />
                 <span className="text-[#52ff1f] drop-shadow-[0_0_20px_rgba(82,255,31,0.22)]">
-                  precisionists?
+                  Precisionists?
                 </span>
               </h2>
 
@@ -1194,12 +1267,10 @@ const Home = () => {
 
         {/* TESTIMONIALS */}
         <section className="border-t border-b border-white/5">
-          <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24 overflow-visible">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <motion.p
-                {...fadeUp}
-                className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-cyan-300 font-semibold mb-3"
-              >
+               >
                 What Our Traders Say
               </motion.p>
 
@@ -1209,7 +1280,7 @@ const Home = () => {
               >
                 What Our Traders Say
                 <br className="hidden sm:block" />
-                <span className="text-[#52ff1f]">about Tredixo</span>
+                <span className="text-[#52ff1f]">About Tredixo</span>
               </motion.h2>
             </div>
 
@@ -1225,14 +1296,16 @@ const Home = () => {
                     className="shrink-0 px-3"
                     style={{ width: `${100 / perView}%` }}
                   >
-                    <div className="h-full rounded-[26px] border border-white/10 bg-gradient-to-br from-[#10151d] to-[#0a0d12] p-6 md:p-7 shadow-[0_15px_40px_rgba(0,0,0,0.25)]">
+                   <motion.div
+  className="h-full rounded-[26px] border border-white/10 bg-gradient-to-br from-[#10151d] to-[#0a0d12] p-6 md:p-7 shadow-[0_15px_40px_rgba(0,0,0,0.25)] transition-all duration-300"
+>
                       <div className="flex gap-1 text-[#52ff1f] mb-5">
                         {[...Array(5)].map((_, i) => (
                           <FaStar key={i} className="text-sm" />
                         ))}
                       </div>
 
-                      <p className="text-white/75 leading-7 text-sm md:text-base">
+                      <p className="text-white/75 leading-7 text-sm md:text-base min-h-[196px]">
                         {item.text}
                       </p>
 
@@ -1240,7 +1313,7 @@ const Home = () => {
                         <h3 className="text-white font-semibold text-lg">{item.name}</h3>
                         <p className="text-white/50 text-sm mt-1">{item.role}</p>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
                 ))}
               </motion.div>
@@ -1253,8 +1326,8 @@ const Home = () => {
                   type="button"
                   onClick={() => setTestimonialIndex(index)}
                   className={`h-2.5 rounded-full transition-all duration-300 ${testimonialIndex === index
-                      ? 'w-8 bg-[#52ff1f]'
-                      : 'w-2.5 bg-white/20 hover:bg-white/40'
+                    ? 'w-8 bg-[#52ff1f]'
+                    : 'w-2.5 bg-white/20 hover:bg-white/40'
                     }`}
                   aria-label={`Go to testimonial slide ${index + 1}`}
                 />
