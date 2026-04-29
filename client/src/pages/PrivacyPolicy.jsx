@@ -2,6 +2,9 @@ import { Helmet } from 'react-helmet-async';
 import { FiShield, FiLock, FiGlobe, FiMail, FiDatabase, FiEye } from 'react-icons/fi';
 import { HiOutlineDocumentText } from 'react-icons/hi';
 
+// apni hero image yaha import karo
+import privacyHero from '../assests/crypto.png';
+
 const sections = [
   {
     icon: <HiOutlineDocumentText size={20} />,
@@ -79,7 +82,7 @@ const sections = [
 const PrivacyPolicy = () => {
   return (
     <>
-        <Helmet>
+      <Helmet>
         <title>Tredixo Privacy Policy | Your Data, Our Priority</title>
         <meta
           name="description"
@@ -90,69 +93,77 @@ const PrivacyPolicy = () => {
           content="Tredixo privacy policy, trading platform data security,trading platform GDPR, safe data trading app, trading account privacy India"
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.tredixo.com/blogs" />
-
-        <meta property="og:title" content="Tredixo Privacy Policy | Your Data, Our Priority" />
-        <meta
-          property="og:description"
-          content="Read Tredixo's privacy policy to learn how we protect your data and ensure a secure trading experience."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.tredixo.com/blogs" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Tredixo Privacy Policy | Your Data, Our Priority" />
-        <meta
-          name="twitter:description"
-          content="Read Tredixo's privacy policy to learn how we protect your data and ensure a secure trading experience."
-        />
+        <link rel="canonical" href="https://www.tredixo.com/privacy-policy" />
       </Helmet>
 
-      <div className="min-h-screen bg-black text-white overflow-hidden">
-        <section className="relative border-b border-white/8">
-          <div className="absolute inset-0 opacity-30">
-            <div className="h-full w-full bg-[radial-gradient(circle_at_top_left,rgba(0,255,180,0.12),transparent_25%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.12),transparent_25%)]" />
-          </div>
+      <div className="min-h-screen bg-[#05070b] text-white overflow-hidden">
+        {/* HERO */}
+        <section className="relative overflow-hidden border-b border-white/5">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(82,255,31,0.14),transparent_30%),radial-gradient(circle_at_top_right,rgba(0,180,255,0.08),transparent_24%)]" />
+          <div className="absolute inset-0 opacity-[0.12] bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
-          <div className="relative max-w-7xl mx-auto px-4 md:px-8 lg:px-12 py-16 md:py-24">
-            <div className="max-w-4xl">
-              <p className="text-cyan-300 text-xs md:text-sm uppercase tracking-[4px] font-semibold mb-4">
+          <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-cyan-300 font-semibold mb-4">
                 Tredixo Legal & Privacy
               </p>
+
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                Privacy <span className="text-lime-300">Policy</span>
+                Privacy
+                <br />
+                <span className="text-[#52ff1f]">Policy</span>
               </h1>
-              <p className="mt-6 text-white/70 text-base md:text-lg leading-8 max-w-3xl">
+
+              <p className="mt-6 text-gray-300 text-base md:text-lg leading-8 max-w-3xl">
                 This page explains how Tredixo collects, uses, stores, shares, and safeguards
                 personal information when users visit the website, interact with ads, submit
                 forms, or communicate with us through any channel.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <span className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-300">
-                  Educational Platform
-                </span>
-                <span className="rounded-full border border-lime-400/20 bg-lime-400/10 px-4 py-2 text-sm text-lime-300">
-                  Data Protection Focus
-                </span>
-                <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/70">
-                  Last reviewed for website use
-                </span>
+                {['Educational Platform', 'Data Protection Focus', 'Last reviewed for website use'].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-[#52ff1f]/25 bg-[#52ff1f]/10 px-4 py-2 text-sm text-[#52ff1f]"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* RIGHT IMAGE */}
+            <div className="flex justify-center">
+              <div className="relative w-full max-w-[520px] rounded-[30px] overflow-hidden flex items-center justify-center min-h-[380px]">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(82,255,31,0.16),transparent_55%)]" />
+                <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:60px_60px]" />
+
+                <img
+                  src={privacyHero}
+                  alt="Tredixo privacy policy"
+                  className="relative z-10 w-full h-[380px] object-contain"
+                />
               </div>
             </div>
           </div>
         </section>
 
-        <section className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 py-14 md:py-20">
+        {/* CONTENT */}
+        <section className="max-w-7xl mx-auto px-4 md:px-8 py-14 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-8">
-            <aside className="h-fit lg:sticky lg:top-28 rounded-[28px] border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm">
-              <h2 className="text-xl font-semibold mb-5">Policy Highlights</h2>
-              <div className="space-y-4 text-sm text-white/65 leading-7">
-                <p>Tredixo provides educational market-learning content only.</p>
-                <p>User information may be collected through forms, website activity, and ad interactions.</p>
-                <p>Communication is consent-based and opt-out remains available.</p>
-                <p>Tredixo does not sell or rent personal data.</p>
-                <p>Users may contact admin@tredixo.co.in for privacy-related concerns.</p>
+            <aside className="relative overflow-hidden h-fit lg:sticky lg:top-28 rounded-[28px] border border-white/10 bg-[#0b0f16] p-6">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(82,255,31,0.12),transparent_45%)]" />
+              <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:28px_28px]" />
+
+              <div className="relative z-10">
+                <h2 className="text-xl font-semibold mb-5 text-[#52ff1f]">Policy Highlights</h2>
+                <div className="space-y-4 text-sm text-gray-400 leading-7">
+                  <p>Tredixo provides educational market-learning content only.</p>
+                  <p>User information may be collected through forms, website activity, and ad interactions.</p>
+                  <p>Communication is consent-based and opt-out remains available.</p>
+                  <p>Tredixo does not sell or rent personal data.</p>
+                  <p>Users may contact admin@tredixo.co.in for privacy-related concerns.</p>
+                </div>
               </div>
             </aside>
 
@@ -160,37 +171,54 @@ const PrivacyPolicy = () => {
               {sections.map((section, index) => (
                 <div
                   key={index}
-                  className="rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,#0b0f14_0%,#11161d_100%)] p-6 md:p-8 shadow-[0_0_25px_rgba(0,255,255,0.03)]"
+                  className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-[#0b0f16] p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[#52ff1f]/40 hover:bg-[#0e151d] hover:shadow-[0_18px_45px_rgba(82,255,31,0.08)]"
                 >
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="h-11 w-11 rounded-full border border-cyan-400/20 bg-cyan-400/10 flex items-center justify-center text-cyan-300">
-                      {section.icon}
-                    </span>
-                    <h2 className="text-2xl font-semibold text-white">{section.title}</h2>
-                  </div>
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(82,255,31,0.10),transparent_50%)] opacity-60" />
+                  <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:28px_28px]" />
 
-                  <div className="space-y-4 text-white/72 leading-8 text-sm md:text-base">
-                    {section.content.map((paragraph, pIndex) => (
-                      <p key={pIndex}>{paragraph}</p>
-                    ))}
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="h-11 w-11 rounded-xl border border-[#52ff1f]/25 bg-[#52ff1f]/10 flex items-center justify-center text-[#52ff1f]">
+                        {section.icon}
+                      </span>
+
+                      <h2 className="text-2xl font-semibold text-white group-hover:text-[#52ff1f] transition">
+                        {section.title}
+                      </h2>
+                    </div>
+
+                    <div className="space-y-4 text-gray-400 leading-8 text-sm md:text-base">
+                      {section.content.map((paragraph, pIndex) => (
+                        <p key={pIndex}>{paragraph}</p>
+                      ))}
+                    </div>
                   </div>
                 </div>
               ))}
 
-              <div className="rounded-[28px] border border-lime-400/20 bg-lime-400/5 p-6 md:p-8">
-                <h3 className="text-2xl font-semibold text-white mb-3">Contact for Privacy Requests</h3>
-                <p className="text-white/75 leading-8">
-                  For any privacy-related questions, correction requests, deletion requests,
-                  or communication preferences, please contact:
-                </p>
-                <div className="mt-5 flex flex-col gap-3">
-                  <div className="rounded-2xl border border-white/10 bg-black/30 px-5 py-4">
-                    <p className="text-sm text-white/50 mb-1">Email</p>
-                    <p className="text-lime-300 font-medium">admin@tredixo.co.in</p>
-                  </div>
-                  <div className="rounded-2xl border border-white/10 bg-black/30 px-5 py-4">
-                    <p className="text-sm text-white/50 mb-1">Website</p>
-                    <p className="text-cyan-300 font-medium">www.tredixo.co.in</p>
+              <div className="relative overflow-hidden rounded-[28px] border border-[#52ff1f]/25 bg-[#52ff1f]/5 p-6 md:p-8">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(82,255,31,0.12),transparent_45%)]" />
+
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-semibold text-white mb-3">
+                    Contact for Privacy Requests
+                  </h3>
+
+                  <p className="text-gray-300 leading-8">
+                    For any privacy-related questions, correction requests, deletion requests,
+                    or communication preferences, please contact:
+                  </p>
+
+                  <div className="mt-5 grid sm:grid-cols-2 gap-3">
+                    <div className="rounded-2xl border border-white/10 bg-black/30 px-5 py-4">
+                      <p className="text-sm text-white/50 mb-1">Email</p>
+                      <p className="text-[#52ff1f] font-medium">admin@tredixo.co.in</p>
+                    </div>
+
+                    <div className="rounded-2xl border border-white/10 bg-black/30 px-5 py-4">
+                      <p className="text-sm text-white/50 mb-1">Website</p>
+                      <p className="text-cyan-300 font-medium">www.tredixo.co.in</p>
+                    </div>
                   </div>
                 </div>
               </div>

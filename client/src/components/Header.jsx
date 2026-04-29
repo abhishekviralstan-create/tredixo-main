@@ -3,6 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { IoChevronDownOutline } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
+import logo from '../assests/logo.png'
 
 const Header = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -83,16 +84,16 @@ const Header = () => {
                         onClick={closeAllMenus}
                     >
                         <img
-                            src="/logo.png"
+                            src={logo}
                             alt="Tredixo"
-                            className="h-10 md:h-12 object-contain"
+                             className="h-6 md:h-8 w-auto object-contain"
                             onError={(e) => {
                                 e.currentTarget.style.display = "none";
                             }}
                         />
-                        <span className="text-white text-2xl md:text-3xl font-extrabold tracking-tight">
+                        {/* <span className="text-white text-2xl md:text-3xl font-extrabold tracking-tight">
                             Tredi<span className="text-lime-300">X</span>o
-                        </span>
+                        </span> */}
                     </NavLink>
 
                     {/* Desktop Menu */}

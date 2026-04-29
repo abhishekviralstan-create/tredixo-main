@@ -21,6 +21,7 @@ import option from '../assests/option-trading.png';
 import { MdOutlineSupportAgent } from "react-icons/md";
 import { BsGraphUpArrow } from "react-icons/bs";
 import { GiTakeMyMoney } from "react-icons/gi";
+import phone from "../assests/phone.png"
 import {
   FiTrendingUp,
   FiShield,
@@ -333,20 +334,16 @@ const Home = () => {
     {
       title: 'Sign Up in 10 Seconds',
       desc: 'Create your account quickly and enter the trading platform without complex steps.',
-      image: null,
     },
     {
       title: 'Deposit Funds Instantly',
       desc: 'Fund your account quickly with fast and secure payment options.',
-      image: null,
     },
     {
       title: 'Start Trading with High Leverage',
       desc: 'Access major markets and use powerful leverage for flexible trading practice.',
-      image: null,
     },
   ];
-
   const platformFeatures = [
     {
       title: 'Fast & Secure Transactions',
@@ -670,56 +667,73 @@ const Home = () => {
         </section>
 
         {/* STATS + TRUST BADGES COMBINED */}
-        <section className="bg-[#05060a] text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-10">
-            {/* TRUST BADGES */}
-            <motion.div
-              className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-4"
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              variants={{
-                hidden: {},
-                show: { transition: { staggerChildren: 0.06 } },
-              }}
-            >
-              {trustBadges.map((item, index) => (
-                <motion.div
-                  key={`${item.title}-${index}`}
-                  variants={{
-                    hidden: { opacity: 0, y: 20, scale: 0.95 },
-                    show: { opacity: 1, y: 0, scale: 1 },
-                  }}
-                  transition={{ duration: 0.45 }}
-                  whileHover={{ y: -6, scale: 1.05 }}
-                  className="group flex flex-col items-center text-center rounded-xl px-2 py-3 transition-all duration-300 hover:bg-white/5"
-                >
-                  <motion.div
-                    className="text-[22px] sm:text-[26px] md:text-[30px] mb-2 text-[#52FF1F]"
-                    animate={{ y: [0, -4, 0] }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      delay: index * 0.1,
-                    }}
-                  >
-                    {item.icon}
-                  </motion.div>
+        <section className="relative bg-[#05060a] text-white overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(82,255,31,0.08),transparent_35%)]" />
+          <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:60px_60px]" />
 
-                  <h4 className="text-[11px] sm:text-xs font-semibold text-white">
-                    {item.title}
-                  </h4>
-                  <p className="text-[10px] sm:text-[11px] text-gray-400 mt-1">
-                    {item.sub}
-                  </p>
-                </motion.div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-10">
+
+            {/* TRUST BADGES */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
+              {trustBadges.map((item, index) => (
+                <div
+                  key={`${item.title}-${index}`}
+                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#0b0f16] px-4 py-5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#52ff1f]/40 hover:bg-[#0e151d] hover:shadow-[0_18px_45px_rgba(82,255,31,0.08)]"
+                >
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(82,255,31,0.12),transparent_45%)] opacity-60" />
+                  <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:26px_26px]" />
+                  <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[#52ff1f]/10 blur-2xl transition-all duration-300 group-hover:bg-[#52ff1f]/20" />
+
+                  <div className="relative z-10">
+                    <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-[26px] text-[#52ff1f] transition-all duration-300 group-hover:border-[#52ff1f]/40 group-hover:bg-[#52ff1f]/10 group-hover:scale-105">
+                      {item.icon}
+                    </div>
+
+                    <h4 className="text-sm font-bold text-white">
+                      {item.title}
+                    </h4>
+
+                    <p className="mt-1 text-xs text-gray-400">
+                      {item.sub}
+                    </p>
+                  </div>
+                </div>
               ))}
-            </motion.div>
-            <div className="w-full h-[1px] bg-white/10 my-6" />
+            </div>
+
+            <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/15 to-transparent my-6" />
+
             {/* STATS */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
               {stats.map((item, index) => (
-                <StatCard key={index} item={item} fadeUp={fadeUp} />
+                <div
+                  key={index}
+                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#0b0f16] px-4 py-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#52ff1f]/40 hover:bg-[#0e151d] hover:shadow-[0_18px_45px_rgba(82,255,31,0.08)]"
+                >
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(82,255,31,0.14),transparent_42%)] opacity-70" />
+                  <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:28px_28px]" />
+                  <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[#52ff1f]/10 blur-2xl transition-all duration-300 group-hover:bg-[#52ff1f]/20" />
+                  <div className="absolute bottom-3 left-3 right-3 h-[1px] bg-gradient-to-r from-transparent via-[#52ff1f]/35 to-transparent" />
+
+                  <div className="relative z-10">
+                    <h3
+                      className={`text-2xl sm:text-3xl md:text-4xl font-extrabold tabular-nums transition-all duration-300 group-hover:scale-105 ${item.green ? 'text-[#52ff1f]' : 'text-white'
+                        }`}
+                    >
+                      <AnimatedCounter
+                        value={item.value}
+                        prefix={item.prefix || ''}
+                        suffix={item.suffix || ''}
+                        decimals={item.decimals || 0}
+                        startAnimation={true}
+                      />
+                    </h3>
+
+                    <p className="text-[10px] uppercase tracking-[0.22em] text-gray-500 mt-3 group-hover:text-gray-300 transition-all">
+                      {item.label}
+                    </p>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -727,14 +741,11 @@ const Home = () => {
 
         {/* BUILT FOR HIGH STAKES */}
         <section className="max-w-7xl mx-auto px-4 md:px-8 py-16">
-          <motion.p
-            {...fadeUp}
-            className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-[#52ff1f] font-semibold mb-3"
-          >
+          <motion.p className="text-center text-[10px] md:text-xs tracking-[0.28em] uppercase text-[#52ff1f] font-semibold mb-3">
             TRUST SECTION
           </motion.p>
 
-          <motion.h2 {...fadeUp} className="text-3xl md:text-5xl font-bold text-slate-100 mb-10">
+          <motion.h2 {...fadeUp} className="text-3xl md:text-5xl font-bold text-slate-100 mb-10 text-center">
             Trusted By Traders World-Wide.
           </motion.h2>
 
@@ -851,9 +862,10 @@ const Home = () => {
           </div>
         </section>
 
-        {/* TRADING INSTRUMENTS - DARK PILL STYLE RESPONSIVE */}
-        <section className="relative border-t border-white/5 bg-[#0b1118] overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(82,255,31,0.08),transparent_35%)]" />
+        {/* TRADING INSTRUMENTS - UPDATED */}
+        <section className="relative border-t border-white/5 bg-[#05070b] overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(82,255,31,0.10),transparent_36%),radial-gradient(circle_at_bottom_left,rgba(0,180,255,0.06),transparent_30%)]" />
+          <div className="absolute inset-0 opacity-15 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-16 md:py-24">
             <motion.div {...fadeUp} className="text-center max-w-3xl mx-auto mb-14">
@@ -868,100 +880,60 @@ const Home = () => {
               </h2>
             </motion.div>
 
-            <div className="space-y-7 md:space-y-12">
+            <div className="space-y-8 md:space-y-10">
               {[
-                {
-                  title: 'NSE',
-                  points: ['India’s leading exchange for stocks trading'],
-                  image: indian,
-                  reverse: false,
-                },
-                {
-                  title: 'Commodity',
-                  points: ['Trade metals, energy, and commodity futures'],
-                  image: global,
-                  reverse: true,
-                },
-                {
-                  title: 'Forex',
-                  points: ['Trade global currencies with fast market execution'],
-                  image: forex,
-                  reverse: false,
-                },
-                {
-                  title: 'Comex',
-                  points: ['Trade gold, silver, oil, global commodities'],
-                  image: comex,
-                  reverse: true,
-                },
-                {
-                  title: 'US Stocks Indices',
-                  points: ['Trade top US indices and global stocks easily'],
-                  image: usIndi,
-                  reverse: false,
-                },
-                {
-                  title: 'Crypto',
-                  points: ['Trade Bitcoin, Ethereum, and digital assets'],
-                  image: cryptoA,
-                  reverse: true,
-                },
+                { title: 'NSE', points: ['India’s leading exchange for stocks trading'], image: indian, reverse: false },
+                { title: 'Commodity', points: ['Trade metals, energy, and commodity futures'], image: global, reverse: true },
+                { title: 'Forex', points: ['Trade global currencies with fast market execution'], image: forex, reverse: false },
+                { title: 'Comex', points: ['Trade gold, silver, oil, global commodities'], image: comex, reverse: true },
+                { title: 'US Stocks', points: ['Trade top US indices and global stocks easily'], image: usIndi, reverse: false },
+                { title: 'Crypto', points: ['Trade Bitcoin, Ethereum, and digital assets'], image: cryptoA, reverse: true },
               ].map((item, index) => (
                 <motion.div
                   key={item.title}
                   {...fadeUp}
                   transition={{ duration: 0.7, delay: index * 0.06 }}
-                  className={`flex ${item.reverse ? 'lg:justify-end' : 'lg:justify-start'}`}
+                  className="w-full"
                 >
                   <div
-                    className={`relative w-full lg:w-[82%] h-[125px] sm:h-[145px] md:h-[190px] rounded-[28px] md:rounded-[46px] bg-[#0b1118] overflow-hidden ${item.reverse ? 'lg:mr-10' : 'lg:ml-10'
+                    className={`group relative w-full min-h-[150px] md:min-h-[178px] rounded-[34px] md:rounded-[48px] border border-white/10 overflow-hidden shadow-[0_22px_70px_rgba(0,0,0,0.35)] ${item.reverse ? 'lg:pl-8' : 'lg:pr-8'
                       }`}
                   >
-                    {/* inner pill */}
-                    <div className="absolute top-1/2 left-3 right-3 md:left-5 md:right-5 h-[78px] sm:h-[90px] md:h-[115px] -translate-y-1/2 rounded-[24px] md:rounded-[40px] bg-[#102817]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(135deg,#071018_0%,#0b2814_48%,#081018_100%)]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(82,255,31,0.16),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(29,161,242,0.08),transparent_32%)] opacity-80" />
+                    <div className="absolute inset-0 opacity-20 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:42px_42px]" />
+                    <div className="absolute inset-0 bg-[#52ff1f]/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                    {/* title circle */}
                     <div
-                      className={`absolute z-20 top-1/2 -translate-y-1/2 w-[82px] h-[82px] sm:w-[105px] sm:h-[105px] md:w-[155px] md:h-[155px] rounded-full bg-[#05070b] border border-[#52ff1f]/40 flex items-center justify-center text-center px-2 ${item.reverse ? 'right-3 md:right-7' : 'left-3 md:left-7'
+                      className={`relative z-10 min-h-[150px] md:min-h-[178px] flex items-center gap-5 md:gap-8 px-5 md:px-8 ${item.reverse ? 'flex-row-reverse text-right' : ''
                         }`}
                     >
-                      <h3 className="text-[#52ff1f] font-extrabold text-sm sm:text-lg md:text-2xl leading-tight break-words">
-                        {item.title}
-                      </h3>
-                    </div>
+                      <div className="shrink-0 w-[92px] h-[92px] sm:w-[118px] sm:h-[118px] md:w-[150px] md:h-[150px] rounded-full bg-[#05070b]/90 border border-[#52ff1f]/45 flex items-center justify-center shadow-[0_0_35px_rgba(82,255,31,0.12)]">
+                        <h3 className="text-[#52ff1f] font-extrabold text-sm sm:text-lg md:text-2xl leading-tight px-2">
+                          {item.title}
+                        </h3>
+                      </div>
 
-                    {/* image */}
-                    <div
-                      className={`absolute z-20 top-1/2 -translate-y-1/2 ${item.reverse ? 'left-2 sm:left-4 md:left-9' : 'right-2 sm:right-4 md:right-9'
-                        }`}
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-[82px] h-[70px] sm:w-[120px] sm:h-[100px] md:w-[220px] md:h-[175px] object-contain drop-shadow-[0_12px_22px_rgba(0,0,0,0.6)]"
-                      />
-                    </div>
-
-                    {/* text */}
-                    <div
-                      className={`relative z-20 h-full flex items-center ${item.reverse
-                        ? 'pl-[95px] pr-[95px] sm:pl-[145px] sm:pr-[125px] md:pl-[285px] md:pr-[210px]'
-                        : 'pl-[95px] pr-[95px] sm:pl-[125px] sm:pr-[145px] md:pl-[210px] md:pr-[285px]'
-                        }`}
-                    >
-                      <ul className="space-y-2">
+                      <div className="flex-1">
                         {item.points.map((point) => (
-                          <li
+                          <p
                             key={point}
-                            className="flex items-start gap-2 sm:gap-3 text-white font-semibold text-[11px] sm:text-sm md:text-lg leading-snug"
+                            className={`flex items-center gap-3 text-white font-semibold text-sm sm:text-base md:text-lg leading-snug ${item.reverse ? 'justify-end' : ''
+                              }`}
                           >
-                            <span className="text-[#52ff1f] text-sm sm:text-lg md:text-xl mt-[1px]">
-                              ✓
-                            </span>
+                            <span className="text-[#52ff1f] text-xl">✓</span>
                             <span>{point}</span>
-                          </li>
+                          </p>
                         ))}
-                      </ul>
+                      </div>
+
+                      <div className="shrink-0 hidden sm:flex w-[120px] md:w-[190px] justify-center">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-[115px] h-[95px] md:w-[190px] md:h-[145px] object-contain drop-shadow-[0_18px_25px_rgba(0,0,0,0.65)]"
+                        />
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -969,53 +941,74 @@ const Home = () => {
             </div>
           </div>
         </section>
-
         {/* HOW IT WORKS */}
-        <section className="border-t border-white/5">
-          <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
-            <motion.div {...fadeUp} className="text-center max-w-3xl mx-auto mb-12">
-              <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-[#52ff1f] font-semibold mb-3">
-                How It Works
-              </p>
+        <section className="relative border-t border-white/5 bg-[#05070b] overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(82,255,31,0.10),transparent_35%)]" />
 
-              <h2 className="text-3xl md:text-5xl font-bold text-slate-100">
-                Start Trading In Seconds
-              </h2>
-            </motion.div>
+          <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-            <div className="grid md:grid-cols-3 gap-6">
-              {howItWorksSteps.map((item, index) => (
-                <motion.div
-                  key={item.title}
-                  {...fadeUp}
-                  transition={{ duration: 0.7, delay: index * 0.08 }}
-                  className="relative rounded-[26px] border border-white/10 bg-[#0b0f16] p-6 min-h-[310px] text-center overflow-hidden"
-                >
-                  <span className="absolute top-5 left-5 text-5xl font-bold text-white/[0.04]">
-                    0{index + 1}
-                  </span>
+              {/* LEFT IMAGE */}
+              <motion.div
+                {...fadeUp}
+                className="relative rounded-[30px] border border-white/10 bg-[#0b0f16] p-4 h-full min-h-[100%] flex items-center justify-center overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(82,255,31,0.12),transparent_45%)]" />
 
-                  <div className="relative z-10 flex h-full flex-col items-center justify-center">
-                    <div className="w-24 h-24 rounded-full border border-[#52ff1f]/25 bg-[#52ff1f]/10 flex items-center justify-center mb-6 overflow-hidden">
-                      {item.image ? (
-                        <img src={item.image} alt={item.title} className="w-16 h-16 object-contain" />
-                      ) : (
-                        <span className="text-3xl font-bold text-[#52ff1f]">
+                {/* apni image yaha lagao */}
+                <img
+                  src={phone}
+                  alt="How trading works"
+                  className="w-full h-full object-contain"
+                />
+              </motion.div>
+
+              {/* RIGHT STEPS */}
+              <div>
+                <motion.div {...fadeUp} className="mb-10">
+                  <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-[#52ff1f] font-semibold mb-3">
+                    How It Works
+                  </p>
+
+                  <h2 className="text-3xl md:text-5xl font-bold text-slate-100 leading-tight">
+                    Start Trading In Seconds
+                  </h2>
+                </motion.div>
+
+                <div className="relative space-y-6">
+                  <div className="absolute left-[31px] top-8 bottom-8 w-[1px] bg-[#52ff1f]/25 hidden sm:block" />
+
+                  {howItWorksSteps.map((item, index) => (
+                    <motion.div
+                      key={item.title}
+                      {...fadeUp}
+                      transition={{ duration: 0.7, delay: index * 0.08 }}
+                      className="relative flex gap-5 rounded-[24px] border border-white/10 bg-[#0b0f16] p-5 md:p-6 hover:border-[#52ff1f]/35 hover:bg-[#0d141c] transition-all duration-300"
+                    >
+                      <div className="relative z-10 shrink-0 w-16 h-16 rounded-full border border-[#52ff1f]/35 bg-[#52ff1f]/10 flex items-center justify-center">
+                        <span className="text-xl font-extrabold text-[#52ff1f]">
                           0{index + 1}
                         </span>
-                      )}
-                    </div>
+                      </div>
 
-                    <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
-                      {item.title}
-                    </h3>
+                      <div>
+                        <span className="text-5xl font-bold text-white/[0.035]">
+                          0{index + 1}
+                        </span>
 
-                    <p className="text-sm text-gray-400 leading-7">
-                      {item.desc}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
+                        <h3 className="text-xl md:text-2xl font-bold text-white -mt-4 mb-3">
+                          {item.title}
+                        </h3>
+
+                        <p className="text-sm text-gray-400 leading-7">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
@@ -1023,7 +1016,7 @@ const Home = () => {
         {/* FEATURES */}
         <section className="border-t border-white/5 bg-[#06090f]">
           <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
-            <motion.div {...fadeUp} className="text-center max-w-4xl mx-auto mb-12">
+            <div className="text-center max-w-4xl mx-auto mb-12">
               <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-cyan-300 font-semibold mb-3">
                 Features
               </p>
@@ -1031,22 +1024,15 @@ const Home = () => {
               <h2 className="text-3xl md:text-5xl font-bold text-slate-100">
                 Built For Fast, Secure & Smarter Practice
               </h2>
-
-              <p className="text-sm md:text-base text-gray-400 mt-5 leading-7">
-                Tredixo is an advanced simulated trading platform that provides real-time market data and professional tools for practice. Not a broker, it allows you to switch to safe partner status for reasonable regulated live trading/execution/fund management.
-              </p>
-            </motion.div>
+            </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {platformFeatures.map((item, index) => (
-                <motion.div
+              {platformFeatures.map((item) => (
+                <div
                   key={item.title}
-                  {...fadeUp}
-                  transition={{ duration: 0.7, delay: index * 0.07 }}
-                  whileHover={{ y: -8 }}
-                  className="rounded-[24px] border border-white/10 bg-gradient-to-br from-[#10151d] to-[#0a0d12] p-6 min-h-[300px] flex flex-col items-center justify-center text-center"
+                  className="group rounded-[24px] border border-white/10 bg-gradient-to-br from-[#10151d] to-[#0a0d12] p-6 min-h-[315px] flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-2 hover:border-[#52ff1f]/45 hover:shadow-[0_22px_55px_rgba(82,255,31,0.10)]"
                 >
-                  <div className="w-20 h-20 rounded-2xl border border-white/10 bg-white/[0.04] flex items-center justify-center mb-5 overflow-hidden">
+                  <div className="w-20 h-20 rounded-2xl border border-white/10 bg-white/[0.04] flex items-center justify-center mb-7 group-hover:border-[#52ff1f]/40 group-hover:bg-[#52ff1f]/10 transition-all duration-300">
                     {item.image ? (
                       <img src={item.image} alt={item.title} className="w-14 h-14 object-contain" />
                     ) : (
@@ -1054,14 +1040,14 @@ const Home = () => {
                     )}
                   </div>
 
-                  <h3 className="text-lg md:text-xl font-bold text-white mb-3">
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-5 min-h-[56px] flex items-center justify-center leading-snug">
                     {item.title}
                   </h3>
 
-                  <p className="text-sm text-gray-400 leading-7">
+                  <p className="text-sm text-gray-400 leading-7 min-h-[84px] flex items-center justify-center">
                     {item.desc}
                   </p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -1070,27 +1056,25 @@ const Home = () => {
         {/* BLOGS */}
         <section id="blogs" className="border-t border-white/5">
           <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
-            <div className="flex items-center justify-between gap-4 flex-wrap mb-10">
-              <div>
-                <motion.p
-                  {...fadeUp}
-                  className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-cyan-300 font-semibold mb-3"
-                >
-                  Insights & Intel
-                </motion.p>
-                <motion.h2 {...fadeUp} className="text-3xl md:text-5xl font-bold text-slate-100">
-                  Latest Blogs.
-                </motion.h2>
-              </div>
 
-              <Link
-                to="/blogs"
-                className="bg-white/10 border border-white/10 text-white px-5 py-3 rounded-full text-sm hover:bg-white/15 transition-all"
+            {/* HEADER */}
+            <div className="text-center mb-12">
+              <motion.p
+                {...fadeUp}
+                className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-cyan-300 font-semibold mb-3"
               >
-                View All Blogs
-              </Link>
+                Insights & Intel
+              </motion.p>
+
+              <motion.h2
+                {...fadeUp}
+                className="text-3xl md:text-5xl font-bold text-slate-100"
+              >
+                Latest Blogs.
+              </motion.h2>
             </div>
 
+            {/* BLOG CARDS */}
             {loading ? (
               <div className="flex justify-center py-10">
                 <Spinner />
@@ -1103,7 +1087,7 @@ const Home = () => {
                       key={value._id || index}
                       {...fadeUp}
                       transition={{ duration: 0.7, delay: index * 0.08 }}
-                      className="rounded-[24px] overflow-hidden border border-white/10 bg-gradient-to-b from-white/[0.04] to-white/[0.02] hover:-translate-y-1 transition-all"
+                      className="rounded-[24px] overflow-hidden border border-white/10 bg-gradient-to-b from-white/[0.04] to-white/[0.02] hover:-translate-y-1 hover:border-[#52ff1f]/35 transition-all"
                     >
                       <Link to={`/blog/${value.slug}`}>
                         <div className="relative">
@@ -1112,6 +1096,7 @@ const Home = () => {
                             alt={value.blogTitle}
                             className="w-full h-64 object-cover"
                           />
+
                           <div className="absolute top-4 left-4">
                             <span className="text-[10px] uppercase tracking-[0.18em] bg-black/60 border border-white/10 text-white px-3 py-1 rounded-full">
                               {value.blogCategory || 'Blog'}
@@ -1146,9 +1131,16 @@ const Home = () => {
                 )}
               </div>
             )}
+            <div className="mt-6 flex justify-center">
+              <Link
+                to="/blogs"
+                className="inline-flex items-center justify-center rounded-full bg-white/10 border border-white/10 text-white px-5 py-3 text-sm font-semibold hover:bg-white/15 hover:border-[#52ff1f]/40 transition-all"
+              >
+                View All Blogs
+              </Link>
+            </div>
           </div>
         </section>
-
         {/* PAYMENT OPTIONS */}
         <section className="border-b border-white/5">
           <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
@@ -1222,44 +1214,101 @@ const Home = () => {
             </div>
           </div>
         </section>
-
         {/* CTA */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-16 md:py-20">
           <motion.div
             {...fadeUp}
-            className="relative overflow-hidden rounded-[28px] md:rounded-[34px] border border-[#21451f] bg-[linear-gradient(135deg,#1b1f24_0%,#102914_45%,#0a2508_100%)] min-h-[320px] flex items-center justify-center text-center px-5 sm:px-6 md:px-10 py-12 shadow-[0_25px_80px_rgba(0,0,0,0.35)]"
+            className="relative overflow-hidden rounded-[28px] md:rounded-[34px] border border-[#21451f] bg-[linear-gradient(135deg,#1b1f24_0%,#102914_45%,#0a2508_100%)] min-h-[340px] flex items-center justify-center text-center px-5 sm:px-6 md:px-10 py-12 shadow-[0_25px_80px_rgba(0,0,0,0.35)]"
           >
+            {/* BG EFFECT */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(82,255,31,0.12),transparent_35%)]" />
             <div className="absolute -top-10 left-10 h-40 w-40 rounded-full bg-white/5 blur-3xl" />
             <div className="absolute -bottom-10 right-10 h-48 w-48 rounded-full bg-[#52ff1f]/10 blur-3xl" />
 
             <div className="relative z-10 max-w-3xl mx-auto">
+
+              {/* TAG */}
               <span className="inline-flex items-center rounded-full border border-[#52ff1f]/30 bg-[#52ff1f]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-[#52ff1f]">
-                Start in Seconds
+                Start Now
               </span>
 
+              {/* HEADING */}
               <h2 className="text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.08] mt-5">
-                Ready To Join The
+                A Superior
                 <br />
                 <span className="text-[#52ff1f] drop-shadow-[0_0_20px_rgba(82,255,31,0.22)]">
-                  Precisionists?
+                  Trading Platform
                 </span>
               </h2>
 
+              {/* PARAGRAPH */}
               <p className="text-gray-200 text-sm md:text-base leading-7 mt-5 max-w-2xl mx-auto">
-                Sign up in 30 seconds and get a ₹10,000 demo account to practice your
-                strategies with real-time market data.
+                Access our platform from any location, at any time, on both desktop and mobile devices.
+                Experience the power of ultra-low latency and lightning-fast trade execution.
               </p>
 
-              <div className="mt-8 mb-2 flex justify-center">
+              {/* BUTTONS */}
+              <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
+
+                {/* PLAYSTORE */}
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.tredixo.tredixo&pcampaignid=web_share"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 px-6 py-3 rounded-xl bg-[#0b0f16] border border-white/10 hover:border-[#52ff1f]/50 hover:bg-[#101722] transition-all duration-300 min-w-[210px] justify-center"
+                >
+                  {/* PLAYSTORE ICON */}
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg"
+                    alt="Google Play"
+                    className="h-5 w-5"
+                  />
+
+                  <span className="text-white text-sm font-semibold">
+                    Google Play
+                  </span>
+                </a>
+
+                {/* APP STORE */}
+                <a
+                  href="https://apps.apple.com/jo/app/osense-trader/id6741929487"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 px-6 py-3 rounded-xl bg-[#0b0f16] border border-white/10 hover:border-[#52ff1f]/50 hover:bg-[#101722] transition-all duration-300 min-w-[210px] justify-center"
+                >
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                    alt="App Store"
+                    className="h-5 w-auto invert"
+                  />
+                  <span className="text-white text-sm font-semibold">
+                    App Store
+                  </span>
+                </a>
+
+                {/* OPEN ACCOUNT */}
                 <a
                   href="https://crm.tredixo.co.in/auth-pages/create-account/step1?accountType=real"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex w-full sm:w-auto min-w-[230px] items-center justify-center rounded-full bg-[#52ff1f] px-8 py-3.5 text-base font-semibold text-black shadow-[0_0_40px_rgba(82,255,31,0.28)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_55px_rgba(82,255,31,0.38)]"
+                  className="flex items-center gap-3 px-6 py-3 rounded-xl bg-[#0b0f16] border border-white/10 hover:border-[#52ff1f]/50 hover:bg-[#101722] transition-all duration-300 min-w-[210px] justify-center"
                 >
-                  Create Free Account
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 text-[#52ff1f]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                  </svg>
+
+                  <span className="text-white text-sm font-semibold">
+                    Open Account Now
+                  </span>
                 </a>
+
               </div>
             </div>
           </motion.div>
@@ -1270,7 +1319,7 @@ const Home = () => {
           <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24 overflow-visible">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <motion.p
-               >
+              >
                 What Our Traders Say
               </motion.p>
 
@@ -1296,9 +1345,9 @@ const Home = () => {
                     className="shrink-0 px-3"
                     style={{ width: `${100 / perView}%` }}
                   >
-                   <motion.div
-  className="h-full rounded-[26px] border border-white/10 bg-gradient-to-br from-[#10151d] to-[#0a0d12] p-6 md:p-7 shadow-[0_15px_40px_rgba(0,0,0,0.25)] transition-all duration-300"
->
+                    <motion.div
+                      className="h-full rounded-[26px] border border-white/10 bg-gradient-to-br from-[#10151d] to-[#0a0d12] p-6 md:p-7 shadow-[0_15px_40px_rgba(0,0,0,0.25)] transition-all duration-300"
+                    >
                       <div className="flex gap-1 text-[#52ff1f] mb-5">
                         {[...Array(5)].map((_, i) => (
                           <FaStar key={i} className="text-sm" />
@@ -1332,6 +1381,97 @@ const Home = () => {
                   aria-label={`Go to testimonial slide ${index + 1}`}
                 />
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ SECTION */}
+        <section className="border-t border-white/5 bg-[#05070b]">
+          <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
+
+            {/* HEADER */}
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-[#52ff1f] font-semibold mb-3">
+                FAQ
+              </p>
+
+              <h2 className="text-3xl md:text-5xl font-bold text-white">
+                Frequently Asked
+                <br />
+                <span className="text-[#52ff1f]">Questions</span>
+              </h2>
+
+              <p className="text-gray-400 mt-5 text-sm md:text-base leading-7">
+                Commonly Asked Questions are addressed here to provide clarity on our services,
+                processes, and any concerns you may have. Find the answers you need easily.
+              </p>
+            </div>
+
+            {/* FAQ LIST */}
+            <div className="max-w-3xl mx-auto space-y-4">
+
+              {[
+                {
+                  q: "What is Tredixo?",
+                  a: "Tredixo is a trading platform that brings everything under one roof — forex, commodities, crypto, US stocks — all accessible from a single dashboard. No clutter, no noise, just clean execution and zero commissions."
+                },
+                {
+                  q: "Are there any commissions or hidden charges?",
+                  a: "No, not here. We've cut that out completely. You trade, and your earnings are yours."
+                },
+                {
+                  q: "Is the registration process time-consuming?",
+                  a: "Not at all. It's nearly instant. Just your name and mobile, and you're all set. We've kept it fast so you don't lose a minute."
+                },
+                {
+                  q: "How do deposits work?",
+                  a: "UPI, bank transfer, whatever works for you. Most payments hit your account instantly. We don't charge anything extra."
+                },
+                {
+                  q: "What about withdrawals?",
+                  a: "Withdraw anytime. No restrictions. Over 99% of transactions go through without delay — and again, no fees involved."
+                },
+                {
+                  q: "Can I trade from any device?",
+                  a: "Yes. App for Android, app for iOS, plus a browser-based web version that syncs perfectly. Pick what's easiest."
+                },
+                {
+                  q: "Is customer support really available 24/7?",
+                  a: "Yes — real people on live chat or WhatsApp. Support is available in multiple languages like English, Hindi, Tamil and more."
+                },
+                {
+                  q: "Is there a minimum deposit?",
+                  a: "Yes, but it's kept low so anyone can start. You'll see the exact figure after sign-up."
+                },
+                {
+                  q: "Any hidden charges when I deposit or withdraw?",
+                  a: "None. No deductions, no last-minute surprises."
+                },
+                {
+                  q: "What trading tools come with the platform?",
+                  a: "You get real-time charts, indicators, a live news feed, and an economic calendar built into your dashboard."
+                }
+              ].map((item, index) => (
+                <details
+                  key={index}
+                  className="group rounded-[18px] border border-white/10 bg-[#0b0f16] p-5 transition-all duration-300 open:border-[#52ff1f]/40"
+                >
+                  <summary className="flex justify-between items-center cursor-pointer list-none">
+                    <h3 className="text-white font-semibold text-sm md:text-base">
+                      {item.q}
+                    </h3>
+
+                    <span className="text-[#52ff1f] text-xl transition-transform duration-300 group-open:rotate-45">
+                      +
+                    </span>
+                  </summary>
+
+                  <p className="text-gray-400 text-sm leading-7 mt-4">
+                    {item.a}
+                  </p>
+                </details>
+              ))}
+
             </div>
           </div>
         </section>

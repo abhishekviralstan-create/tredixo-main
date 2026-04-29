@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import PQR from '../assests/play-store-qr.png';
 import IQR from '../assests/Qr for ios.png';
+import logo from '../assests/logo.png';
 import {
   FaFacebookF,
   FaInstagram,
@@ -52,20 +53,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10">
           {/* LEFT SECTION */}
           <div>
-            <div className="flex items-center gap-2 mb-6">
-              <img
-                src="/logo.png"
-                alt="Tredixo"
-                className="h-10 object-contain"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
-              />
-              <span className="text-white text-2xl font-extrabold">
-                Tredi<span className="text-[#39FF14]">X</span>o
-              </span>
+            <div className="mb-6">
+              <Link to="/">
+                <img
+                  src={logo}
+                  alt="Tredixo"
+                  className="h-6 md:h-8 w-auto object-contain cursor-pointer hover:opacity-80 transition"
+                />
+              </Link>
             </div>
-
             <div className="flex gap-4 mb-8">
               {socialLinks.map((item, index) => (
                 <a

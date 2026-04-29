@@ -121,7 +121,7 @@ const Home = () => {
     <>
       <Helmet>
         <title>Tredixo Blog | Latest Market News & Insights
-</title>
+        </title>
         <meta
           name="description"
           content="Stay updated with Tredixo's blog. Get the latest news, market trends, and trading tips to enhance your trading journey."
@@ -148,7 +148,32 @@ const Home = () => {
           content="Read premium trading insights, market analysis, and latest news updates from Tredixo."
         />
       </Helmet>
+        {/* BLOG HERO */}
+      <section className="relative w-full overflow-hidden pb-10 pt-6 md:pt-10">
 
+        {/* background effects */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(82,255,31,0.14),transparent_30%),radial-gradient(circle_at_top_right,rgba(0,180,255,0.08),transparent_24%)]" />
+        <div className="absolute inset-0 opacity-[0.08] bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:64px_64px]" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-20">
+
+          <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-cyan-300 font-semibold mb-4">
+            Tredixo Market Hub
+          </p>
+
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05]">
+            Latest Market
+            <br />
+            <span className="text-[#52ff1f]">News & Insights</span>
+          </h1>
+
+          <p className="text-gray-300 mt-6 max-w-3xl leading-8 text-base md:text-lg">
+            Stay updated with trading insights, market trends, crypto updates,
+            NSE news, commodity movements and expert-style articles from Tredixo.
+          </p>
+
+        </div>
+      </section>
       <div className="min-h-screen bg-black text-white px-4 md:px-6 lg:px-8 pb-20 pt-10">
         <div className="max-w-7xl mx-auto">
           {loading ? (
@@ -283,11 +308,10 @@ const Home = () => {
                         key={page}
                         type="button"
                         onClick={() => goToPage(page)}
-                        className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium transition-all ${
-                          currentPage === page
-                            ? 'bg-cyan-400 text-black'
-                            : 'bg-transparent text-white/70 hover:text-white'
-                        }`}
+                        className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium transition-all ${currentPage === page
+                          ? 'bg-cyan-400 text-black'
+                          : 'bg-transparent text-white/70 hover:text-white'
+                          }`}
                       >
                         {page}
                       </button>
