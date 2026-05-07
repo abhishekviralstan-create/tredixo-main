@@ -1535,7 +1535,7 @@ const Home = () => {
                   </div>
 
                   <a
-                    href="https://wa.me/447598697995?text=Hi%2C%20I%20visited%20from%20tredixo%20and%20I%20want%20to%20start%20trading."
+                    href="https://wa.me/447598697995?text=Hi%2C%20I%20want%20to%20start%20trading."
                     target="_blank"
                     rel="noreferrer"
                     className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-[#25D366] text-black font-semibold px-5 py-3 hover:scale-[1.01] transition-all duration-300"
