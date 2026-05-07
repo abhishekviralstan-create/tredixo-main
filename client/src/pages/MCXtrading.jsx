@@ -11,7 +11,7 @@ import {
 } from 'react-icons/fi';
 
 // 👉 image change kar sakte ho
-import mcxHero from '../assests/crypto.png';
+import mcxHero from '../assests/mcx.png';
 
 const mcxFeatures = [
   {

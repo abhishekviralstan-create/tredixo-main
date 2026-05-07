@@ -21,7 +21,7 @@ import option from '../assests/option-trading.png';
 import { MdOutlineSupportAgent } from "react-icons/md";
 import { BsGraphUpArrow } from "react-icons/bs";
 import { GiTakeMyMoney } from "react-icons/gi";
-import phone from "../assests/phone.png"
+import phone from "../assests/phone2.png"
 import {
   FiTrendingUp,
   FiShield,
@@ -862,125 +862,125 @@ const Home = () => {
           </div>
         </section>
 
-       {/* TRADING INSTRUMENTS - CARDS STYLE */}
-<section className="relative border-t border-white/5 bg-[#05070b] overflow-hidden">
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(82,255,31,0.10),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(0,180,255,0.08),transparent_30%)]" />
-  <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:58px_58px]" />
+        {/* TRADING INSTRUMENTS - CARDS STYLE */}
+        <section className="relative border-t border-white/5 bg-[#05070b] overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(82,255,31,0.10),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(0,180,255,0.08),transparent_30%)]" />
+          <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:58px_58px]" />
 
-  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-16 md:py-24">
-    <motion.div {...fadeUp} className="text-center max-w-3xl mx-auto mb-14">
-      <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-[#52ff1f] font-semibold mb-3">
-        Trading Instruments
-      </p>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-16 md:py-24">
+            <motion.div {...fadeUp} className="text-center max-w-3xl mx-auto mb-14">
+              <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-[#52ff1f] font-semibold mb-3">
+                Trading Instruments
+              </p>
 
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
-        Trade All Exchanges In
-        <br className="hidden sm:block" />
-        One Platform
-      </h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+                Trade All Exchanges In
+                <br className="hidden sm:block" />
+                One Platform
+              </h2>
 
-      <p className="text-sm md:text-base text-gray-400 mt-5 leading-7">
-        Access NSE, Forex, Commodities, Crypto and global markets from one powerful Tredixo dashboard.
-      </p>
-    </motion.div>
+              <p className="text-sm md:text-base text-gray-400 mt-5 leading-7">
+                Access NSE, Forex, Commodities, Crypto and global markets from one powerful Tredixo dashboard.
+              </p>
+            </motion.div>
 
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {[
-        {
-          title: 'NSE Trading',
-          desc: 'Trade Indian stocks, indices and market opportunities with fast execution.',
-          image: indian,
-          tag: 'Indian Market',
-        },
-        {
-          title: 'Commodity',
-          desc: 'Explore metals, energy and commodity futures with a smooth trading experience.',
-          image: global,
-          tag: 'Metals & Energy',
-        },
-        {
-          title: 'Forex',
-          desc: 'Trade global currency pairs with real-time market movement and clean tools.',
-          image: forex,
-          tag: 'Global Currencies',
-        },
-        {
-          title: 'Comex',
-          desc: 'Access gold, silver, crude oil and international commodity markets easily.',
-          image: comex,
-          tag: 'Global Commodities',
-        },
-        {
-          title: 'US Stocks',
-          desc: 'Explore top US indices, stocks and international equity opportunities.',
-          image: usIndi,
-          tag: 'US Market',
-        },
-        {
-          title: 'Crypto',
-          desc: 'Trade Bitcoin, Ethereum and digital assets from one secure platform.',
-          image: cryptoA,
-          tag: 'Digital Assets',
-        },
-      ].map((item, index) => (
-        <motion.div
-          key={item.title}
-          {...fadeUp}
-          transition={{ duration: 0.7, delay: index * 0.07 }}
-          whileHover={{ y: -8, scale: 1.01 }}
-          className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-br from-[#101722] via-[#0b1118] to-[#06090f] p-6 min-h-[365px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition-all duration-300 hover:border-[#52ff1f]/45 hover:shadow-[0_25px_70px_rgba(82,255,31,0.10)]"
-        >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(82,255,31,0.13),transparent_40%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          <div className="absolute -right-14 -top-14 h-40 w-40 rounded-full bg-[#52ff1f]/10 blur-3xl group-hover:bg-[#52ff1f]/20 transition-all duration-300" />
-          <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-[size:32px_32px]" />
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  title: 'NSE Trading',
+                  desc: 'Trade Indian stocks, indices and market opportunities with fast execution.',
+                  image: indian,
+                  tag: 'Indian Market',
+                },
+                {
+                  title: 'Commodity',
+                  desc: 'Explore metals, energy and commodity futures with a smooth trading experience.',
+                  image: global,
+                  tag: 'Metals & Energy',
+                },
+                {
+                  title: 'Forex',
+                  desc: 'Trade global currency pairs with real-time market movement and clean tools.',
+                  image: forex,
+                  tag: 'Global Currencies',
+                },
+                {
+                  title: 'Comex',
+                  desc: 'Access gold, silver, crude oil and international commodity markets easily.',
+                  image: comex,
+                  tag: 'Global Commodities',
+                },
+                {
+                  title: 'US Stocks',
+                  desc: 'Explore top US indices, stocks and international equity opportunities.',
+                  image: usIndi,
+                  tag: 'US Market',
+                },
+                {
+                  title: 'Crypto',
+                  desc: 'Trade Bitcoin, Ethereum and digital assets from one secure platform.',
+                  image: cryptoA,
+                  tag: 'Digital Assets',
+                },
+              ].map((item, index) => (
+                <motion.div
+                  key={item.title}
+                  {...fadeUp}
+                  transition={{ duration: 0.7, delay: index * 0.07 }}
+                  whileHover={{ y: -8, scale: 1.01 }}
+                  className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-br from-[#101722] via-[#0b1118] to-[#06090f] p-6 min-h-[365px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition-all duration-300 hover:border-[#52ff1f]/45 hover:shadow-[0_25px_70px_rgba(82,255,31,0.10)]"
+                >
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(82,255,31,0.13),transparent_40%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute -right-14 -top-14 h-40 w-40 rounded-full bg-[#52ff1f]/10 blur-3xl group-hover:bg-[#52ff1f]/20 transition-all duration-300" />
+                  <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-[size:32px_32px]" />
 
-          <div className="relative z-10 h-full flex flex-col">
-            <div className="flex items-center justify-between gap-3 mb-7">
-              <span className="inline-flex rounded-full border border-[#52ff1f]/25 bg-[#52ff1f]/10 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-[#52ff1f] font-semibold">
-                {item.tag}
-              </span>
+                  <div className="relative z-10 h-full flex flex-col">
+                    <div className="flex items-center justify-between gap-3 mb-7">
+                      <span className="inline-flex rounded-full border border-[#52ff1f]/25 bg-[#52ff1f]/10 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-[#52ff1f] font-semibold">
+                        {item.tag}
+                      </span>
 
-              <span className="text-white/20 text-4xl font-black">
-                0{index + 1}
-              </span>
-            </div>
+                      <span className="text-white/20 text-4xl font-black">
+                        0{index + 1}
+                      </span>
+                    </div>
 
-            <div className="flex justify-center mb-8">
-              <div className="relative w-[150px] h-[150px] rounded-full border border-white/10 bg-white/[0.04] flex items-center justify-center group-hover:border-[#52ff1f]/35 group-hover:bg-[#52ff1f]/10 transition-all duration-300">
-                <div className="absolute inset-0 rounded-full bg-[#52ff1f]/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="relative z-10 w-[118px] h-[118px] object-contain drop-shadow-[0_18px_25px_rgba(0,0,0,0.65)] transition-transform duration-300 group-hover:scale-110"
-                />
-              </div>
-            </div>
+                    <div className="flex justify-center mb-8">
+                      <div className="relative w-[150px] h-[150px] rounded-full border border-white/10 bg-white/[0.04] flex items-center justify-center group-hover:border-[#52ff1f]/35 group-hover:bg-[#52ff1f]/10 transition-all duration-300">
+                        <div className="absolute inset-0 rounded-full bg-[#52ff1f]/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="relative z-10 w-[118px] h-[118px] object-contain drop-shadow-[0_18px_25px_rgba(0,0,0,0.65)] transition-transform duration-300 group-hover:scale-110"
+                        />
+                      </div>
+                    </div>
 
-            <h3 className="text-2xl font-bold text-white mb-4 text-center group-hover:text-[#52ff1f] transition-colors duration-300">
-              {item.title}
-            </h3>
+                    <h3 className="text-2xl font-bold text-white mb-4 text-center group-hover:text-[#52ff1f] transition-colors duration-300">
+                      {item.title}
+                    </h3>
 
-            <p className="text-sm text-gray-400 leading-7 text-center flex-1">
-              {item.desc}
-            </p>
+                    <p className="text-sm text-gray-400 leading-7 text-center flex-1">
+                      {item.desc}
+                    </p>
 
-            <div className="mt-7 flex justify-center">
-              <a
-                href="https://crm.tredixo.co.in/auth-pages/create-account/step1?accountType=real"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:border-[#52ff1f]/45 hover:bg-[#52ff1f] hover:text-black"
-              >
-                Start Trading
-                <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+                    <div className="mt-7 flex justify-center">
+                      <a
+                        href="https://crm.tredixo.co.in/auth-pages/create-account/step1?accountType=real"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:border-[#52ff1f]/45 hover:bg-[#52ff1f] hover:text-black"
+                      >
+                        Start Trading
+                        <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+        </section>
         {/* HOW IT WORKS */}
         <section className="relative border-t border-white/5 bg-[#05070b] overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(82,255,31,0.10),transparent_35%)]" />
@@ -1535,7 +1535,7 @@ const Home = () => {
                   </div>
 
                   <a
-                    href="https://wa.me/919120010883"
+                    href="https://wa.me/447598697995?text=Hi%2C%20I%20visited%20from%20tredixo%20and%20I%20want%20to%20start%20trading."
                     target="_blank"
                     rel="noreferrer"
                     className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-[#25D366] text-black font-semibold px-5 py-3 hover:scale-[1.01] transition-all duration-300"

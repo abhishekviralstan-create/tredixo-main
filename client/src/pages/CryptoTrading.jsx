@@ -11,7 +11,7 @@ import {
 } from 'react-icons/fi';
 
 // apni hero image yaha change kar sakte ho
-import cryptoHero from '../assests/crypto.png';
+import cryptoHero from '../assests/crypto2.png';
 
 const cryptoFeatures = [
   {
