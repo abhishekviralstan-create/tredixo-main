@@ -10,7 +10,8 @@ import {
   FiHelpCircle,
   FiChevronDown,
 } from "react-icons/fi";
-
+import whatNseImg from "../assests/what-is-nse.png";
+import whyNseImg from "../assests/why-nse.png";
 import nseHero from "../assests/NSE2.png";
 
 const whatNseItems = [
@@ -199,7 +200,7 @@ const NSEtrading = () => {
                 NSE Trading Platform
               </p>
 
-              <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight">
                 NSE Trading Platform
                 <br />
                 <span className="text-[#52ff1f]">With Upto 500X Margin</span>
@@ -207,17 +208,9 @@ const NSEtrading = () => {
 
               <p className="text-gray-300 mt-6 max-w-2xl leading-8 text-base md:text-lg">
                 India's largest stock exchange by both market capitalization and trading
-                volume is the National Stock Exchange (NSE). Trade NSE stocks, futures and
-                options on Tredixo, a NSE trading platform with Upto 500X margin.
+                volume is the National Stock Exchange (NSE). Trade NSE stocks, futures
+                and options on Tredixo, a NSE trading platform with Upto 500X margin.
               </p>
-
-              <p className="text-gray-400 mt-4 max-w-2xl leading-8">
-                Does not matter whether you are trading Nifty 50 or Bank Nifty, Equity
-                Futures or Stock Options, Tredixo will give you access to all NSE segments
-                along with real time market data, advanced charting tools and instant order
-                execution.
-              </p>
-
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <a
                   href="https://crm.tredixo.co.in/auth-pages/create-account/step1?accountType=real"
@@ -246,7 +239,7 @@ const NSEtrading = () => {
         {/* WHAT IS NSE */}
         <section className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <AnimatedSvgBox type="what" />
+            <VisualBox type="what" />
 
             <div>
               <SectionLabel>What is NSE Trading?</SectionLabel>
@@ -288,19 +281,19 @@ const NSEtrading = () => {
                 </h2>
 
                 <p className="text-gray-300 mt-5 leading-8">
-                  Trade on NSE for 10 seconds - not days of paperwork, its hassle free and
-                  also NO HIDDEN CHARGES through the best NSE trading app.
+                  Tredixo gives access to NSE segments along with real time market data,
+                  advanced charting tools and instant order execution.
                 </p>
               </div>
 
-              <AnimatedSvgBox type="why" />
+              <VisualBox type="why" />
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
               {whyTradeItems.map((item, index) => (
                 <div
                   key={item.title}
-                  className="group relative overflow-hidden rounded-[26px] border border-white/10 bg-[#0b0f16] p-6 transition-all duration-300 hover:-translate-y-2 hover:border-[#52ff1f]/40 hover:bg-[#0e151d] hover:shadow-[0_22px_55px_rgba(82,255,31,0.10)]"
+                  className="group relative overflow-hidden rounded-[26px] bg-[#0b0f16] p-6 transition-all duration-300 hover:-translate-y-2 hover:border-[#52ff1f]/40 hover:bg-[#0e151d] hover:shadow-[0_22px_55px_rgba(82,255,31,0.10)]"
                 >
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(82,255,31,0.11),transparent_45%)] opacity-70" />
 
@@ -317,7 +310,9 @@ const NSEtrading = () => {
                       {item.title}
                     </h3>
 
-                    <p className="text-gray-400 leading-7 text-sm mb-5">{item.desc}</p>
+                    <p className="text-gray-400 leading-7 text-sm mb-5">
+                      {item.desc}
+                    </p>
 
                     <div className="space-y-3">
                       {item.points.map((point) => (
@@ -339,37 +334,55 @@ const NSEtrading = () => {
         </section>
 
         {/* START STEPS */}
-        <section className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-14">
-            <AnimatedSvgBox type="start" />
+        <section className="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <SectionLabel>How to Start NSE Trading on Tredixo</SectionLabel>
 
-            <div>
-              <SectionLabel>How to Start NSE Trading on Tredixo</SectionLabel>
+            <h2 className="text-3xl md:text-5xl font-bold leading-tight">
+              Start NSE Trading In
+              <br />
+              <span className="text-[#52ff1f]">5 Simple Steps</span>
+            </h2>
 
-              <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-                Start Trading In
-                <br />
-                <span className="text-[#52ff1f]">5 Simple Steps</span>
-              </h2>
-
-              <p className="text-gray-300 mt-5 leading-8">
-                Create an account, add funds, select your NSE symbol, place your trade and
-                monitor your positions in the live market.
-              </p>
-            </div>
+            <p className="text-gray-300 mt-5 leading-8">
+              Open your account, add funds, choose your NSE symbol, place your order,
+              and monitor live positions through a clean trading interface.
+            </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
-            {startSteps.map((item) => (
-              <div
-                key={item.step}
-                className="relative rounded-[24px] border border-white/10 bg-[#0b0f16] p-5 transition hover:border-[#52ff1f]/40 hover:-translate-y-1"
-              >
-                <span className="text-[#52ff1f] text-sm font-semibold">{item.step}</span>
-                <h3 className="text-lg font-semibold mt-3 mb-3">{item.title}</h3>
-                <p className="text-gray-400 text-sm leading-7">{item.desc}</p>
-              </div>
-            ))}
+          <div className="relative">
+            <div className="hidden lg:block absolute top-[44px] left-[8%] right-[8%] h-[1px] bg-gradient-to-r from-transparent via-[#52ff1f]/35 to-transparent" />
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+              {startSteps.map((item, index) => (
+                <div
+                  key={item.step}
+                  className="group relative overflow-hidden rounded-[28px] bg-[#0b0f16] p-6 min-h-[260px] transition-all duration-300 hover:-translate-y-2 hover:bg-[#0f1720] hover:shadow-[0_25px_70px_rgba(82,255,31,0.10)]"
+                >
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(82,255,31,0.12),transparent_48%)] opacity-80" />
+
+                  <div className="relative z-10">
+                    <div className="mb-6 flex items-center justify-between">
+                      <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#52ff1f] text-black text-lg font-black shadow-[0_0_35px_rgba(82,255,31,0.25)]">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+
+                      <span className="text-xs uppercase tracking-[0.22em] text-[#52ff1f]/80">
+                        {item.step}
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#52ff1f] transition">
+                      {item.title}
+                    </h3>
+
+                    <p className="text-gray-400 text-sm leading-7">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -390,7 +403,7 @@ const NSEtrading = () => {
               <FaqAccordion />
             </div>
 
-            <AnimatedSvgBox type="faq" />
+            <VisualBox type="faq" />
           </div>
         </section>
 
@@ -459,7 +472,7 @@ const HeroImageBox = () => (
 );
 
 const InfoCard = ({ title, desc }) => (
-  <div className="rounded-2xl border border-white/10 bg-[#0b0f16] p-5 hover:border-[#52ff1f]/40 transition">
+  <div className="rounded-2xl bg-[#0b0f16] p-5 hover:border-[#52ff1f]/40 transition">
     <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
     <p className="text-sm text-gray-400 leading-7">{desc}</p>
   </div>
@@ -476,7 +489,7 @@ const FaqAccordion = () => {
         return (
           <div
             key={item.q}
-            className="overflow-hidden rounded-[22px] border border-white/10 bg-[#0b0f16]"
+            className="overflow-hidden rounded-[22px] bg-[#0b0f16]"
           >
             <button
               type="button"
@@ -489,16 +502,14 @@ const FaqAccordion = () => {
               </span>
 
               <FiChevronDown
-                className={`text-[#52ff1f] shrink-0 transition ${
-                  isOpen ? "rotate-180" : ""
-                }`}
+                className={`text-[#52ff1f] shrink-0 transition ${isOpen ? "rotate-180" : ""
+                  }`}
               />
             </button>
 
             <div
-              className={`grid transition-all duration-300 ${
-                isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-              }`}
+              className={`grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                }`}
             >
               <div className="overflow-hidden">
                 <p className="px-5 pb-5 pl-12 text-gray-400 leading-7 text-sm">
@@ -513,152 +524,127 @@ const FaqAccordion = () => {
   );
 };
 
-const AnimatedSvgBox = ({ type }) => (
+const VisualBox = ({ type }) => (
   <div className="flex justify-center">
-    <div className="relative w-full max-w-[520px] rounded-[30px] overflow-hidden flex items-center justify-center min-h-[360px]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(82,255,31,0.16),transparent_55%)]" />
-      <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:60px_60px]" />
-      <NseAnimatedSvg type={type} />
+    <div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(82,255,31,0.14),transparent_34%),radial-gradient(circle_at_80%_80%,rgba(0,190,255,0.08),transparent_34%)]" />
+      <div className="absolute inset-0 opacity-[0.08] bg-[linear-gradient(to_right,rgba(255,255,255,0.10)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.10)_1px,transparent_1px)] bg-[size:44px_44px]" />
+
+      {type === "what" && <WhatNseVisual />}
+      {type === "why" && <WhyNseVisual />}
+      {type === "start" && <StartNseVisual />}
+      {type === "faq" && <FaqNseVisual />}
     </div>
   </div>
 );
 
-const NseAnimatedSvg = ({ type }) => {
-  const isWhat = type === "what";
-  const isWhy = type === "why";
-  const isStart = type === "start";
-  const isFaq = type === "faq";
+const WhatNseVisual = () => (
+  <div className="relative w-full max-w-[620px] mx-auto">
+    <img
+      src={whatNseImg}
+      alt="What is NSE Trading"
+      className="w-full h-auto object-contain drop-shadow-[0_20px_80px_rgba(0,255,170,0.18)]"
+    />
+  </div>
+);
+const WhyNseVisual = () => (
+  <div className="relative w-full max-w-[620px] mx-auto flex items-center justify-center">
+    
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(82,255,31,0.14),transparent_60%)] blur-3xl" />
 
-  return (
-    <svg
-      viewBox="0 0 620 450"
-      className="relative z-10 w-full h-[360px]"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <defs>
-        <linearGradient id={`g-${type}`} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#52FF1F" />
-          <stop offset="100%" stopColor="#0B8F2A" />
-        </linearGradient>
+    <img
+      src={whyNseImg}
+      alt="Why Trade NSE on Tredixo"
+      className="relative z-10 w-full h-auto object-contain drop-shadow-[0_25px_90px_rgba(82,255,31,0.16)]"
+    />
+  </div>
+);
 
-        <linearGradient id={`gold-${type}`} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#FFD66B" />
-          <stop offset="100%" stopColor="#F5A400" />
-        </linearGradient>
+const StartNseVisual = () => (
+  <svg viewBox="0 0 620 430" className="relative z-10 w-full h-[360px]" fill="none">
+    <style>
+      {`
+        .step-pulse{animation:stepPulse 2s ease-in-out infinite}
+        .step-flow{stroke-dasharray:260;stroke-dashoffset:260;animation:stepFlow 3s ease-in-out infinite}
+        @keyframes stepPulse{0%,100%{transform:scale(1);opacity:.75}50%{transform:scale(1.06);opacity:1}}
+        @keyframes stepFlow{0%{stroke-dashoffset:260}70%,100%{stroke-dashoffset:0}}
+      `}
+    </style>
 
-        <filter id={`glow-${type}`}>
-          <feGaussianBlur stdDeviation="6" result="blur" />
-          <feMerge>
-            <feMergeNode in="blur" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-      </defs>
+    <ellipse cx="310" cy="374" rx="220" ry="32" fill="#000" opacity=".45" />
+    <rect x="92" y="80" width="436" height="260" rx="30" fill="#071018" stroke="#244232" strokeWidth="2" />
 
-      <style>
-        {`
-          .float-${type}{animation:float-${type} 3.8s ease-in-out infinite}
-          .pulse-${type}{animation:pulse-${type} 2.4s ease-in-out infinite}
-          .draw-${type}{stroke-dasharray:420;stroke-dashoffset:420;animation:draw-${type} 3s ease-in-out infinite}
-          .bar-${type}{transform-origin:bottom;animation:bar-${type} 2.2s ease-in-out infinite}
-          @keyframes float-${type}{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-          @keyframes pulse-${type}{0%,100%{opacity:.45}50%{opacity:1}}
-          @keyframes draw-${type}{0%{stroke-dashoffset:420}60%,100%{stroke-dashoffset:0}}
-          @keyframes bar-${type}{0%,100%{transform:scaleY(.65)}50%{transform:scaleY(1)}}
-        `}
-      </style>
+    <text x="310" y="125" textAnchor="middle" fill="#fff" fontSize="25" fontWeight="900">
+      START TRADING FLOW
+    </text>
 
-      <ellipse cx="310" cy="390" rx="210" ry="34" fill="#000" opacity="0.42" />
+    <text x="310" y="150" textAnchor="middle" fill="#9ca3af" fontSize="13">
+      Sign up • Add funds • Select symbol • Place trade • Monitor
+    </text>
 
-      <g className={`float-${type}`}>
-        <circle cx="310" cy="190" r="118" fill="#061126" opacity="0.96" />
-        <circle cx="310" cy="190" r="88" stroke="#52FF1F" strokeOpacity="0.18" strokeWidth="3" />
+    <path className="step-flow" d="M130 235 H490" stroke="#52FF1F" strokeWidth="5" strokeLinecap="round" />
 
-        <text x="310" y="205" textAnchor="middle" fontSize="64" fontWeight="900" fill="#52FF1F">
-          NSE
+    {[1, 2, 3, 4, 5].map((num, i) => (
+      <g key={num} transform={`translate(${105 + i * 90} 198)`} className="step-pulse" style={{ animationDelay: `${i * 0.18}s` }}>
+        <circle cx="35" cy="35" r="34" fill="#0B1118" stroke="#52FF1F" strokeOpacity=".55" strokeWidth="2" />
+        <text x="35" y="45" textAnchor="middle" fill="#52FF1F" fontSize="26" fontWeight="900">
+          {num}
         </text>
-
-        <path
-          d="M220 238 C270 280 365 282 405 230"
-          stroke="#52FF1F"
-          strokeWidth="8"
-          strokeLinecap="round"
-          filter={`url(#glow-${type})`}
-        />
+        <text x="35" y="86" textAnchor="middle" fill="#9ca3af" fontSize="11">
+          STEP
+        </text>
       </g>
+    ))}
+  </svg>
+);
 
-      {isWhat && (
-        <>
-          <g transform="translate(85 245)">
-            {["Equity", "F&O", "Currency", "Debt"].map((label, i) => (
-              <g key={label} transform={`translate(${i * 112} 0)`}>
-                <rect width="92" height="62" rx="18" fill="#0B1118" stroke="#52FF1F" strokeOpacity="0.3" />
-                <text x="46" y="38" textAnchor="middle" fill="#fff" fontSize="14" fontWeight="700">
-                  {label}
-                </text>
-              </g>
-            ))}
-          </g>
-          <path className={`draw-${type}`} d="M120 170 C205 105 315 95 492 155" stroke="#52FF1F" strokeWidth="6" strokeLinecap="round" />
-        </>
-      )}
+const FaqNseVisual = () => (
+  <svg viewBox="0 0 620 430" className="relative z-10 w-full h-[360px]" fill="none">
+    <style>
+      {`
+        .faq-float{animation:faqFloat 4s ease-in-out infinite}
+        .faq-pulse{animation:faqPulse 2s ease-in-out infinite}
+        @keyframes faqFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+        @keyframes faqPulse{0%,100%{opacity:.45}50%{opacity:1}}
+      `}
+    </style>
 
-      {isWhy && (
-        <>
-          <g transform="translate(110 250)">
-            {[40, 75, 115, 155].map((h, i) => (
-              <rect
-                key={i}
-                className={`bar-${type}`}
-                x={i * 70}
-                y={170 - h}
-                width="42"
-                height={h}
-                rx="10"
-                fill={i === 3 ? `url(#g-${type})` : "#17331f"}
-                stroke="#52FF1F"
-                strokeOpacity="0.35"
-                style={{ animationDelay: `${i * 0.18}s` }}
-              />
-            ))}
-          </g>
-          <path className={`draw-${type}`} d="M100 125 C205 85 350 102 510 58" stroke="#52FF1F" strokeWidth="8" strokeLinecap="round" filter={`url(#glow-${type})`} />
-          <path d="M512 48 L528 82 L488 72 Z" fill="#52FF1F" />
-        </>
-      )}
+    <ellipse cx="310" cy="374" rx="220" ry="32" fill="#000" opacity=".45" />
 
-      {isStart && (
-        <g transform="translate(80 265)">
-          {[1, 2, 3, 4, 5].map((num, i) => (
-            <g key={num} transform={`translate(${i * 95} 0)`} className={`pulse-${type}`} style={{ animationDelay: `${i * 0.18}s` }}>
-              <circle cx="36" cy="36" r="34" fill="#0B1118" stroke="#52FF1F" strokeOpacity="0.55" />
-              <text x="36" y="45" textAnchor="middle" fontSize="26" fontWeight="900" fill="#52FF1F">
-                {num}
-              </text>
-              {i < 4 && <path d="M70 36 H94" stroke="#52FF1F" strokeOpacity="0.45" strokeWidth="4" />}
-            </g>
-          ))}
+    <g className="faq-float">
+      <rect
+        x="90"
+        y="45"
+        width="440"
+        height="330"
+        rx="34"
+        fill="#071018"
+        stroke="#244232"
+        strokeWidth="2"
+      />
+      <circle cx="310" cy="140" r="48" fill="#52FF1F" opacity=".14" />
+
+      <text x="310" y="158" textAnchor="middle" fill="#52FF1F" fontSize="70" fontWeight="900">
+        ?
+      </text>
+
+      <text x="310" y="215" textAnchor="middle" fill="#fff" fontSize="25" fontWeight="900">
+        NSE FAQ
+      </text>
+
+      <text x="310" y="240" textAnchor="middle" fill="#9ca3af" fontSize="13">
+        Common trading questions answered
+      </text>
+
+      {[0, 1, 2].map((i) => (
+        <g key={i} transform={`translate(175 ${265 + i * 34})`} className="faq-pulse" style={{ animationDelay: `${i * 0.2}s` }}>
+          <rect width="270" height="25" rx="11" fill="#0B1118" stroke="#52FF1F" strokeOpacity=".22" />
+          <rect x="18" y="7" width={150 - i * 25} height="12" rx="4" fill="#fff" opacity=".28" />
+          <rect x="210" y="7" width="34" height="8" rx="4" fill="#52FF1F" opacity=".5" />
         </g>
-      )}
-
-      {isFaq && (
-        <>
-          {[0, 1, 2].map((i) => (
-            <g key={i} transform={`translate(${120 + i * 48} ${245 + i * 42})`} className={`pulse-${type}`} style={{ animationDelay: `${i * 0.2}s` }}>
-              <rect x="0" y="0" width="245" height="54" rx="18" fill="#0B1118" stroke="#52FF1F" strokeOpacity="0.35" />
-              <circle cx="30" cy="27" r="14" fill="#52FF1F" opacity="0.18" />
-              <text x="30" y="36" textAnchor="middle" fontSize="26" fontWeight="900" fill="#52FF1F">
-                ?
-              </text>
-              <rect x="58" y="18" width="135" height="8" rx="4" fill="#fff" opacity="0.45" />
-              <rect x="58" y="33" width="90" height="7" rx="4" fill="#52FF1F" opacity="0.6" />
-            </g>
-          ))}
-        </>
-      )}
-    </svg>
-  );
-};
+      ))}
+    </g>
+  </svg>
+);
 
 export default NSEtrading;

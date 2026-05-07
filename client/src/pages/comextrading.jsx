@@ -10,169 +10,137 @@ import {
   FiCheckCircle,
 } from "react-icons/fi";
 
-import forexHero from "../assests/crypto.png";
+import comexHero from "../assests/crypto.png";
 
-const forexFeatures = [
+const comexFeatures = [
   {
     icon: <FiTrendingUp />,
     title: "High Leverage",
-    desc: "Trade major currency pairs like EUR/USD and GBP/USD with up to 200X leverage.",
+    desc: "Trade global metals futures with powerful leverage on Tredixo.",
     points: [
-      "Major pairs: 200X leverage",
-      "Minor pairs: 100X leverage",
-      "Exotic pairs: 50X leverage",
+      "COMEX Gold: 200X leverage",
+      "COMEX Silver: 200X leverage",
+      "Copper: 100X leverage",
     ],
   },
   {
     icon: <FiClock />,
-    title: "24/5 Market Access",
-    desc: "Forex markets are open 24 hours a day, five days a week across global sessions.",
+    title: "23-Hour Trading",
+    desc: "COMEX markets trade almost round-the-clock across global sessions.",
     points: [
-      "London session",
-      "New York session",
-      "Tokyo & Sydney sessions",
+      "Sunday 6 PM EST to Friday 5 PM EST",
+      "Only 1 hour daily maintenance",
+      "Trade during Indian market hours",
     ],
   },
   {
-    icon: <FiZap />,
-    title: "Tight Spreads",
-    desc: "Experience low spreads and fast execution for smooth currency trading online.",
+    icon: <FiGlobe />,
+    title: "Global Price Discovery",
+    desc: "Access global benchmark prices for precious and base metals.",
     points: [
-      "EUR/USD from 0.1 pips",
-      "GBP/USD from 0.2 pips",
-      "Execution under 50ms",
+      "International metal prices",
+      "High liquidity",
+      "Global commodity trading access",
     ],
   },
   {
     icon: <FiBarChart2 />,
-    title: "Advanced Tools",
-    desc: "Access forex charts, economic calendar, indicators and risk management tools.",
+    title: "Real-Time COMEX Prices",
+    desc: "Track gold, silver, copper and metals futures with live market movement.",
     points: [
-      "100+ indicators",
-      "Economic calendar",
-      "Stop loss & take profit",
+      "Live commodity prices",
+      "Clean charting tools",
+      "Fast execution",
     ],
   },
 ];
 
-const forexPairs = [
+const comexCommodities = [
   {
-    title: "EUR/USD",
-    desc: "The world’s most traded forex pair, known for high liquidity and tight spreads.",
+    title: "COMEX Gold (GC)",
+    desc: "The global gold price benchmark with a contract size of 100 troy ounces. Highly liquid and popular for COMEX gold trading.",
   },
   {
-    title: "GBP/USD",
-    desc: "Also called Cable, popular for volatility during London and New York sessions.",
+    title: "COMEX Silver (SI)",
+    desc: "Global silver price discovery with a contract size of 5,000 troy ounces. Known for higher volatility and active speculation.",
   },
   {
-    title: "USD/JPY",
-    desc: "A major pair sensitive to Bank of Japan policy and Asian market sentiment.",
+    title: "Copper (HG)",
+    desc: "Often called Dr. Copper because it reflects global economic trends. Contract size is 25,000 pounds.",
   },
   {
-    title: "AUD/USD",
-    desc: "Known as the Aussie, often influenced by commodity prices like gold and iron ore.",
-  },
-  {
-    title: "USD/CAD",
-    desc: "Known as the Loonie, highly correlated with crude oil price movements.",
-  },
-];
-
-const startSteps = [
-  {
-    step: "01",
-    title: "Create Account",
-    desc: "Open your forex trading account in seconds using basic details.",
-  },
-  {
-    step: "02",
-    title: "Add Funds",
-    desc: "Deposit using supported payment methods and prepare your account for trading.",
-  },
-  {
-    step: "03",
-    title: "Choose Currency Pair",
-    desc: "Select major, minor, exotic or cross pairs such as EUR/USD, GBP/USD or USD/JPY.",
-  },
-  {
-    step: "04",
-    title: "Place Your Trade",
-    desc: "Use market or limit orders with stop loss, take profit and trailing stop tools.",
-  },
-  {
-    step: "05",
-    title: "Monitor Positions",
-    desc: "Track live forex rates, price movement and manage your trading risk.",
+    title: "Platinum (PL)",
+    desc: "A precious metal used in automotive, jewelry and industrial applications, offering unique global commodity trading opportunities.",
   },
 ];
 
 const faqs = [
   {
-    q: "Is forex trading legal in India?",
-    a: "Yes. Forex trading in India should be done through regulated brokers. Tredixo works through licensed broker partnerships for compliant access.",
+    q: "COMEX gold vs MCX gold?",
+    a: "COMEX is the global price setter and is denominated in USD, while MCX reflects COMEX prices with currency conversion into INR.",
   },
   {
-    q: "What is the minimum deposit for forex traders?",
-    a: "No minimum deposit is required, but we advise a minimum of $100 for better risk management while using our forex trading platform.",
+    q: "Can I do COMEX trading in Indian day time?",
+    a: "Yes. COMEX is operational for nearly 23 hours a day, making COMEX trading accessible from India during multiple global sessions.",
   },
   {
-    q: "Can I trade forex over the weekend?",
-    a: "No. Forex markets close on Saturday and Sunday. Trading resumes Sunday evening EST with the Sydney session.",
+    q: "How much capital do I need to trade COMEX?",
+    a: "With 200X leverage, some traders may start COMEX gold trading with around $50-$100, but for better risk management we suggest $500-$1000.",
   },
 ];
 
-const ForexTrading = () => {
+const ComexTrading = () => {
   return (
     <>
       <Helmet>
         <title>
-          Forex Trading Platform India | Trade EUR/USD, GBP/USD & Currency Pairs - Tredixo
+          COMEX Trading India | Trade Gold, Silver, Copper Futures - Tredixo
         </title>
 
         <meta
           name="description"
-          content="Trade forex with zero commission & 200X leverage. Access 50+ currency pairs, real-time forex rates, advanced charts. Start forex trading in India with Tredixo now."
+          content="Trade COMEX commodities (gold, silver, copper) with zero commission & 200X leverage. Access global commodity markets 24/5. Start COMEX trading on Tredixo now."
         />
 
         <meta
           name="keywords"
-          content="forex trading India, Forex trading platform, Currency trading online, EUR USD trading, Best forex broker India, forex trading platform India, currency pairs trading, Tredixo forex trading"
+          content="COMEX trading, COMEX gold trading, COMEX silver futures, Copper futures trading, Global commodity trading, COMEX Trading India, Gold futures trading, Silver futures trading, Tredixo COMEX trading"
         />
 
         <meta name="publisher" content="Tredixo" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://tredixo.co.in/forex-trading" />
+        <link rel="canonical" href="https://tredixo.co.in/comex-trading" />
 
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Tredixo" />
         <meta
           property="og:title"
-          content="Forex Trading Platform India | Trade EUR/USD, GBP/USD & Currency Pairs - Tredixo"
+          content="COMEX Trading India | Trade Gold, Silver, Copper Futures - Tredixo"
         />
         <meta
           property="og:description"
-          content="Trade forex with zero commission, up to 200X leverage, 50+ currency pairs, real-time forex rates and advanced charts on Tredixo."
+          content="Trade COMEX gold, silver, copper and global commodities with zero commission, real-time prices and up to 200X leverage on Tredixo."
         />
-        <meta property="og:url" content="https://tredixo.co.in/forex-trading" />
+        <meta property="og:url" content="https://tredixo.co.in/comex-trading" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Forex Trading Platform India | Trade EUR/USD, GBP/USD & Currency Pairs - Tredixo"
+          content="COMEX Trading India | Trade Gold, Silver, Copper Futures - Tredixo"
         />
         <meta
           name="twitter:description"
-          content="Trade 50+ forex currency pairs with zero commission, 200X leverage, tight spreads and real-time forex rates."
+          content="Access COMEX gold, silver and copper futures trading with real-time global commodity prices and up to 200X leverage."
         />
 
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            name: "Forex Trading Platform India",
-            url: "https://tredixo.co.in/forex-trading",
+            name: "COMEX Trading India",
+            url: "https://tredixo.co.in/comex-trading",
             description:
-              "Trade 50+ currency pairs including EUR/USD, GBP/USD and USD/JPY with real-time forex rates, advanced charts, tight spreads and 200X leverage on Tredixo.",
+              "Trade COMEX commodities including gold, silver, copper and platinum futures with real-time prices and up to 200X leverage on Tredixo.",
             publisher: {
               "@type": "Organization",
               name: "Tredixo",
@@ -205,28 +173,27 @@ const ForexTrading = () => {
           <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-cyan-300 font-semibold mb-4">
-                Forex Trading Platform
+                COMEX Trading India
               </p>
 
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                Forex Trading Platform
+                COMEX Trading
                 <br />
                 <span className="text-[#52ff1f]">
-                  Trade Currency Pairs With High Leverage
+                  Trade Global Gold, Silver & Copper Futures
                 </span>
               </h1>
 
               <p className="text-gray-300 mt-6 max-w-2xl leading-8 text-base md:text-lg">
-                Work with over 50 currency pairs including EUR/USD, GBP/USD,
-                USD/JPY and exotic pairs on Tredixo’s professional forex
-                trading platform. Enjoy low brokerage, up to 200X leverage and
-                24/5 access to the world’s largest financial market.
+                Trade COMEX — one of the world’s biggest precious metals futures
+                exchanges. Buy and sell gold, silver, copper, platinum and
+                other industrial metals with up to 200X leverage on Tredixo.
               </p>
 
               <p className="text-gray-400 mt-4 max-w-2xl leading-8">
-                Tredixo offers tight spreads, real-time forex rates, advanced
-                charting tools and instant order execution for smooth currency
-                trading online.
+                COMEX is a division of NYMEX and acts as a major global price
+                reference for precious and base metals, giving traders access to
+                professional global commodity trading.
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -236,7 +203,7 @@ const ForexTrading = () => {
                   rel="noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-[#52ff1f] px-8 py-3.5 font-semibold text-black shadow-[0_0_35px_rgba(82,255,31,0.25)] transition hover:scale-105"
                 >
-                  Start Forex Trading <FiArrowRight />
+                  Start COMEX Trading <FiArrowRight />
                 </a>
 
                 <a
@@ -250,39 +217,37 @@ const ForexTrading = () => {
               </div>
             </div>
 
-            <ImageBox image={forexHero} alt="Forex Trading Platform" />
+            <ImageBox image={comexHero} alt="COMEX Trading India" />
           </div>
         </section>
 
-        {/* WHAT IS FOREX */}
+        {/* WHAT IS COMEX */}
         <section className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <ImageBox image={forexHero} alt="What is Forex Trading" />
+            <ImageBox image={comexHero} alt="What is COMEX Trading" />
 
             <div>
-              <SectionLabel>What is Forex Trading?</SectionLabel>
+              <SectionLabel>What is COMEX Trading?</SectionLabel>
 
               <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-                Trade The World’s
+                Global Metals
                 <br />
-                <span className="text-[#52ff1f]">
-                  Largest Financial Market
-                </span>
+                <span className="text-[#52ff1f]">Futures Exchange</span>
               </h2>
 
               <p className="text-gray-300 mt-6 leading-8">
-                Forex trading means buying and selling currency pairs to benefit
-                from changes in exchange rates. Forex is the world’s largest and
-                most liquid financial market, with daily trading volume
-                exceeding $7 trillion.
+                COMEX is the world’s largest precious metals exchange, with gold
+                and silver benchmarks used across the world. It allows traders to
+                access international metals pricing, deeper liquidity and
+                nearly 23-hour market participation.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-5 mt-8">
                 {[
-                  "Major Pairs: EUR/USD, GBP/USD, USD/JPY",
-                  "Minor Pairs: EUR/GBP, GBP/JPY, AUD/NZD",
-                  "Exotic Pairs: USD/TRY, EUR/ZAR, GBP/MXN",
-                  "Cross Pairs: EUR/JPY, GBP/AUD, CAD/CHF",
+                  "International price discovery",
+                  "Higher liquidity than local markets",
+                  "23 hours of trading, 5 days a week",
+                  "Direct global metals exposure",
                 ].map((item) => (
                   <div
                     key={item}
@@ -305,25 +270,25 @@ const ForexTrading = () => {
 
           <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20">
             <div className="text-center max-w-3xl mx-auto mb-14">
-              <SectionLabel>Why Trade Forex on Tredixo?</SectionLabel>
+              <SectionLabel>Why Trade COMEX on Tredixo?</SectionLabel>
 
               <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-                High Leverage, Tight Spreads
+                High Leverage,
                 <br />
                 <span className="text-[#52ff1f]">
-                  And Advanced Forex Tools
+                  Global Prices & Long Market Hours
                 </span>
               </h2>
 
               <p className="text-gray-300 mt-5 leading-8">
-                Tredixo gives traders 24/5 access, real-time forex rates, fast
-                execution and integrated risk management tools for currency
-                trading online.
+                Tredixo gives users access to COMEX gold, silver and copper
+                futures with global commodity prices, smooth execution and
+                powerful leverage.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {forexFeatures.map((item, index) => (
+              {comexFeatures.map((item, index) => (
                 <div
                   key={item.title}
                   className="group relative overflow-hidden rounded-[26px] bg-[#0b0f16] p-6 min-h-[330px] transition-all duration-300 hover:-translate-y-2 hover:bg-[#0e151d] hover:shadow-[0_22px_55px_rgba(82,255,31,0.10)]"
@@ -364,33 +329,33 @@ const ForexTrading = () => {
             </div>
 
             <div className="mt-8 rounded-[26px] border border-[#52ff1f]/20 bg-[#52ff1f]/5 p-6 text-gray-300 leading-8">
-              For instance, EUR/USD trading with 200X leverage lets you control
-              $20,000 worth of currency with only $100 capital on our forex
-              trading platform.
+              COMEX markets trade almost round-the-clock from Sunday evening to
+              Friday evening, allowing Indian traders to respond to global
+              commodity developments in real time.
             </div>
           </div>
         </section>
 
-        {/* POPULAR FOREX PAIRS */}
+        {/* COMEX COMMODITIES */}
         <section className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <SectionLabel>Popular Forex Pairs</SectionLabel>
+            <SectionLabel>COMEX Commodities Available</SectionLabel>
 
             <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-              Trade Major
+              Trade Global
               <br />
-              <span className="text-[#52ff1f]">Currency Pairs</span>
+              <span className="text-[#52ff1f]">Metals Futures</span>
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {forexPairs.map((item) => (
+          <div className="grid md:grid-cols-2 gap-6">
+            {comexCommodities.map((item) => (
               <div
                 key={item.title}
                 className="rounded-[26px] bg-[#0b0f16] p-6 hover:bg-[#0f1720] transition"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#52ff1f]/25 bg-[#52ff1f]/10 text-[#52ff1f] mb-5">
-                  <FiGlobe />
+                  <FiCheckCircle />
                 </div>
 
                 <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
@@ -400,102 +365,57 @@ const ForexTrading = () => {
           </div>
         </section>
 
-        {/* START STEPS */}
+        {/* FAQ */}
         <section className="relative border-y border-white/5 bg-[#05060a] overflow-hidden">
           <HeroBg />
 
-          <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
-            <div className="text-center max-w-3xl mx-auto mb-14">
-              <SectionLabel>How to Start Forex Trading</SectionLabel>
+          <div className="relative max-w-5xl mx-auto px-4 md:px-8 py-16 md:py-24">
+            <div className="text-center mb-14">
+              <SectionLabel>Frequently Asked Questions</SectionLabel>
 
-              <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-                Start Currency Trading
-                <br />
-                <span className="text-[#52ff1f]">In 5 Easy Steps</span>
+              <h2 className="text-3xl md:text-5xl font-bold">
+                COMEX Trading <span className="text-[#52ff1f]">FAQs</span>
               </h2>
-
-              <p className="text-gray-300 mt-5 leading-8">
-                Create your account, add funds, select a currency pair, place
-                your forex trade and monitor your positions in real time.
-              </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
-              {startSteps.map((item) => (
-                <div
-                  key={item.step}
-                  className="group relative overflow-hidden rounded-[28px] bg-[#0b0f16] p-6 min-h-[260px] transition-all duration-300 hover:-translate-y-2 hover:bg-[#101822] hover:shadow-[0_25px_70px_rgba(82,255,31,0.10)]"
+            <div className="space-y-5">
+              {faqs.map((item) => (
+                <details
+                  key={item.q}
+                  className="group rounded-[24px] bg-[#0b0f16] p-6"
                 >
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(82,255,31,0.12),transparent_48%)] opacity-80" />
+                  <summary className="cursor-pointer list-none flex items-center justify-between gap-5 font-semibold text-base md:text-lg">
+                    {item.q}
 
-                  <div className="relative z-10">
-                    <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#52ff1f] text-black text-lg font-black shadow-[0_0_35px_rgba(82,255,31,0.25)]">
-                      {item.step}
+                    <span className="text-[#52ff1f] text-2xl group-open:rotate-45 transition">
+                      +
                     </span>
+                  </summary>
 
-                    <h3 className="text-xl font-bold text-white mt-6 mb-3 group-hover:text-[#52ff1f] transition">
-                      {item.title}
-                    </h3>
-
-                    <p className="text-gray-400 text-sm leading-7">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
+                  <p className="mt-4 text-gray-400 leading-8">{item.a}</p>
+                </details>
               ))}
             </div>
           </div>
         </section>
 
-        {/* FAQ */}
-        <section className="max-w-5xl mx-auto px-4 md:px-8 py-16 md:py-24">
-          <div className="text-center mb-14">
-            <SectionLabel>Frequently Asked Questions</SectionLabel>
-
-            <h2 className="text-3xl md:text-5xl font-bold">
-              Forex Trading <span className="text-[#52ff1f]">FAQs</span>
-            </h2>
-          </div>
-
-          <div className="space-y-5">
-            {faqs.map((item) => (
-              <details
-                key={item.q}
-                className="group rounded-[24px] bg-[#0b0f16] p-6"
-              >
-                <summary className="cursor-pointer list-none flex items-center justify-between gap-5 font-semibold text-base md:text-lg">
-                  {item.q}
-
-                  <span className="text-[#52ff1f] text-2xl group-open:rotate-45 transition">
-                    +
-                  </span>
-                </summary>
-
-                <p className="mt-4 text-gray-400 leading-8">{item.a}</p>
-              </details>
-            ))}
-          </div>
-        </section>
-
         {/* CTA */}
-        <section className="max-w-7xl mx-auto px-4 md:px-8 pb-20">
+        <section className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20">
           <div className="relative overflow-hidden rounded-[32px] border border-[#21451f] bg-[linear-gradient(135deg,#1b1f24_0%,#102914_45%,#0a2508_100%)] px-6 md:px-10 py-12 text-center shadow-[0_25px_80px_rgba(0,0,0,0.35)]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(82,255,31,0.12),transparent_35%)]" />
-
             <div className="relative z-10 max-w-3xl mx-auto">
               <span className="inline-flex items-center rounded-full border border-[#52ff1f]/30 bg-[#52ff1f]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-[#52ff1f]">
-                Start Forex Trading
+                Start COMEX Trading
               </span>
 
               <h2 className="text-3xl md:text-5xl font-bold mt-5">
                 Ready To Trade
                 <br />
-                <span className="text-[#52ff1f]">Forex With Tredixo?</span>
+                <span className="text-[#52ff1f]">COMEX With Tredixo?</span>
               </h2>
 
               <p className="text-gray-300 mt-5 leading-7">
-                Create your account and access a faster, smarter and cleaner
-                forex trading experience.
+                Access global gold, silver, copper and platinum futures with a
+                clean and fast trading experience.
               </p>
 
               <div className="mt-8">
@@ -543,4 +463,4 @@ const ImageBox = ({ image, alt }) => (
   </div>
 );
 
-export default ForexTrading;
+export default ComexTrading;

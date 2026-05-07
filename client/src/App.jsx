@@ -37,7 +37,8 @@ import AboutUs from './pages/Aboutus';
 import LiveMarkets from "./pages/LiveMarkets";
 import NSE from './pages/NSEtrading';
 import MCX from './pages/MCXtrading';
-
+import US from './pages/Usstock';
+import Comex from './pages/comextrading';
 const persistor = persistStore(store);
 
 const App = () => {
@@ -74,6 +75,8 @@ const App = () => {
                   <Route path="/about-us" element={<AboutUs />} />
                   <Route path="/live-markets" element={<LiveMarkets />} />
                   <Route path="/nse-trading" element={<NSE />} />
+                  <Route path="/us-stock" element={<US />} />
+                  <Route path="/comex-trading" element={<Comex />} />
                   <Route path="/mcx-trading" element={<MCX/>}/>
                   <Route element={<PrivateRoute />}>
                     <Route path="/dashboard" element={<Dashboard />} />

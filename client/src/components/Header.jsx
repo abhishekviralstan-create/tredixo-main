@@ -65,6 +65,8 @@ const Header = () => {
         { label: "MCX Trading", path: "/mcx-trading" },
         { label: "Forex Trading", path: "/forex-trading" },
         { label: "Margin Trading", path: "/margin-trading" },
+        { label: "US Stocks", path: "/us-stock" },
+        { label: "Comex Trading", path: "/comex-trading" },
         { label: "Dabba Trading", path: "/dabba-trading" },
         { label: "Intraday Trading", path: "/intraday-trading" },
         { label: "Live Markets", path: "/live-markets" },

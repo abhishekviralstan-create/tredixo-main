@@ -5,174 +5,146 @@ import {
   FiShield,
   FiBarChart2,
   FiClock,
-  FiGlobe,
   FiArrowRight,
   FiCheckCircle,
 } from "react-icons/fi";
 
-import forexHero from "../assests/crypto.png";
+import usStocksHero from "../assests/crypto.png";
 
-const forexFeatures = [
+const usStockFeatures = [
   {
     icon: <FiTrendingUp />,
-    title: "High Leverage",
-    desc: "Trade major currency pairs like EUR/USD and GBP/USD with up to 200X leverage.",
+    title: "Trade With Leverage",
+    desc: "Access US stocks and index futures with flexible leverage options on Tredixo.",
     points: [
-      "Major pairs: 200X leverage",
-      "Minor pairs: 100X leverage",
-      "Exotic pairs: 50X leverage",
-    ],
-  },
-  {
-    icon: <FiClock />,
-    title: "24/5 Market Access",
-    desc: "Forex markets are open 24 hours a day, five days a week across global sessions.",
-    points: [
-      "London session",
-      "New York session",
-      "Tokyo & Sydney sessions",
+      "S&P 500 / Dow Jones: 300X",
+      "Large-cap stocks: around 20X",
+      "Mid & small-cap stocks: 10X",
     ],
   },
   {
     icon: <FiZap />,
-    title: "Tight Spreads",
-    desc: "Experience low spreads and fast execution for smooth currency trading online.",
+    title: "No Currency Hassle",
+    desc: "Deposit in INR and trade US markets in USD with automatic currency conversion.",
+    points: ["INR deposit support", "Live forex conversion", "Zero conversion charges"],
+  },
+  {
+    icon: <FiClock />,
+    title: "Extended Market Hours",
+    desc: "Trade US stocks during evening and night hours from India.",
     points: [
-      "EUR/USD from 0.1 pips",
-      "GBP/USD from 0.2 pips",
-      "Execution under 50ms",
+      "Pre-market access",
+      "Regular US session",
+      "After-hours opportunity",
     ],
   },
   {
     icon: <FiBarChart2 />,
-    title: "Advanced Tools",
-    desc: "Access forex charts, economic calendar, indicators and risk management tools.",
-    points: [
-      "100+ indicators",
-      "Economic calendar",
-      "Stop loss & take profit",
-    ],
+    title: "Real-Time Market Access",
+    desc: "Track US stock prices, index movement and Wall Street opportunities in real time.",
+    points: ["Live prices", "Fast execution", "Clean trading dashboard"],
   },
 ];
 
-const forexPairs = [
+const popularStocks = [
   {
-    title: "EUR/USD",
-    desc: "The world’s most traded forex pair, known for high liquidity and tight spreads.",
+    title: "Apple (AAPL)",
+    desc: "One of the world’s most valuable companies and a popular choice for users who want to trade Apple stock in India.",
   },
   {
-    title: "GBP/USD",
-    desc: "Also called Cable, popular for volatility during London and New York sessions.",
+    title: "Tesla (TSLA)",
+    desc: "A leading EV and energy company, widely active on every Tesla stock trading platform.",
   },
   {
-    title: "USD/JPY",
-    desc: "A major pair sensitive to Bank of Japan policy and Asian market sentiment.",
+    title: "Amazon (AMZN)",
+    desc: "A global online retail and cloud computing giant with strong market participation.",
   },
   {
-    title: "AUD/USD",
-    desc: "Known as the Aussie, often influenced by commodity prices like gold and iron ore.",
+    title: "Google (GOOGL)",
+    desc: "A major technology company known for search, advertising, AI and digital innovation.",
   },
   {
-    title: "USD/CAD",
-    desc: "Known as the Loonie, highly correlated with crude oil price movements.",
+    title: "Microsoft (MSFT)",
+    desc: "A cloud, software and AI leader, popular among global stock market participants.",
   },
 ];
 
-const startSteps = [
-  {
-    step: "01",
-    title: "Create Account",
-    desc: "Open your forex trading account in seconds using basic details.",
-  },
-  {
-    step: "02",
-    title: "Add Funds",
-    desc: "Deposit using supported payment methods and prepare your account for trading.",
-  },
-  {
-    step: "03",
-    title: "Choose Currency Pair",
-    desc: "Select major, minor, exotic or cross pairs such as EUR/USD, GBP/USD or USD/JPY.",
-  },
-  {
-    step: "04",
-    title: "Place Your Trade",
-    desc: "Use market or limit orders with stop loss, take profit and trailing stop tools.",
-  },
-  {
-    step: "05",
-    title: "Monitor Positions",
-    desc: "Track live forex rates, price movement and manage your trading risk.",
-  },
+const etfs = [
+  "S&P 500 (SPY)",
+  "NASDAQ 100 (QQQ)",
+  "Dow Jones ETF (DIA)",
 ];
 
 const faqs = [
   {
-    q: "Is forex trading legal in India?",
-    a: "Yes. Forex trading in India should be done through regulated brokers. Tredixo works through licensed broker partnerships for compliant access.",
+    q: "Is it legal to trade US stocks in India?",
+    a: "Yes, it is legal. Under LRS, RBI allows Indians to invest up to $250,000 annually in foreign stocks.",
   },
   {
-    q: "What is the minimum deposit for forex traders?",
-    a: "No minimum deposit is required, but we advise a minimum of $100 for better risk management while using our forex trading platform.",
+    q: "Do I need a US bank account?",
+    a: "No. You can fund your Tredixo account in INR and USD conversion is handled automatically while buying or selling.",
   },
   {
-    q: "Can I trade forex over the weekend?",
-    a: "No. Forex markets close on Saturday and Sunday. Trading resumes Sunday evening EST with the Sydney session.",
+    q: "What about tax?",
+    a: "Profit from US stock trading in India is generally taxed as capital gains. Short-term gains may be taxed at your income slab rate, while long-term gains may follow applicable capital gains rules. Please consult a tax advisor for your case.",
   },
 ];
 
-const ForexTrading = () => {
+const UsStocksTrading = () => {
   return (
     <>
       <Helmet>
         <title>
-          Forex Trading Platform India | Trade EUR/USD, GBP/USD & Currency Pairs - Tredixo
+          US Stocks Trading India | Trade Apple, Tesla, Amazon Stocks - Tredixo
         </title>
 
         <meta
           name="description"
-          content="Trade forex with zero commission & 200X leverage. Access 50+ currency pairs, real-time forex rates, advanced charts. Start forex trading in India with Tredixo now."
+          content="Trade US stocks (Apple, Tesla, Amazon, Google) from India with zero commission. Access S&P 500, NASDAQ stocks with leverage. Start US stock trading on Tredixo now."
         />
 
         <meta
           name="keywords"
-          content="forex trading India, Forex trading platform, Currency trading online, EUR USD trading, Best forex broker India, forex trading platform India, currency pairs trading, Tredixo forex trading"
+          content="US stocks trading in India, How to invest in US stocks from India, Trade Apple stock in India, Tesla stock trading platform, S&P 500 trading in India, US stock trading India, NASDAQ stocks India, Tredixo US stocks"
         />
 
         <meta name="publisher" content="Tredixo" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://tredixo.co.in/forex-trading" />
+        <link rel="canonical" href="https://tredixo.co.in/us-stocks-trading" />
 
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Tredixo" />
         <meta
           property="og:title"
-          content="Forex Trading Platform India | Trade EUR/USD, GBP/USD & Currency Pairs - Tredixo"
+          content="US Stocks Trading India | Trade Apple, Tesla, Amazon Stocks - Tredixo"
         />
         <meta
           property="og:description"
-          content="Trade forex with zero commission, up to 200X leverage, 50+ currency pairs, real-time forex rates and advanced charts on Tredixo."
+          content="Trade Apple, Tesla, Amazon, Google, S&P 500 and NASDAQ stocks from India with zero commission and leverage on Tredixo."
         />
-        <meta property="og:url" content="https://tredixo.co.in/forex-trading" />
+        <meta
+          property="og:url"
+          content="https://tredixo.co.in/us-stocks-trading"
+        />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Forex Trading Platform India | Trade EUR/USD, GBP/USD & Currency Pairs - Tredixo"
+          content="US Stocks Trading India | Trade Apple, Tesla, Amazon Stocks - Tredixo"
         />
         <meta
           name="twitter:description"
-          content="Trade 50+ forex currency pairs with zero commission, 200X leverage, tight spreads and real-time forex rates."
+          content="Trade US stocks from India with access to Apple, Tesla, Amazon, S&P 500 and NASDAQ stocks."
         />
 
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            name: "Forex Trading Platform India",
-            url: "https://tredixo.co.in/forex-trading",
+            name: "US Stocks Trading India",
+            url: "https://tredixo.co.in/us-stocks-trading",
             description:
-              "Trade 50+ currency pairs including EUR/USD, GBP/USD and USD/JPY with real-time forex rates, advanced charts, tight spreads and 200X leverage on Tredixo.",
+              "Trade US stocks including Apple, Tesla, Amazon, Google, S&P 500 and NASDAQ stocks from India with Tredixo.",
             publisher: {
               "@type": "Organization",
               name: "Tredixo",
@@ -205,28 +177,26 @@ const ForexTrading = () => {
           <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-cyan-300 font-semibold mb-4">
-                Forex Trading Platform
+                US Stocks Trading India
               </p>
 
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                Forex Trading Platform
+                US Stocks Trading
                 <br />
                 <span className="text-[#52ff1f]">
-                  Trade Currency Pairs With High Leverage
+                  Trade Apple, Tesla, Amazon & S&P 500
                 </span>
               </h1>
 
               <p className="text-gray-300 mt-6 max-w-2xl leading-8 text-base md:text-lg">
-                Work with over 50 currency pairs including EUR/USD, GBP/USD,
-                USD/JPY and exotic pairs on Tredixo’s professional forex
-                trading platform. Enjoy low brokerage, up to 200X leverage and
-                24/5 access to the world’s largest financial market.
+                Trade 2000+ US stocks listed on NYSE and NASDAQ, including
+                Apple, Tesla, Amazon, Alphabet, Facebook and other top global
+                companies from India through Tredixo.
               </p>
 
               <p className="text-gray-400 mt-4 max-w-2xl leading-8">
-                Tredixo offers tight spreads, real-time forex rates, advanced
-                charting tools and instant order execution for smooth currency
-                trading online.
+                Access Wall Street with real-time prices, execution, leveraged
+                trading and no currency conversion headaches.
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -236,7 +206,7 @@ const ForexTrading = () => {
                   rel="noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-[#52ff1f] px-8 py-3.5 font-semibold text-black shadow-[0_0_35px_rgba(82,255,31,0.25)] transition hover:scale-105"
                 >
-                  Start Forex Trading <FiArrowRight />
+                  Start US Stock Trading <FiArrowRight />
                 </a>
 
                 <a
@@ -250,52 +220,7 @@ const ForexTrading = () => {
               </div>
             </div>
 
-            <ImageBox image={forexHero} alt="Forex Trading Platform" />
-          </div>
-        </section>
-
-        {/* WHAT IS FOREX */}
-        <section className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <ImageBox image={forexHero} alt="What is Forex Trading" />
-
-            <div>
-              <SectionLabel>What is Forex Trading?</SectionLabel>
-
-              <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-                Trade The World’s
-                <br />
-                <span className="text-[#52ff1f]">
-                  Largest Financial Market
-                </span>
-              </h2>
-
-              <p className="text-gray-300 mt-6 leading-8">
-                Forex trading means buying and selling currency pairs to benefit
-                from changes in exchange rates. Forex is the world’s largest and
-                most liquid financial market, with daily trading volume
-                exceeding $7 trillion.
-              </p>
-
-              <div className="grid sm:grid-cols-2 gap-5 mt-8">
-                {[
-                  "Major Pairs: EUR/USD, GBP/USD, USD/JPY",
-                  "Minor Pairs: EUR/GBP, GBP/JPY, AUD/NZD",
-                  "Exotic Pairs: USD/TRY, EUR/ZAR, GBP/MXN",
-                  "Cross Pairs: EUR/JPY, GBP/AUD, CAD/CHF",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-2xl bg-[#0b0f16] p-5 hover:bg-[#0f1720] transition"
-                  >
-                    <div className="flex items-start gap-3">
-                      <FiCheckCircle className="text-[#52ff1f] mt-1 shrink-0" />
-                      <span className="font-medium text-gray-200">{item}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <ImageBox image={usStocksHero} alt="US Stocks Trading India" />
           </div>
         </section>
 
@@ -305,25 +230,24 @@ const ForexTrading = () => {
 
           <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20">
             <div className="text-center max-w-3xl mx-auto mb-14">
-              <SectionLabel>Why Trade Forex on Tredixo?</SectionLabel>
+              <SectionLabel>Why Trade US Stocks on Tredixo?</SectionLabel>
 
               <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-                High Leverage, Tight Spreads
+                Wall Street Access
                 <br />
                 <span className="text-[#52ff1f]">
-                  And Advanced Forex Tools
+                  Without Currency Conversion Hassle
                 </span>
               </h2>
 
               <p className="text-gray-300 mt-5 leading-8">
-                Tredixo gives traders 24/5 access, real-time forex rates, fast
-                execution and integrated risk management tools for currency
-                trading online.
+                Trade US stocks from India with access to leverage, real-time
+                Wall Street pricing and simplified INR-to-USD trading flow.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {forexFeatures.map((item, index) => (
+              {usStockFeatures.map((item, index) => (
                 <div
                   key={item.title}
                   className="group relative overflow-hidden rounded-[26px] bg-[#0b0f16] p-6 min-h-[330px] transition-all duration-300 hover:-translate-y-2 hover:bg-[#0e151d] hover:shadow-[0_22px_55px_rgba(82,255,31,0.10)]"
@@ -362,35 +286,29 @@ const ForexTrading = () => {
                 </div>
               ))}
             </div>
-
-            <div className="mt-8 rounded-[26px] border border-[#52ff1f]/20 bg-[#52ff1f]/5 p-6 text-gray-300 leading-8">
-              For instance, EUR/USD trading with 200X leverage lets you control
-              $20,000 worth of currency with only $100 capital on our forex
-              trading platform.
-            </div>
           </div>
         </section>
 
-        {/* POPULAR FOREX PAIRS */}
+        {/* POPULAR US STOCKS */}
         <section className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <SectionLabel>Popular Forex Pairs</SectionLabel>
+            <SectionLabel>Popular US Stocks to Trade</SectionLabel>
 
             <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-              Trade Major
+              Trade FAANG+
               <br />
-              <span className="text-[#52ff1f]">Currency Pairs</span>
+              <span className="text-[#52ff1f]">And Global Market Leaders</span>
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {forexPairs.map((item) => (
+            {popularStocks.map((item) => (
               <div
                 key={item.title}
                 className="rounded-[26px] bg-[#0b0f16] p-6 hover:bg-[#0f1720] transition"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#52ff1f]/25 bg-[#52ff1f]/10 text-[#52ff1f] mb-5">
-                  <FiGlobe />
+                  <FiTrendingUp />
                 </div>
 
                 <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
@@ -400,47 +318,34 @@ const ForexTrading = () => {
           </div>
         </section>
 
-        {/* START STEPS */}
+        {/* ETF SECTION */}
         <section className="relative border-y border-white/5 bg-[#05060a] overflow-hidden">
           <HeroBg />
 
-          <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
-            <div className="text-center max-w-3xl mx-auto mb-14">
-              <SectionLabel>How to Start Forex Trading</SectionLabel>
+          <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <SectionLabel>Index Funds & ETFs</SectionLabel>
 
               <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-                Start Currency Trading
+                Trade S&P 500,
                 <br />
-                <span className="text-[#52ff1f]">In 5 Easy Steps</span>
+                <span className="text-[#52ff1f]">NASDAQ 100 & Dow Jones</span>
               </h2>
-
-              <p className="text-gray-300 mt-5 leading-8">
-                Create your account, add funds, select a currency pair, place
-                your forex trade and monitor your positions in real time.
-              </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
-              {startSteps.map((item) => (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {etfs.map((item) => (
                 <div
-                  key={item.step}
-                  className="group relative overflow-hidden rounded-[28px] bg-[#0b0f16] p-6 min-h-[260px] transition-all duration-300 hover:-translate-y-2 hover:bg-[#101822] hover:shadow-[0_25px_70px_rgba(82,255,31,0.10)]"
+                  key={item}
+                  className="group flex items-center gap-4 rounded-2xl bg-[#0b0f16] p-5 transition-all duration-300 hover:-translate-y-1 hover:bg-[#0e151d]"
                 >
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(82,255,31,0.12),transparent_48%)] opacity-80" />
-
-                  <div className="relative z-10">
-                    <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#52ff1f] text-black text-lg font-black shadow-[0_0_35px_rgba(82,255,31,0.25)]">
-                      {item.step}
-                    </span>
-
-                    <h3 className="text-xl font-bold text-white mt-6 mb-3 group-hover:text-[#52ff1f] transition">
-                      {item.title}
-                    </h3>
-
-                    <p className="text-gray-400 text-sm leading-7">
-                      {item.desc}
-                    </p>
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#52ff1f]/25 bg-[#52ff1f]/10 text-[#52ff1f]">
+                    <FiCheckCircle />
                   </div>
+
+                  <h3 className="font-semibold group-hover:text-[#52ff1f] transition">
+                    {item}
+                  </h3>
                 </div>
               ))}
             </div>
@@ -453,7 +358,7 @@ const ForexTrading = () => {
             <SectionLabel>Frequently Asked Questions</SectionLabel>
 
             <h2 className="text-3xl md:text-5xl font-bold">
-              Forex Trading <span className="text-[#52ff1f]">FAQs</span>
+              US Stocks Trading <span className="text-[#52ff1f]">FAQs</span>
             </h2>
           </div>
 
@@ -480,22 +385,20 @@ const ForexTrading = () => {
         {/* CTA */}
         <section className="max-w-7xl mx-auto px-4 md:px-8 pb-20">
           <div className="relative overflow-hidden rounded-[32px] border border-[#21451f] bg-[linear-gradient(135deg,#1b1f24_0%,#102914_45%,#0a2508_100%)] px-6 md:px-10 py-12 text-center shadow-[0_25px_80px_rgba(0,0,0,0.35)]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(82,255,31,0.12),transparent_35%)]" />
-
             <div className="relative z-10 max-w-3xl mx-auto">
               <span className="inline-flex items-center rounded-full border border-[#52ff1f]/30 bg-[#52ff1f]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-[#52ff1f]">
-                Start Forex Trading
+                Start US Stock Trading
               </span>
 
               <h2 className="text-3xl md:text-5xl font-bold mt-5">
                 Ready To Trade
                 <br />
-                <span className="text-[#52ff1f]">Forex With Tredixo?</span>
+                <span className="text-[#52ff1f]">US Stocks With Tredixo?</span>
               </h2>
 
               <p className="text-gray-300 mt-5 leading-7">
-                Create your account and access a faster, smarter and cleaner
-                forex trading experience.
+                Trade Apple, Tesla, Amazon, Google and S&P 500 from India with a
+                clean and fast market experience.
               </p>
 
               <div className="mt-8">
@@ -543,4 +446,4 @@ const ImageBox = ({ image, alt }) => (
   </div>
 );
 
-export default ForexTrading;
+export default UsStocksTrading;
