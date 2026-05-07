@@ -209,7 +209,7 @@ const Home = () => {
                           to={`/blog/${featuredBlog.slug}`}
                           className="inline-flex items-center gap-2 rounded-full bg-lime-400 px-6 py-3 text-sm font-semibold text-black transition-all duration-300 hover:scale-[1.02]"
                         >
-                          Read Full Report
+                          Read Full Blog
                           <FiArrowRight />
                         </Link>
 
@@ -273,7 +273,7 @@ const Home = () => {
                           </p>
 
                           <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-300">
-                            Read Story <FiArrowRight />
+                            Read Blogs <FiArrowRight />
                           </div>
                         </div>
                       </Link>
