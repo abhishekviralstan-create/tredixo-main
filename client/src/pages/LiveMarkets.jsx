@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-
+import live from "../assests/live.png";
 const Widget = ({ id, script }) => {
   useEffect(() => {
     const container = document.getElementById(id);
@@ -99,7 +99,7 @@ const Widget = ({ id, script }) => {
     if (script === "symbol-overview") {
       scriptEl.innerHTML = JSON.stringify({
         symbols: [
-        
+
           ["BINANCE:BTCUSDT|1D"],
           ["TVC:GOLD|1D"],
           ["FX_IDC:USDINR|1D"]
@@ -157,7 +157,7 @@ const Widget = ({ id, script }) => {
 const LiveMarkets = () => {
   return (
     <>
-     <Helmet>
+      <Helmet>
         <title>Advanced Trading Tools | Tredixo Platform</title>
         <meta
           name="description"
@@ -187,21 +187,78 @@ const LiveMarkets = () => {
       </Helmet>
 
       <div className="min-h-screen bg-[#05070b] text-white">
-        <section className="border-b border-white/5">
-          <div className="max-w-7xl mx-auto px-4 md:px-8 py-10">
-            <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-cyan-300 font-semibold mb-3">
-              Live Market Dashboard
-            </p>
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              Live Trading Rates
-              <br />
-              <span className="text-[#52ff1f]">Market Wise Overview</span>
-            </h1>
-            <p className="mt-5 text-white/70 max-w-3xl leading-8">
-              Yahan aap live market rates, kaunsi market upar hai, kaunsi neeche hai,
-              aur Forex, Crypto, Commodities, Indices sab ek hi page par dekh sakte ho.
-            </p>
+        <section className="relative overflow-hidden border-b border-white/5">
+
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(82,255,31,0.12),transparent_28%),radial-gradient(circle_at_top_right,rgba(0,190,255,0.10),transparent_26%)]" />
+
+          <div className="absolute inset-0 opacity-[0.08] bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:64px_64px]" />
+
+          <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-14 items-center">
+
+            {/* LEFT CONTENT */}
+
+            <div>
+
+              <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-cyan-300 font-semibold mb-4">
+                Live Market Dashboard
+              </p>
+
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+                Live Trading Rates
+                <br />
+                <span className="text-[#52ff1f]">
+                  Market Wise Overview
+                </span>
+              </h1>
+
+              <p className="mt-6 text-white/70 max-w-2xl leading-8 text-base md:text-lg">
+                Access real-time market rates and monitor live performance across Forex, Cryptocurrencies, Commodities, and Global Indices — all from one powerful trading dashboard.
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+
+                {[
+                  "Forex",
+                  "Crypto",
+                  "Commodities",
+                  "Indices",
+                ].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-gray-300 hover:border-[#52ff1f]/40 hover:text-[#52ff1f] transition"
+                  >
+                    {item}
+                  </span>
+                ))}
+
+              </div>
+
+            </div>
+
+            {/* RIGHT IMAGE */}
+
+            <div className="flex justify-center">
+
+              <div className="relative w-full max-w-[520px] flex items-center justify-center">
+
+                {/* GLOW */}
+
+                <div className="absolute inset-0 rounded-full bg-[#52ff1f]/10 blur-3xl" />
+
+                {/* IMAGE */}
+
+                <img
+                  src={live}
+                  alt="Live Trading Markets"
+                  className="relative z-10 w-full h-[360px] object-contain border-0 outline-none shadow-none"
+                />
+
+              </div>
+
+            </div>
+
           </div>
+
         </section>
 
         <section className="border-b border-white/5">

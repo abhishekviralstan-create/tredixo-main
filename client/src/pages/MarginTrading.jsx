@@ -8,8 +8,8 @@ import {
   FiCheckCircle,
 } from "react-icons/fi";
 
-import marginHero from "../assests/crypto.png";
-
+import marginHero from "../assests/margintrading.png";
+import trading from "../assests/intraday.png"
 const marginFeatures = [
   {
     icon: <FiTrendingUp />,
@@ -89,7 +89,7 @@ const MarginTrading = () => {
         />
         <meta name="publisher" content="Tredixo" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://tredixo.co.in/margin-trading" />
+        <link rel="canonical" href="https://tredixo.info/margin-trading" />
 
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Tredixo" />
@@ -98,7 +98,7 @@ const MarginTrading = () => {
           property="og:description"
           content="Trade with up to 500X leverage across stocks, forex, crypto and commodities. Learn how margin trading works on Tredixo."
         />
-        <meta property="og:url" content="https://tredixo.co.in/margin-trading" />
+        <meta property="og:url" content="https://tredixo.info/margin-trading" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Margin Trading India | Trade with Up to 500X Leverage - Tredixo" />
@@ -112,13 +112,13 @@ const MarginTrading = () => {
             "@context": "https://schema.org",
             "@type": "WebPage",
             name: "Margin Trading India",
-            url: "https://tredixo.co.in/margin-trading",
+            url: "https://tredixo.info/margin-trading",
             description:
               "Learn margin trading with up to 500X leverage across stocks, forex, crypto and commodities on Tredixo.",
             publisher: {
               "@type": "Organization",
               name: "Tredixo",
-              url: "https://tredixo.co.in",
+              url: "https://tredixo.info",
             },
           })}
         </script>
@@ -150,17 +150,13 @@ const MarginTrading = () => {
               </p>
 
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                Margin Trading
+               Boost Your Gains 
                 <br />
-                <span className="text-[#52ff1f]">Boost Your Gains With Up To 500X Leverage</span>
+                <span className="text-[#52ff1f]">With Up To 500X Leverage</span>
               </h1>
 
               <p className="text-gray-300 mt-6 max-w-2xl leading-8 text-base md:text-lg">
                 Margin trading lets you control larger positions with smaller capital by using leverage. Tredixo offers margin trading in India with leverage from 1:1 to 1:500 across stocks, forex, crypto and commodities.
-              </p>
-
-              <p className="text-gray-400 mt-4 max-w-2xl leading-8">
-                With ₹10,000 investment, traders can access up to ₹5,00,000 trading power on Tredixo’s margin trading platform.
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -190,7 +186,7 @@ const MarginTrading = () => {
 
         <section className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <ImageBox image={marginHero} alt="What is Margin Trading" />
+            <ImageBox image={trading} alt="What is Margin Trading" />
 
             <div>
               <SectionLabel>What is Margin Trading?</SectionLabel>
@@ -402,7 +398,7 @@ const ImageBox = ({ image, alt }) => (
       <img
         src={image}
         alt={alt}
-        className="relative z-10 w-full h-[360px] object-contain drop-shadow-[0_25px_80px_rgba(82,255,31,0.12)]"
+        className="relative z-10 w-full h-[360px] object-contain "
       />
     </div>
   </div>

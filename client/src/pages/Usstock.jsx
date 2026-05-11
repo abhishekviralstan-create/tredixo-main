@@ -9,7 +9,7 @@ import {
   FiCheckCircle,
 } from "react-icons/fi";
 
-import usStocksHero from "../assests/crypto.png";
+import usStocksHero from "../assests/us-stock.png";
 
 const usStockFeatures = [
   {
@@ -110,7 +110,7 @@ const UsStocksTrading = () => {
 
         <meta name="publisher" content="Tredixo" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://tredixo.co.in/us-stocks-trading" />
+        <link rel="canonical" href="https://tredixo.info/us-stocks-trading" />
 
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Tredixo" />
@@ -124,7 +124,7 @@ const UsStocksTrading = () => {
         />
         <meta
           property="og:url"
-          content="https://tredixo.co.in/us-stocks-trading"
+          content="https://tredixo.info/us-stocks-trading"
         />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -142,13 +142,13 @@ const UsStocksTrading = () => {
             "@context": "https://schema.org",
             "@type": "WebPage",
             name: "US Stocks Trading India",
-            url: "https://tredixo.co.in/us-stocks-trading",
+            url: "https://tredixo.info/us-stocks-trading",
             description:
               "Trade US stocks including Apple, Tesla, Amazon, Google, S&P 500 and NASDAQ stocks from India with Tredixo.",
             publisher: {
               "@type": "Organization",
               name: "Tredixo",
-              url: "https://tredixo.co.in",
+              url: "https://tredixo.info",
             },
           })}
         </script>
@@ -181,10 +181,10 @@ const UsStocksTrading = () => {
               </p>
 
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                US Stocks Trading
+                Trade Apple, Tesla,
                 <br />
                 <span className="text-[#52ff1f]">
-                  Trade Apple, Tesla, Amazon & S&P 500
+                  Amazon & S&P 500
                 </span>
               </h1>
 
@@ -193,12 +193,6 @@ const UsStocksTrading = () => {
                 Apple, Tesla, Amazon, Alphabet, Facebook and other top global
                 companies from India through Tredixo.
               </p>
-
-              <p className="text-gray-400 mt-4 max-w-2xl leading-8">
-                Access Wall Street with real-time prices, execution, leveraged
-                trading and no currency conversion headaches.
-              </p>
-
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <a
                   href="https://crm.tredixo.co.in/auth-pages/create-account/step1?accountType=real"
@@ -440,7 +434,7 @@ const ImageBox = ({ image, alt }) => (
       <img
         src={image}
         alt={alt}
-        className="relative z-10 w-full h-[360px] object-contain drop-shadow-[0_25px_80px_rgba(82,255,31,0.12)]"
+        className="relative z-10 w-full h-[360px] object-contain"
       />
     </div>
   </div>

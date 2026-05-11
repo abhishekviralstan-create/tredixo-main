@@ -12,7 +12,7 @@ import {
 } from "react-icons/fi";
 import whatNseImg from "../assests/what-is-nse.png";
 import whyNseImg from "../assests/why-nse.png";
-import nseHero from "../assests/NSE2.png";
+import nseHero from "../assests/nse.png";
 
 const whatNseItems = [
   {

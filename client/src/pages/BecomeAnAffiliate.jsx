@@ -9,14 +9,14 @@ import {
   FiArrowRight,
   FiCheckCircle,
 } from 'react-icons/fi';
-
+ import heroimg from "../assests/becomeaffiliate.png";
 const BecomeAnAffiliate = () => {
   const benefits = [
     'Attractive partnership opportunity',
     'Growth-focused ecosystem',
     'Simple and scalable collaboration model',
   ];
-
+ 
   const steps = [
     { icon: <FiUsers />, title: 'Apply', desc: 'Submit your affiliate interest and basic details.' },
     { icon: <FiShield />, title: 'Get Approved', desc: 'Our team reviews your profile and partnership fit.' },
@@ -36,69 +36,69 @@ const BecomeAnAffiliate = () => {
 
       <div className="min-h-screen bg-[#05070b] text-white overflow-hidden">
         {/* HERO */}
-       {/* HERO */}
-<section className="relative overflow-hidden border-b border-white/5">
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(82,255,31,0.14),transparent_30%),radial-gradient(circle_at_top_right,rgba(0,180,255,0.08),transparent_24%)]" />
-  <div className="absolute inset-0 opacity-[0.12] bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:64px_64px]" />
+        {/* HERO */}
+        <section className="relative overflow-hidden border-b border-white/5">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(82,255,31,0.14),transparent_30%),radial-gradient(circle_at_top_right,rgba(0,180,255,0.08),transparent_24%)]" />
+          <div className="absolute inset-0 opacity-[0.12] bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
-  <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+          <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
 
-    {/* LEFT CONTENT */}
-    <div>
-      <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-cyan-300 font-semibold mb-4">
-        Partner With Tredixo
-      </p>
+            {/* LEFT CONTENT */}
+            <div>
+              <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-cyan-300 font-semibold mb-4">
+                Partner With Tredixo
+              </p>
 
-      <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-        Become an
-        <br />
-        <span className="text-[#52ff1f]">Affiliate</span>
-      </h1>
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+                Become an
+                <br />
+                <span className="text-[#52ff1f]">Affiliate</span>
+              </h1>
 
-      <p className="text-gray-300 mt-6 max-w-xl leading-8 text-base md:text-lg">
-        Tredixo offers affiliate partnership opportunities for individuals and businesses
-        who want to grow with a modern trading-focused platform.
-      </p>
+              <p className="text-gray-300 mt-6 max-w-xl leading-8 text-base md:text-lg">
+                Tredixo offers affiliate partnership opportunities for individuals and businesses
+                who want to grow with a modern trading-focused platform.
+              </p>
 
-      <div className="mt-8 flex flex-col sm:flex-row gap-4">
-        <a
-          href="https://crm.tredixo.co.in/auth-pages/create-account/step1?accountType=real"
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center justify-center gap-2 rounded-full bg-[#52ff1f] px-8 py-3.5 font-semibold text-black shadow-[0_0_35px_rgba(82,255,31,0.25)] transition hover:scale-105"
-        >
-          Apply Now <FiArrowRight />
-        </a>
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <a
+                  href="https://crm.tredixo.co.in/auth-pages/create-account/step1?accountType=real"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#52ff1f] px-8 py-3.5 font-semibold text-black shadow-[0_0_35px_rgba(82,255,31,0.25)] transition hover:scale-105"
+                >
+                  Apply Now <FiArrowRight />
+                </a>
 
-        <a
-          href="/contact"
-          className="inline-flex items-center justify-center rounded-full border border-[#52ff1f]/40 bg-[#52ff1f]/10 px-8 py-3.5 font-semibold text-[#52ff1f] transition hover:bg-[#52ff1f] hover:text-black"
-        >
-          Contact Team
-        </a>
-      </div>
-    </div>
+                <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-full border border-[#52ff1f]/40 bg-[#52ff1f]/10 px-8 py-3.5 font-semibold text-[#52ff1f] transition hover:bg-[#52ff1f] hover:text-black"
+                >
+                  Contact Team
+                </a>
+              </div>
+            </div>
 
-    {/* RIGHT IMAGE */}
-    <div className="flex justify-center">
-      <div className="relative w-full max-w-[520px] rounded-[30px] overflow-hidden flex items-center justify-center min-h-[380px]">
+            {/* RIGHT IMAGE */}
+            <div className="flex justify-center">
+              <div className="relative w-full max-w-[520px] rounded-[30px] overflow-hidden flex items-center justify-center min-h-[380px]">
 
-        {/* glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(82,255,31,0.16),transparent_55%)]" />
+                {/* glow */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(82,255,31,0.16),transparent_55%)]" />
 
-        {/* grid */}
-        <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:60px_60px]" />
+                {/* grid */}
+                <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:60px_60px]" />
 
-        <img
-          src="/images/affiliate-hero.png" // 👉 yaha apni image daalna
-          alt="Affiliate Program"
-          className="relative z-10 w-full h-[380px] object-contain"
-        />
-      </div>
-    </div>
+                <img
+                  src= {heroimg} // 👉 yaha apni image daalna
+                  alt="Affiliate Program"
+                  className="relative z-10 w-full h-[380px] object-contain"
+                />
+              </div>
+            </div>
 
-  </div>
-</section>
+          </div>
+        </section>
         {/* BENEFITS */}
         <section className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20">
           <div className="text-center max-w-3xl mx-auto mb-12">

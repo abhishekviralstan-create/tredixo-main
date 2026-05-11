@@ -9,7 +9,7 @@ import {
   FiArrowRight,
   FiCheckCircle,
 } from "react-icons/fi";
-
+import cryptoHero2 from "../assests/crypto.png";
 import cryptoHero from "../assests/crypto2.png";
 
 const cryptoFeatures = [
@@ -125,7 +125,7 @@ const Trading = () => {
 
         <meta name="publisher" content="Tredixo" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://tredixo.co.in/crypto-trading" />
+        <link rel="canonical" href="https://tredixo.info/crypto-trading" />
 
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Tredixo" />
@@ -137,7 +137,7 @@ const Trading = () => {
           property="og:description"
           content="Trade Bitcoin, Ethereum and 100+ cryptocurrencies with zero commission, high leverage, real-time prices and 24/7 market access."
         />
-        <meta property="og:url" content="https://tredixo.co.in/crypto-trading" />
+        <meta property="og:url" content="https://tredixo.info/crypto-trading" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -154,13 +154,13 @@ const Trading = () => {
             "@context": "https://schema.org",
             "@type": "WebPage",
             name: "Crypto Trading Platform",
-            url: "https://tredixo.co.in/crypto-trading",
+            url: "https://tredixo.info/crypto-trading",
             description:
               "Trade Bitcoin, Ethereum and 100+ cryptocurrencies with zero commission, high leverage, real-time crypto prices and 24/7 market access on Tredixo.",
             publisher: {
               "@type": "Organization",
               name: "Tredixo",
-              url: "https://tredixo.co.in",
+              url: "https://tredixo.info",
             },
           })}
         </script>
@@ -189,14 +189,14 @@ const Trading = () => {
           <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-cyan-300 font-semibold mb-4">
-                Crypto Trading Platform
+                Crypto Trading Platform Trade
               </p>
 
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                Crypto Trading Platform
+                   Bitcoin,  Ethereum 
                 <br />
                 <span className="text-[#52ff1f]">
-                  Trade Bitcoin, Ethereum & 100+ Cryptocurrencies
+               & Cryptocurrencies
                 </span>
               </h1>
 
@@ -206,12 +206,6 @@ const Trading = () => {
                 platform. Enjoy zero commission trading, high leverage and
                 global crypto markets open 24/7.
               </p>
-
-              <p className="text-gray-400 mt-4 max-w-2xl leading-8">
-                Trade crypto in 10 seconds with no hidden fees, low starting
-                capital and 24/7 customer support on Tredixo.
-              </p>
-
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <a
                   href="https://crm.tredixo.co.in/auth-pages/create-account/step1?accountType=real"
@@ -233,7 +227,7 @@ const Trading = () => {
               </div>
             </div>
 
-            <ImageBox image={cryptoHero} alt="Crypto Trading Platform" />
+            <ImageBox image={cryptoHero2} alt="Crypto Trading Platform" />
           </div>
         </section>
 
@@ -516,7 +510,7 @@ const ImageBox = ({ image, alt }) => (
       <img
         src={image}
         alt={alt}
-        className="relative z-10 w-full h-[360px] object-contain drop-shadow-[0_25px_80px_rgba(82,255,31,0.12)]"
+        className="relative z-10 w-full h-[360px] object-contain"
       />
     </div>
   </div>

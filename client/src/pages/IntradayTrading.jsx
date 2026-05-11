@@ -9,7 +9,8 @@ import {
   FiCheckCircle,
 } from "react-icons/fi";
 
-import intradayHero from "../assests/crypto.png";
+import intradayHero from "../assests/intraday.png";
+import trading from "../assests/trading.png";
 
 const intradayFeatures = [
   {
@@ -145,7 +146,7 @@ const IntradayTrading = () => {
 
         <meta name="publisher" content="Tredixo" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://tredixo.co.in/intraday-trading" />
+        <link rel="canonical" href="https://tredixo.info/intraday-trading" />
 
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Tredixo" />
@@ -157,7 +158,7 @@ const IntradayTrading = () => {
           property="og:description"
           content="Master intraday trading with zero brokerage, 500X leverage, real-time charts, day trading strategies and fast execution on Tredixo."
         />
-        <meta property="og:url" content="https://tredixo.co.in/intraday-trading" />
+        <meta property="og:url" content="https://tredixo.info/intraday-trading" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -174,13 +175,13 @@ const IntradayTrading = () => {
             "@context": "https://schema.org",
             "@type": "WebPage",
             name: "Intraday Trading Platform",
-            url: "https://tredixo.co.in/intraday-trading",
+            url: "https://tredixo.info/intraday-trading",
             description:
               "Learn intraday trading with day trading strategies, real-time charts, alerts, high leverage and zero brokerage on Tredixo.",
             publisher: {
               "@type": "Organization",
               name: "Tredixo",
-              url: "https://tredixo.co.in",
+              url: "https://tredixo.info",
             },
           })}
         </script>
@@ -212,11 +213,11 @@ const IntradayTrading = () => {
                 Intraday Trading Platform
               </p>
 
-              <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                Intraday Trading Platform
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+                 Day Trade With
                 <br />
                 <span className="text-[#52ff1f]">
-                  Day Trade With Zero Commission & Advanced Tools
+                  Zero Commission & Advanced Tools
                 </span>
               </h1>
 
@@ -227,13 +228,6 @@ const IntradayTrading = () => {
                 with real-time charts, instant execution and technical
                 indicators.
               </p>
-
-              <p className="text-gray-400 mt-4 max-w-2xl leading-8">
-                From scalping Nifty futures to trading EUR/USD or catching
-                momentum in Bank Nifty, Tredixo provides tools for active
-                day trading strategies.
-              </p>
-
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <a
                   href="https://crm.tredixo.co.in/auth-pages/create-account/step1?accountType=real"
@@ -262,7 +256,7 @@ const IntradayTrading = () => {
         {/* WHAT IS INTRADAY */}
         <section className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <ImageBox image={intradayHero} alt="What is Intraday Trading" />
+            <ImageBox image={trading} alt="What is Intraday Trading" />
 
             <div>
               <SectionLabel>What is Intraday Trading?</SectionLabel>
@@ -559,7 +553,7 @@ const ImageBox = ({ image, alt }) => (
       <img
         src={image}
         alt={alt}
-        className="relative z-10 w-full h-[360px] object-contain drop-shadow-[0_25px_80px_rgba(82,255,31,0.12)]"
+        className="relative z-10 w-full h-[360px] object-contain"
       />
     </div>
   </div>

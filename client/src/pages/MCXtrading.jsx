@@ -9,7 +9,7 @@ import {
 } from "react-icons/fi";
 
 import mcxHero from "../assests/mcx.png";
-
+import comex from "../assests/comext.png"
 const mcxFeatures = [
   {
     icon: <FiTrendingUp />,
@@ -154,7 +154,7 @@ const MCXtrading = () => {
           property="og:description"
           content="Trade Gold, Silver, Crude Oil and commodities with 500X leverage, live MCX prices and instant execution on Tredixo."
         />
-        <meta property="og:url" content="https://tredixo.co.in/mcx-trading" />
+        <meta property="og:url" content="https://tredixo.info/mcx-trading" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -171,13 +171,13 @@ const MCXtrading = () => {
             "@context": "https://schema.org",
             "@type": "WebPage",
             name: "MCX Trading Platform",
-            url: "https://tredixo.co.in/mcx-trading",
+            url: "https://tredixo.info/mcx-trading",
             description:
               "Trade MCX commodities including gold, silver, crude oil and natural gas with real-time charts, instant execution and 500X leverage on Tredixo.",
             publisher: {
               "@type": "Organization",
               name: "Tredixo",
-              url: "https://tredixo.co.in",
+              url: "https://tredixo.info",
             },
           })}
         </script>
@@ -206,14 +206,14 @@ const MCXtrading = () => {
           <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-cyan-300 font-semibold mb-4">
-                MCX Trading Platform
+                MCX Trading Platform Trade 
               </p>
 
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                MCX Trading Platform
+             Gold, Silver 
                 <br />
                 <span className="text-[#52ff1f]">
-                  Trade Gold, Silver & Commodities
+               & Commodities
                 </span>
               </h1>
 
@@ -224,10 +224,6 @@ const MCXtrading = () => {
                 on Tredixo.
               </p>
 
-              <p className="text-gray-400 mt-4 max-w-2xl leading-8">
-                Begin MCX trades in 10 seconds without paperwork and no hidden
-                fees.
-              </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <a
@@ -257,7 +253,7 @@ const MCXtrading = () => {
         {/* WHAT IS MCX */}
         <section className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <ImageBox image={mcxHero} alt="What is MCX Trading" />
+            <ImageBox image={comex} alt="What is MCX Trading" />
 
             <div>
               <SectionLabel>What is MCX Trading?</SectionLabel>
@@ -537,7 +533,7 @@ const ImageBox = ({ image, alt }) => (
       <img
         src={image}
         alt={alt}
-        className="relative z-10 w-full h-[360px] object-contain drop-shadow-[0_25px_80px_rgba(82,255,31,0.12)]"
+        className="relative z-10 w-full h-[360px] object-contain "
       />
     </div>
   </div>

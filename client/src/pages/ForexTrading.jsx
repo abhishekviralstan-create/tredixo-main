@@ -10,7 +10,8 @@ import {
   FiCheckCircle,
 } from "react-icons/fi";
 
-import forexHero from "../assests/crypto.png";
+import forexHero from "../assests/forext.png";
+import forexHero2 from "../assests/forext2.png";
 
 const forexFeatures = [
   {
@@ -131,7 +132,7 @@ const ForexTrading = () => {
 
         <meta
           name="description"
-          content="Trade forex with zero commission & 200X leverage. Access 50+ currency pairs, real-time forex rates, advanced charts. Start forex trading in India with Tredixo now."
+          content="Trade forex with zero commission & 200X leverage. Access 50+ currency pairs, real-time forex rates, advanced charts."
         />
 
         <meta
@@ -141,7 +142,7 @@ const ForexTrading = () => {
 
         <meta name="publisher" content="Tredixo" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://tredixo.co.in/forex-trading" />
+        <link rel="canonical" href="https://tredixo.info/forex-trading" />
 
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Tredixo" />
@@ -153,7 +154,7 @@ const ForexTrading = () => {
           property="og:description"
           content="Trade forex with zero commission, up to 200X leverage, 50+ currency pairs, real-time forex rates and advanced charts on Tredixo."
         />
-        <meta property="og:url" content="https://tredixo.co.in/forex-trading" />
+        <meta property="og:url" content="https://tredixo.info/forex-trading" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -170,13 +171,13 @@ const ForexTrading = () => {
             "@context": "https://schema.org",
             "@type": "WebPage",
             name: "Forex Trading Platform India",
-            url: "https://tredixo.co.in/forex-trading",
+            url: "https://tredixo.info/forex-trading",
             description:
               "Trade 50+ currency pairs including EUR/USD, GBP/USD and USD/JPY with real-time forex rates, advanced charts, tight spreads and 200X leverage on Tredixo.",
             publisher: {
               "@type": "Organization",
               name: "Tredixo",
-              url: "https://tredixo.co.in",
+              url: "https://tredixo.info",
             },
           })}
         </script>
@@ -209,10 +210,10 @@ const ForexTrading = () => {
               </p>
 
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                Forex Trading Platform
+                 Trade Currency Pairs
                 <br />
                 <span className="text-[#52ff1f]">
-                  Trade Currency Pairs With High Leverage
+                 With High Leverage
                 </span>
               </h1>
 
@@ -221,12 +222,6 @@ const ForexTrading = () => {
                 USD/JPY and exotic pairs on Tredixo’s professional forex
                 trading platform. Enjoy low brokerage, up to 200X leverage and
                 24/5 access to the world’s largest financial market.
-              </p>
-
-              <p className="text-gray-400 mt-4 max-w-2xl leading-8">
-                Tredixo offers tight spreads, real-time forex rates, advanced
-                charting tools and instant order execution for smooth currency
-                trading online.
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -257,7 +252,7 @@ const ForexTrading = () => {
         {/* WHAT IS FOREX */}
         <section className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <ImageBox image={forexHero} alt="What is Forex Trading" />
+            <ImageBox image={forexHero2} alt="What is Forex Trading" />
 
             <div>
               <SectionLabel>What is Forex Trading?</SectionLabel>
@@ -537,7 +532,7 @@ const ImageBox = ({ image, alt }) => (
       <img
         src={image}
         alt={alt}
-        className="relative z-10 w-full h-[360px] object-contain drop-shadow-[0_25px_80px_rgba(82,255,31,0.12)]"
+        className="relative z-10 w-full h-[360px] object-contain "
       />
     </div>
   </div>

@@ -10,7 +10,8 @@ import {
   FiCheckCircle,
 } from "react-icons/fi";
 
-import comexHero from "../assests/crypto.png";
+import comexHero from "../assests/comext.png";
+import trading from "../assests/trading.png";
 
 const comexFeatures = [
   {
@@ -109,7 +110,7 @@ const ComexTrading = () => {
 
         <meta name="publisher" content="Tredixo" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://tredixo.co.in/comex-trading" />
+        <link rel="canonical" href="https://tredixo.info/comex-trading" />
 
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Tredixo" />
@@ -121,7 +122,7 @@ const ComexTrading = () => {
           property="og:description"
           content="Trade COMEX gold, silver, copper and global commodities with zero commission, real-time prices and up to 200X leverage on Tredixo."
         />
-        <meta property="og:url" content="https://tredixo.co.in/comex-trading" />
+        <meta property="og:url" content="https://tredixo.info/comex-trading" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -138,13 +139,13 @@ const ComexTrading = () => {
             "@context": "https://schema.org",
             "@type": "WebPage",
             name: "COMEX Trading India",
-            url: "https://tredixo.co.in/comex-trading",
+            url: "https://tredixo.info/comex-trading",
             description:
               "Trade COMEX commodities including gold, silver, copper and platinum futures with real-time prices and up to 200X leverage on Tredixo.",
             publisher: {
               "@type": "Organization",
               name: "Tredixo",
-              url: "https://tredixo.co.in",
+              url: "https://tredixo.info",
             },
           })}
         </script>
@@ -177,10 +178,10 @@ const ComexTrading = () => {
               </p>
 
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                COMEX Trading
+                Trade Global Gold,
                 <br />
                 <span className="text-[#52ff1f]">
-                  Trade Global Gold, Silver & Copper Futures
+                  Silver & Copper Futures
                 </span>
               </h1>
 
@@ -188,12 +189,6 @@ const ComexTrading = () => {
                 Trade COMEX — one of the world’s biggest precious metals futures
                 exchanges. Buy and sell gold, silver, copper, platinum and
                 other industrial metals with up to 200X leverage on Tredixo.
-              </p>
-
-              <p className="text-gray-400 mt-4 max-w-2xl leading-8">
-                COMEX is a division of NYMEX and acts as a major global price
-                reference for precious and base metals, giving traders access to
-                professional global commodity trading.
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -224,7 +219,7 @@ const ComexTrading = () => {
         {/* WHAT IS COMEX */}
         <section className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <ImageBox image={comexHero} alt="What is COMEX Trading" />
+            <ImageBox image={trading} alt="What is COMEX Trading" />
 
             <div>
               <SectionLabel>What is COMEX Trading?</SectionLabel>
@@ -457,7 +452,7 @@ const ImageBox = ({ image, alt }) => (
       <img
         src={image}
         alt={alt}
-        className="relative z-10 w-full h-[360px] object-contain drop-shadow-[0_25px_80px_rgba(82,255,31,0.12)]"
+        className="relative z-10 w-full h-[360px] object-contain"
       />
     </div>
   </div>

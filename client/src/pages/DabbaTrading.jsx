@@ -9,7 +9,7 @@ import {
   FiSmartphone,
 } from "react-icons/fi";
 
-import dabbaHero from "../assests/crypto.png";
+import dabbaHero from "../assests/dabbatrading.png";
 
 const fadeUp = {
   initial: { opacity: 0, y: 22 },
@@ -78,7 +78,7 @@ const DabbaTrading = () => {
 
         <meta
           name="description"
-          content="Explore online dabba trading with fast execution, high leverage and modern trading tools on Tredixo. Advanced Dabba Trading Platform with real-time market movement and seamless trading experience."
+          content="Explore online dabba trading with fast execution, high leverage and modern trading tools on Tredixo."
         />
 
         <meta
@@ -88,7 +88,7 @@ const DabbaTrading = () => {
 
         <meta name="publisher" content="Tredixo" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://tredixo.co.in/dabba-trading" />
+        <link rel="canonical" href="https://tredixo.info/dabba-trading" />
 
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Tredixo" />
@@ -100,7 +100,7 @@ const DabbaTrading = () => {
           property="og:description"
           content="Trade with a modern Dabba Trading Platform featuring fast execution, high leverage, mobile accessibility and advanced tools."
         />
-        <meta property="og:url" content="https://tredixo.co.in/dabba-trading" />
+        <meta property="og:url" content="https://tredixo.info/dabba-trading" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -117,13 +117,13 @@ const DabbaTrading = () => {
             "@context": "https://schema.org",
             "@type": "WebPage",
             name: "Dabba Trading Platform India",
-            url: "https://tredixo.co.in/dabba-trading",
+            url: "https://tredixo.info/dabba-trading",
             description:
               "Explore online dabba trading with fast execution, mobile trading experience, live market data and modern trading tools on Tredixo.",
             publisher: {
               "@type": "Organization",
               name: "Tredixo",
-              url: "https://tredixo.co.in",
+              url: "https://tredixo.info",
             },
           })}
         </script>
@@ -152,14 +152,14 @@ const DabbaTrading = () => {
           <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-14 items-center">
             <motion.div {...fadeUp}>
               <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-cyan-300 font-semibold mb-4">
-                Dabba Trading Platform
+                Online  Dabba Trading Platform
               </p>
 
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                Online Dabba Trading
+                Fast, Modern &
                 <br />
                 <span className="text-[#52ff1f]">
-                  Fast, Modern & High Leverage
+                  High Leverage
                 </span>
               </h1>
 
@@ -167,12 +167,6 @@ const DabbaTrading = () => {
                 Dabba Trading is an expedited version of conventional market
                 trading and is tailored for traders who value speed, simplicity
                 and direct market access.
-              </p>
-
-              <p className="text-gray-400 mt-4 leading-8 max-w-2xl">
-                Tredixo aims to offer a modern Dabba Trading Platform with
-                advanced tools, fast execution and mobile-friendly accessibility
-                for active traders.
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -249,328 +243,328 @@ const DabbaTrading = () => {
         </section>
 
         {/* ARTICLE CONTENT */}
-    {/* ARTICLE CONTENT */}
-<main className="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
-  <div className="text-center max-w-3xl mx-auto mb-14">
-    <SectionLabel>Dabba Trading Guide</SectionLabel>
+        {/* ARTICLE CONTENT */}
+        <main className="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <SectionLabel>Dabba Trading Guide</SectionLabel>
 
-    <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-      Understand Dabba Trading
-      <br />
-      <span className="text-[#52ff1f]">With A Modern View</span>
-    </h2>
+            <h2 className="text-3xl md:text-5xl font-bold leading-tight">
+              Understand Dabba Trading
+              <br />
+              <span className="text-[#52ff1f]">With A Modern View</span>
+            </h2>
 
-    <p className="text-gray-400 mt-5 leading-8">
-      Learn how Dabba Trading works, its features, benefits, risks and the key
-      things to check before choosing any platform.
-    </p>
-  </div>
-
-  {/* WHAT IS */}
-  <section className="grid lg:grid-cols-2 gap-8 items-stretch mb-10">
-    <div className="relative overflow-hidden rounded-[30px] bg-[#0b0f16] p-6 md:p-8">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(82,255,31,0.12),transparent_42%)]" />
-      <div className="relative z-10">
-        <SectionLabel>What is Dabba Trading?</SectionLabel>
-
-        <h3 className="text-2xl md:text-4xl font-bold leading-tight mb-5">
-          Off-Market Trading
-          <span className="text-[#52ff1f]"> Explained</span>
-        </h3>
-
-        <p className="text-gray-300 leading-8">
-          Dabba trading is where informal trades are made beyond official stock
-          exchanges. Orders do not enter NSE or BSE, but trading through a
-          Dabba Trading Platform is managed within the system.
-        </p>
-
-        <p className="text-gray-400 leading-8 mt-4">
-          In simple language, Dabba Trading allows traders to speculate on stock
-          price movement without actually executing the trade on the exchange.
-        </p>
-      </div>
-    </div>
-
-    <div className="relative overflow-hidden rounded-[30px] bg-[#0b0f16] p-6 md:p-8">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,180,255,0.10),transparent_42%)]" />
-      <div className="relative z-10">
-        <SectionLabel>Key Characteristics</SectionLabel>
-
-        <div className="space-y-4">
-          {[
-            "Trades are executed off-market",
-            "No official exchange transaction",
-            "Higher leverage opportunities",
-            "Faster trade execution",
-            "Lower margin requirements",
-          ].map((item) => (
-            <div
-              key={item}
-              className="flex items-start gap-3 rounded-2xl bg-white/[0.03] p-4"
-            >
-              <FiCheckCircle className="text-[#52ff1f] mt-1 shrink-0" />
-              <span className="text-gray-300">{item}</span>
-            </div>
-          ))}
-        </div>
-
-        <p className="text-gray-400 leading-8 mt-5">
-          Because of these features, many traders prefer an Online Dabba Trading
-          Platform rather than using a traditional brokerage setup.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  {/* HOW IT WORKS */}
-  <section className="relative overflow-hidden rounded-[34px] bg-[#05060a] p-6 md:p-10 mb-10">
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(82,255,31,0.10),transparent_45%)]" />
-
-    <div className="relative z-10">
-      <div className="text-center max-w-3xl mx-auto mb-10">
-        <SectionLabel>How Dabba Trading Works</SectionLabel>
-
-        <h3 className="text-3xl md:text-5xl font-bold">
-          Simple Trading
-          <span className="text-[#52ff1f]"> Flow</span>
-        </h3>
-      </div>
-
-      <div className="grid md:grid-cols-4 gap-5">
-        {[
-          {
-            step: "01",
-            title: "Account Setup",
-            desc: "A trader registers with a Dabba Trading Platform such as Tredixo.",
-          },
-          {
-            step: "02",
-            title: "Deposit Capital",
-            desc: "Funds are deposited into the trading wallet on the platform.",
-          },
-          {
-            step: "03",
-            title: "Trade Execution",
-            desc: "Buy and sell orders are placed through the Dabba Trading App.",
-          },
-          {
-            step: "04",
-            title: "Settlement",
-            desc: "Profit or loss is calculated based on actual market price movement.",
-          },
-        ].map((item) => (
-          <div
-            key={item.step}
-            className="group rounded-[26px] bg-[#0b0f16] p-6 transition-all duration-300 hover:-translate-y-2 hover:bg-[#101822]"
-          >
-            <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#52ff1f] text-black font-black">
-              {item.step}
-            </span>
-
-            <h4 className="text-xl font-bold mt-6 mb-3 group-hover:text-[#52ff1f] transition">
-              {item.title}
-            </h4>
-
-            <p className="text-gray-400 text-sm leading-7">
-              {item.desc}
+            <p className="text-gray-400 mt-5 leading-8">
+              Learn how Dabba Trading works, its features, benefits, risks and the key
+              things to check before choosing any platform.
             </p>
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
 
-  {/* COMPARISON */}
-  <section className="mb-10">
-    <div className="text-center max-w-3xl mx-auto mb-10">
-      <SectionLabel>Comparison</SectionLabel>
+          {/* WHAT IS */}
+          <section className="grid lg:grid-cols-2 gap-8 items-stretch mb-10">
+            <div className="relative overflow-hidden rounded-[30px] bg-[#0b0f16] p-6 md:p-8">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(82,255,31,0.12),transparent_42%)]" />
+              <div className="relative z-10">
+                <SectionLabel>What is Dabba Trading?</SectionLabel>
 
-      <h3 className="text-3xl md:text-5xl font-bold">
-        Dabba Trading vs
-        <span className="text-[#52ff1f]"> Stock Market Trading</span>
-      </h3>
+                <h3 className="text-2xl md:text-4xl font-bold leading-tight mb-5">
+                  Off-Market Trading
+                  <span className="text-[#52ff1f]"> Explained</span>
+                </h3>
 
-      <p className="text-gray-400 mt-5 leading-8">
-        Dabba Trading Platforms are usually built for traders who want speed and
-        simplified execution, while conventional markets offer regulated
-        transparency.
-      </p>
-    </div>
+                <p className="text-gray-300 leading-8">
+                  Dabba trading is where informal trades are made beyond official stock
+                  exchanges. Orders do not enter NSE or BSE, but trading through a
+                  Dabba Trading Platform is managed within the system.
+                </p>
 
-    <div className="overflow-x-auto rounded-[30px] bg-[#0b0f16]">
-      <table className="w-full text-left min-w-[720px]">
-        <thead className="bg-[#52ff1f] text-black">
-          <tr>
-            <th className="p-5 font-bold">Feature</th>
-            <th className="p-5 font-bold">Dabba Trading</th>
-            <th className="p-5 font-bold">Stock Market Trading</th>
-          </tr>
-        </thead>
-
-        <tbody className="text-gray-300">
-          {[
-            ["Trade Location", "Off-market", "NSE/BSE"],
-            ["Regulation", "Informal", "SEBI regulated"],
-            ["Speed", "Faster", "Exchange dependent"],
-            ["Leverage", "Higher", "Limited"],
-            ["Brokerage", "Often lower", "Standard charges"],
-          ].map(([feature, dabba, stock]) => (
-            <tr key={feature} className="border-b border-white/10 last:border-b-0">
-              <td className="p-5 font-semibold text-white">{feature}</td>
-              <td className="p-5">{dabba}</td>
-              <td className="p-5">{stock}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  {/* FEATURES + APP ADVANTAGES */}
-  <section className="grid lg:grid-cols-2 gap-8 mb-10">
-    <div className="rounded-[30px] bg-[#0b0f16] p-6 md:p-8">
-      <SectionLabel>Platform Features</SectionLabel>
-
-      <h3 className="text-2xl md:text-4xl font-bold mb-6">
-        Best Platform
-        <span className="text-[#52ff1f]"> Features</span>
-      </h3>
-
-      <div className="space-y-5">
-        {[
-          ["Live Market Data", "A good platform should show accurate live market prices."],
-          ["Simple to Use", "A good Dabba Trading App should be clean and easy to understand."],
-          ["Efficient Order Execution", "The platform should support high trading volume smoothly."],
-          ["Safe Transactions", "A trusted trading website should support safe deposits and withdrawals."],
-          ["Advanced Trading Tools", "Charts, indicators, stop-loss options and margin tracking help traders."],
-        ].map(([title, desc]) => (
-          <div key={title} className="flex gap-4">
-            <FiCheckCircle className="text-[#52ff1f] mt-1 shrink-0" />
-            <div>
-              <h4 className="font-bold text-white">{title}</h4>
-              <p className="text-gray-400 leading-7 text-sm">{desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    <div className="rounded-[30px] bg-[#0b0f16] p-6 md:p-8">
-      <SectionLabel>App Advantages</SectionLabel>
-
-      <h3 className="text-2xl md:text-4xl font-bold mb-6">
-        Benefits Of Using
-        <span className="text-[#52ff1f]"> The App</span>
-      </h3>
-
-      <div className="space-y-5">
-        {[
-          ["Trade Anywhere", "Monitor markets and trade from mobile devices."],
-          ["Instant Notifications", "Live alerts help traders react quickly to market movements."],
-          ["Market Insights", "Price charts and analytical services help users understand opportunities."],
-          ["Faster Decision Making", "Live updates help traders act quickly without delayed inputs."],
-        ].map(([title, desc]) => (
-          <div key={title} className="flex gap-4">
-            <FiCheckCircle className="text-[#52ff1f] mt-1 shrink-0" />
-            <div>
-              <h4 className="font-bold text-white">{title}</h4>
-              <p className="text-gray-400 leading-7 text-sm">{desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  {/* RISK + START */}
-  <section className="grid lg:grid-cols-2 gap-8">
-    <div className="relative overflow-hidden rounded-[30px] bg-[#0b0f16] p-6 md:p-8">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,80,80,0.10),transparent_45%)]" />
-
-      <div className="relative z-10">
-        <SectionLabel>Risks and Legal Implications</SectionLabel>
-
-        <h3 className="text-2xl md:text-4xl font-bold mb-6">
-          Know The
-          <span className="text-red-400"> Risks</span>
-        </h3>
-
-        <div className="space-y-5">
-          {[
-            ["No Regulation", "Dabba Trading Platforms are generally not regulated by official market authorities."],
-            ["Counterparty Risk", "Traders depend on platform credibility because trades are handled internally."],
-            ["Market Volatility", "Like all trading, Dabba Trading includes risk from market price fluctuations."],
-            ["Platform Reliability", "Check platform stability, reviews and credibility before choosing any platform."],
-          ].map(([title, desc]) => (
-            <div key={title} className="flex gap-4">
-              <FiCheckCircle className="text-red-400 mt-1 shrink-0" />
-              <div>
-                <h4 className="font-bold text-white">{title}</h4>
-                <p className="text-gray-400 leading-7 text-sm">{desc}</p>
+                <p className="text-gray-400 leading-8 mt-4">
+                  In simple language, Dabba Trading allows traders to speculate on stock
+                  price movement without actually executing the trade on the exchange.
+                </p>
               </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </div>
 
-    <div className="rounded-[30px] bg-[#0b0f16] p-6 md:p-8">
-      <SectionLabel>How to Start</SectionLabel>
+            <div className="relative overflow-hidden rounded-[30px] bg-[#0b0f16] p-6 md:p-8">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,180,255,0.10),transparent_42%)]" />
+              <div className="relative z-10">
+                <SectionLabel>Key Characteristics</SectionLabel>
 
-      <h3 className="text-2xl md:text-4xl font-bold mb-6">
-        Start Dabba Trading
-        <span className="text-[#52ff1f]"> Step-by-Step</span>
-      </h3>
+                <div className="space-y-4">
+                  {[
+                    "Trades are executed off-market",
+                    "No official exchange transaction",
+                    "Higher leverage opportunities",
+                    "Faster trade execution",
+                    "Lower margin requirements",
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-start gap-3 rounded-2xl bg-white/[0.03] p-4"
+                    >
+                      <FiCheckCircle className="text-[#52ff1f] mt-1 shrink-0" />
+                      <span className="text-gray-300">{item}</span>
+                    </div>
+                  ))}
+                </div>
 
-      <div className="space-y-4">
-        {[
-          "Choose a trusted platform like Tredixo",
-          "Register your account",
-          "Deposit funds",
-          "Analyse the market",
-          "Place your first trade",
-          "Manage risk with stop-loss",
-        ].map((item, index) => (
-          <div
-            key={item}
-            className="flex items-center gap-4 rounded-2xl bg-white/[0.03] p-4"
-          >
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#52ff1f] text-black font-black">
-              {index + 1}
-            </span>
-            <span className="text-gray-300">{item}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+                <p className="text-gray-400 leading-8 mt-5">
+                  Because of these features, many traders prefer an Online Dabba Trading
+                  Platform rather than using a traditional brokerage setup.
+                </p>
+              </div>
+            </div>
+          </section>
 
-  {/* WHY TREDIXO */}
-  <section className="mt-10 rounded-[34px] bg-[linear-gradient(135deg,#0b0f16,#102914,#071018)] p-6 md:p-10 text-center">
-    <SectionLabel>Why Tredixo?</SectionLabel>
+          {/* HOW IT WORKS */}
+          <section className="relative overflow-hidden rounded-[34px] bg-[#05060a] p-6 md:p-10 mb-10">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(82,255,31,0.10),transparent_45%)]" />
 
-    <h3 className="text-3xl md:text-5xl font-bold">
-      Why Tredixo Is A Modern
-      <br />
-      <span className="text-[#52ff1f]">Dabba Trading Platform</span>
-    </h3>
+            <div className="relative z-10">
+              <div className="text-center max-w-3xl mx-auto mb-10">
+                <SectionLabel>How Dabba Trading Works</SectionLabel>
 
-    <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5 mt-10">
-      {[
-        "Advanced trading interface",
-        "Fast execution engine",
-        "Mobile trading experience",
-        "Secure transaction flow",
-        "Growing trader community",
-      ].map((item) => (
-        <div key={item} className="rounded-2xl bg-black/25 p-5">
-          <FiCheckCircle className="text-[#52ff1f] mx-auto mb-3" />
-          <p className="text-gray-300 text-sm leading-6">{item}</p>
-        </div>
-      ))}
-    </div>
-  </section>
-</main>
+                <h3 className="text-3xl md:text-5xl font-bold">
+                  Simple Trading
+                  <span className="text-[#52ff1f]"> Flow</span>
+                </h3>
+              </div>
+
+              <div className="grid md:grid-cols-4 gap-5">
+                {[
+                  {
+                    step: "01",
+                    title: "Account Setup",
+                    desc: "A trader registers with a Dabba Trading Platform such as Tredixo.",
+                  },
+                  {
+                    step: "02",
+                    title: "Deposit Capital",
+                    desc: "Funds are deposited into the trading wallet on the platform.",
+                  },
+                  {
+                    step: "03",
+                    title: "Trade Execution",
+                    desc: "Buy and sell orders are placed through the Dabba Trading App.",
+                  },
+                  {
+                    step: "04",
+                    title: "Settlement",
+                    desc: "Profit or loss is calculated based on actual market price movement.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.step}
+                    className="group rounded-[26px] bg-[#0b0f16] p-6 transition-all duration-300 hover:-translate-y-2 hover:bg-[#101822]"
+                  >
+                    <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#52ff1f] text-black font-black">
+                      {item.step}
+                    </span>
+
+                    <h4 className="text-xl font-bold mt-6 mb-3 group-hover:text-[#52ff1f] transition">
+                      {item.title}
+                    </h4>
+
+                    <p className="text-gray-400 text-sm leading-7">
+                      {item.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* COMPARISON */}
+          <section className="mb-10">
+            <div className="text-center max-w-3xl mx-auto mb-10">
+              <SectionLabel>Comparison</SectionLabel>
+
+              <h3 className="text-3xl md:text-5xl font-bold">
+                Dabba Trading vs
+                <span className="text-[#52ff1f]"> Stock Market Trading</span>
+              </h3>
+
+              <p className="text-gray-400 mt-5 leading-8">
+                Dabba Trading Platforms are usually built for traders who want speed and
+                simplified execution, while conventional markets offer regulated
+                transparency.
+              </p>
+            </div>
+
+            <div className="overflow-x-auto rounded-[30px] bg-[#0b0f16]">
+              <table className="w-full text-left min-w-[720px]">
+                <thead className="bg-[#52ff1f] text-black">
+                  <tr>
+                    <th className="p-5 font-bold">Feature</th>
+                    <th className="p-5 font-bold">Dabba Trading</th>
+                    <th className="p-5 font-bold">Stock Market Trading</th>
+                  </tr>
+                </thead>
+
+                <tbody className="text-gray-300">
+                  {[
+                    ["Trade Location", "Off-market", "NSE/BSE"],
+                    ["Regulation", "Informal", "SEBI regulated"],
+                    ["Speed", "Faster", "Exchange dependent"],
+                    ["Leverage", "Higher", "Limited"],
+                    ["Brokerage", "Often lower", "Standard charges"],
+                  ].map(([feature, dabba, stock]) => (
+                    <tr key={feature} className="border-b border-white/10 last:border-b-0">
+                      <td className="p-5 font-semibold text-white">{feature}</td>
+                      <td className="p-5">{dabba}</td>
+                      <td className="p-5">{stock}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* FEATURES + APP ADVANTAGES */}
+          <section className="grid lg:grid-cols-2 gap-8 mb-10">
+            <div className="rounded-[30px] bg-[#0b0f16] p-6 md:p-8">
+              <SectionLabel>Platform Features</SectionLabel>
+
+              <h3 className="text-2xl md:text-4xl font-bold mb-6">
+                Best Platform
+                <span className="text-[#52ff1f]"> Features</span>
+              </h3>
+
+              <div className="space-y-5">
+                {[
+                  ["Live Market Data", "A good platform should show accurate live market prices."],
+                  ["Simple to Use", "A good Dabba Trading App should be clean and easy to understand."],
+                  ["Efficient Order Execution", "The platform should support high trading volume smoothly."],
+                  ["Safe Transactions", "A trusted trading website should support safe deposits and withdrawals."],
+                  ["Advanced Trading Tools", "Charts, indicators, stop-loss options and margin tracking help traders."],
+                ].map(([title, desc]) => (
+                  <div key={title} className="flex gap-4">
+                    <FiCheckCircle className="text-[#52ff1f] mt-1 shrink-0" />
+                    <div>
+                      <h4 className="font-bold text-white">{title}</h4>
+                      <p className="text-gray-400 leading-7 text-sm">{desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-[30px] bg-[#0b0f16] p-6 md:p-8">
+              <SectionLabel>App Advantages</SectionLabel>
+
+              <h3 className="text-2xl md:text-4xl font-bold mb-6">
+                Benefits Of Using
+                <span className="text-[#52ff1f]"> The App</span>
+              </h3>
+
+              <div className="space-y-5">
+                {[
+                  ["Trade Anywhere", "Monitor markets and trade from mobile devices."],
+                  ["Instant Notifications", "Live alerts help traders react quickly to market movements."],
+                  ["Market Insights", "Price charts and analytical services help users understand opportunities."],
+                  ["Faster Decision Making", "Live updates help traders act quickly without delayed inputs."],
+                ].map(([title, desc]) => (
+                  <div key={title} className="flex gap-4">
+                    <FiCheckCircle className="text-[#52ff1f] mt-1 shrink-0" />
+                    <div>
+                      <h4 className="font-bold text-white">{title}</h4>
+                      <p className="text-gray-400 leading-7 text-sm">{desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* RISK + START */}
+          <section className="grid lg:grid-cols-2 gap-8">
+            <div className="relative overflow-hidden rounded-[30px] bg-[#0b0f16] p-6 md:p-8">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,80,80,0.10),transparent_45%)]" />
+
+              <div className="relative z-10">
+                <SectionLabel>Risks and Legal Implications</SectionLabel>
+
+                <h3 className="text-2xl md:text-4xl font-bold mb-6">
+                  Know The
+                  <span className="text-red-400"> Risks</span>
+                </h3>
+
+                <div className="space-y-5">
+                  {[
+                    ["No Regulation", "Dabba Trading Platforms are generally not regulated by official market authorities."],
+                    ["Counterparty Risk", "Traders depend on platform credibility because trades are handled internally."],
+                    ["Market Volatility", "Like all trading, Dabba Trading includes risk from market price fluctuations."],
+                    ["Platform Reliability", "Check platform stability, reviews and credibility before choosing any platform."],
+                  ].map(([title, desc]) => (
+                    <div key={title} className="flex gap-4">
+                      <FiCheckCircle className="text-red-400 mt-1 shrink-0" />
+                      <div>
+                        <h4 className="font-bold text-white">{title}</h4>
+                        <p className="text-gray-400 leading-7 text-sm">{desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-[30px] bg-[#0b0f16] p-6 md:p-8">
+              <SectionLabel>How to Start</SectionLabel>
+
+              <h3 className="text-2xl md:text-4xl font-bold mb-6">
+                Start Dabba Trading
+                <span className="text-[#52ff1f]"> Step-by-Step</span>
+              </h3>
+
+              <div className="space-y-4">
+                {[
+                  "Choose a trusted platform like Tredixo",
+                  "Register your account",
+                  "Deposit funds",
+                  "Analyse the market",
+                  "Place your first trade",
+                  "Manage risk with stop-loss",
+                ].map((item, index) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-4 rounded-2xl bg-white/[0.03] p-4"
+                  >
+                    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#52ff1f] text-black font-black">
+                      {index + 1}
+                    </span>
+                    <span className="text-gray-300">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* WHY TREDIXO */}
+          <section className="mt-10 rounded-[34px] bg-[linear-gradient(135deg,#0b0f16,#102914,#071018)] p-6 md:p-10 text-center">
+            <SectionLabel>Why Tredixo?</SectionLabel>
+
+            <h3 className="text-3xl md:text-5xl font-bold">
+              Why Tredixo Is A Modern
+              <br />
+              <span className="text-[#52ff1f]">Dabba Trading Platform</span>
+            </h3>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5 mt-10">
+              {[
+                "Advanced trading interface",
+                "Fast execution engine",
+                "Mobile trading experience",
+                "Secure transaction flow",
+                "Growing trader community",
+              ].map((item) => (
+                <div key={item} className="rounded-2xl bg-black/25 p-5">
+                  <FiCheckCircle className="text-[#52ff1f] mx-auto mb-3" />
+                  <p className="text-gray-300 text-sm leading-6">{item}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </main>
 
         {/* CTA */}
         <section className="max-w-7xl mx-auto px-4 md:px-8 pb-20">
@@ -608,12 +602,7 @@ const DabbaTrading = () => {
   );
 };
 
-const HeroBg = () => (
-  <>
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(82,255,31,0.12),transparent_28%),radial-gradient(circle_at_top_right,rgba(0,180,255,0.08),transparent_24%)]" />
-    <div className="absolute inset-0 opacity-[0.10] bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:64px_64px]" />
-  </>
-);
+const HeroBg = () => null;
 
 const SectionLabel = ({ children }) => (
   <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-[#52ff1f] font-semibold mb-3">
@@ -629,7 +618,7 @@ const ImageBox = ({ image, alt }) => (
       <img
         src={image}
         alt={alt}
-        className="relative z-10 w-full h-[380px] object-contain drop-shadow-[0_25px_80px_rgba(82,255,31,0.12)]"
+        className="relative z-10 w-full h-[380px] object-contain"
       />
     </div>
   </div>

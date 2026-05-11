@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import privacyHero from "../assests/privacy.gif";
+import privacyHero from "../assests/privacy.png";
 
 const legalText = `1. About Tredixo
 Tredixo is an educational platform that provides knowledge-based content related to financial markets and general market learning.
@@ -414,17 +414,19 @@ const PrivacyPolicy = () => {
               </div>
             </div>
 
-            <div className="flex justify-center">
-              <div className="relative w-full max-w-[520px]">
-                <div className="absolute inset-0 rounded-full bg-[#52ff1f]/10 blur-3xl" />
-                <div className="absolute -inset-4 rounded-[40px] border border-white/10 bg-white/[0.03]" />
-                <img
-                  src={privacyHero}
-                  alt="Tredixo legal policies"
-                  className="relative z-10 w-full h-[360px] object-contain drop-shadow-[0_25px_70px_rgba(82,255,31,0.18)]"
-                />
-              </div>
-            </div>
+           <div className="flex justify-center">
+  <div className="relative w-full max-w-[520px] flex items-center justify-center">
+
+    {/* glow */}
+    <div className="absolute inset-0 rounded-full bg-[#52ff1f]/10 blur-3xl" />
+
+    <img
+      src={privacyHero}
+      alt="Tredixo legal policies"
+      className="relative z-10 w-full h-[360px] object-contain border-0 outline-none shadow-none"
+    />
+  </div>
+</div>
           </div>
         </section>
 
