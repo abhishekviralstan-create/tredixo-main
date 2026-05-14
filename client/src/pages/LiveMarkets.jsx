@@ -169,14 +169,14 @@ const LiveMarkets = () => {
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="http://tredixo.info/live-markets" />
-
+        <meta name="publisher" content="Tredixo" />
         <meta property="og:title" content="Advanced Trading Tools | Tredixo Platform" />
         <meta
           property="og:description"
           content="Access real-time charts, indicators, live news feeds, and an economic calendar. Tredixo equips you with the tools for successful trading."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.tredixo.com/blogs" />
+        <meta property="og:url" content="https://www.tredixo.info/blogs" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Advanced Trading Tools | Tredixo Platform" />
@@ -184,6 +184,128 @@ const LiveMarkets = () => {
           name="twitter:description"
           content="Access real-time charts, indicators, live news feeds, and an economic calendar. Tredixo equips you with the tools for successful trading."
         />
+        <script type="application/ld+json">
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "http://tredixo.info/live-markets#webpage",
+        url: "http://tredixo.info/live-markets",
+        name: "Advanced Trading Tools | Tredixo Platform",
+        description:
+          "Access real-time charts, indicators, live news feeds, and an economic calendar. Tredixo equips you with the tools for successful trading.",
+        isPartOf: {
+          "@id": "http://tredixo.info/#website",
+        },
+        publisher: {
+          "@id": "http://tredixo.info/#organization",
+        },
+        inLanguage: "en-IN",
+      },
+      {
+        "@type": "WebSite",
+        "@id": "http://tredixo.info/#website",
+        url: "http://tredixo.info/",
+        name: "Tredixo",
+        publisher: {
+          "@id": "http://tredixo.info/#organization",
+        },
+      },
+      {
+        "@type": "Organization",
+        "@id": "http://tredixo.info/#organization",
+        name: "Tredixo",
+        url: "http://tredixo.info/",
+        logo: {
+          "@type": "ImageObject",
+          url: "http://tredixo.info/logo.png",
+        },
+      },
+      {
+        "@type": "Service",
+        "@id": "http://tredixo.info/live-markets#service",
+        name: "Advanced Trading Tools",
+        serviceType: "Trading Tools and Market Analysis Platform",
+        provider: {
+          "@id": "http://tredixo.info/#organization",
+        },
+        areaServed: {
+          "@type": "Country",
+          name: "India",
+        },
+        url: "http://tredixo.info/live-markets",
+        description:
+          "Tredixo provides advanced trading tools including real-time charts, technical indicators, live market news feeds, and an economic calendar to support informed trading decisions.",
+        offers: {
+          "@type": "Offer",
+          url: "http://tredixo.info/live-markets",
+          availability: "https://schema.org/InStock",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "http://tredixo.info/live-markets#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "http://tredixo.info/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Live Markets",
+            item: "http://tredixo.info/live-markets",
+          },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "http://tredixo.info/live-markets#faq",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "What trading tools does Tredixo provide?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text:
+                "Tredixo provides real-time charts, technical indicators, live market news feeds, and an economic calendar to help traders analyze market movements.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Can I access real-time trading charts on Tredixo?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text:
+                "Yes, Tredixo offers real-time trading charts designed to help traders monitor price movements and make informed trading decisions.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Does Tredixo offer technical indicators?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text:
+                "Yes, Tredixo supports technical indicators that traders can use for market analysis, trend identification, and trading strategy planning.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Is an economic calendar available on Tredixo?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text:
+                "Yes, Tredixo includes an economic calendar to help traders track important market events, announcements, and financial data releases.",
+            },
+          },
+        ],
+      },
+    ],
+  })}
+</script>
       </Helmet>
 
       <div className="min-h-screen bg-[#05070b] text-white">

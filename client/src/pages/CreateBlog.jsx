@@ -8,7 +8,9 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-Quill.register('modules/imageResize', ImageResize);
+if (!Quill.imports["modules/imageResize"]) {
+  Quill.register("modules/imageResize", ImageResize);
+}
 
 const Font = Quill.import('formats/font');
 Font.whitelist = ['sans-serif', 'serif', 'monospace', 'roboto', 'poppins', 'inter'];

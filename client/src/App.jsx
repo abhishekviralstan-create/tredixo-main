@@ -39,6 +39,7 @@ import NSE from './pages/NSEtrading';
 import MCX from './pages/MCXtrading';
 import US from './pages/Usstock';
 import Comex from './pages/comextrading';
+import WhatsAppWidget from "./components/WhatsAppWidget.jsx";
 const persistor = persistStore(store);
 
 const App = () => {
@@ -46,7 +47,12 @@ const App = () => {
     <HelmetProvider>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <BrowserRouter>
+          <BrowserRouter
+            future={{
+              v7_startTransition: true,
+              v7_relativeSplatPath: true,
+            }}
+          >
             <ScrollToTop />
             <ThemeProvider>
               <div className="min-h-screen bg-black text-white">
@@ -77,7 +83,7 @@ const App = () => {
                   <Route path="/nse-trading" element={<NSE />} />
                   <Route path="/us-stock" element={<US />} />
                   <Route path="/comex-trading" element={<Comex />} />
-                  <Route path="/mcx-trading" element={<MCX/>}/>
+                  <Route path="/mcx-trading" element={<MCX />} />
                   <Route element={<PrivateRoute />}>
                     <Route path="/dashboard" element={<Dashboard />} />
                   </Route>
@@ -87,6 +93,7 @@ const App = () => {
                     <Route path="/update-blog/:blogId" element={<UpdateBlog />} />
                   </Route>
                 </Routes>
+                <WhatsAppWidget />
                 <Footer />
               </div>
             </ThemeProvider>

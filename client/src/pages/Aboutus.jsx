@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
+import heroTrading from "../assests/about-hero.png";
 import {
   FiBarChart2,
   FiZap,
@@ -21,75 +22,6 @@ const fadeUp = {
   }),
 };
 
-const TradingChartSvg = ({ className = "" }) => {
-  const greenPath =
-    "M0 318 L28 292 L55 300 L83 254 L112 268 L142 228 L174 236 L205 204 L236 214 L268 182 L300 190 L330 160 L362 170 L394 142 L426 156 L458 130 L490 142 L522 116 L554 130 L586 104 L618 116 L650 96 L682 110 L714 98 L746 122 L778 145 L806 188 L834 132 L862 70 L884 82 L900 76";
-
-  return (
-    <svg viewBox="0 0 900 420" className={className} xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="chartBgRun" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#061216" />
-          <stop offset="100%" stopColor="#02080b" />
-        </linearGradient>
-
-        <linearGradient id="chartFillRun" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#52ff1f" stopOpacity="0.45" />
-          <stop offset="70%" stopColor="#52ff1f" stopOpacity="0.12" />
-          <stop offset="100%" stopColor="#52ff1f" stopOpacity="0" />
-        </linearGradient>
-
-        <filter id="chartGlowRun">
-          <feGaussianBlur stdDeviation="5" result="blur" />
-          <feMerge>
-            <feMergeNode in="blur" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-      </defs>
-
-      <rect width="900" height="420" fill="url(#chartBgRun)" />
-
-      {[70, 135, 200, 265, 330].map((y) => (
-        <line key={y} x1="0" y1={y} x2="900" y2={y} stroke="#ffffff" strokeOpacity="0.06" />
-      ))}
-
-      {[120, 260, 400, 540, 680, 820].map((x) => (
-        <line key={x} x1={x} y1="0" x2={x} y2="420" stroke="#ffffff" strokeOpacity="0.035" />
-      ))}
-
-      <motion.path
-        d={`${greenPath} L900 420 L0 420 Z`}
-        fill="url(#chartFillRun)"
-        animate={{ opacity: [0.5, 0.85, 0.5] }}
-        transition={{ duration: 2.5, repeat: Infinity }}
-      />
-
-      <motion.path
-        d={greenPath}
-        fill="none"
-        stroke="#52ff1f"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        filter="url(#chartGlowRun)"
-        initial={{ pathLength: 0 }}
-        animate={{ pathLength: [0, 1, 1], strokeWidth: [5, 7, 5] }}
-        transition={{ duration: 4, repeat: Infinity, repeatDelay: 0.4 }}
-      />
-
-      <motion.circle
-        cx="305"
-        cy="190"
-        r="8"
-        fill="#52ff1f"
-        filter="url(#chartGlowRun)"
-        animate={{ scale: [1, 1.5, 1], opacity: [1, 0.55, 1] }}
-        transition={{ duration: 1.2, repeat: Infinity }}
-      />
-    </svg>
-  );
-};
 
 const whyChoose = [
   {
@@ -184,7 +116,99 @@ const AboutUs = () => {
           content="Learn about Tredixo, a reliable trading platform offering forex, commodities, crypto, and US stocks trading."
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.tredixo.com/about-us" />
+        <link rel="canonical" href="https://www.tredixo.info/about-us" />
+        <meta name="publisher" content="Tredixo" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "About Tredixo",
+            "url": "https://www.tredixo.info/about-us",
+            "description":
+              "Learn about Tredixo, a modern trading platform offering low brokerage, advanced trading tools, instant deposits, and access to global financial markets.",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "Tredixo",
+              "url": "https://www.tredixo.info/",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.tredixo.info/logo.png"
+              },
+              "description":
+                "Tredixo is a global trading platform designed for traders looking for fast execution, advanced market access, low brokerage, and powerful trading technology.",
+              "foundingDate": "2024",
+              "areaServed": "Worldwide",
+              "knowsAbout": [
+                "Crypto Trading",
+                "NSE Trading",
+                "MCX Trading",
+                "Forex Trading",
+                "Margin Trading",
+                "Intraday Trading",
+                "Commodity Trading"
+              ],
+              "sameAs": [
+                "https://www.instagram.com/",
+                "https://www.facebook.com/",
+                "https://twitter.com/"
+              ]
+            }
+          })}
+        </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FinancialService",
+            "name": "Tredixo",
+            "url": "https://www.tredixo.info/",
+            "image": "https://www.tredixo.info/logo.png",
+            "description":
+              "Tredixo provides advanced online trading services with low brokerage, market analytics, high-speed execution, and access to global financial instruments.",
+            "areaServed": {
+              "@type": "Country",
+              "name": "India"
+            },
+            "serviceType": [
+              "Online Trading Platform",
+              "Financial Market Access",
+              "Paper Trading",
+              "Margin Trading",
+              "Forex Trading",
+              "Crypto Trading"
+            ],
+            "brand": {
+              "@type": "Brand",
+              "name": "Tredixo"
+            },
+            "offers": {
+              "@type": "Offer",
+              "availability": "https://schema.org/InStock",
+              "priceCurrency": "INR"
+            }
+          })}
+        </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.tredixo.info/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "About Us",
+                "item": "https://www.tredixo.info/about-us"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-[#05070b] text-white overflow-hidden">
@@ -193,63 +217,62 @@ const AboutUs = () => {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(82,255,31,0.14),transparent_30%),radial-gradient(circle_at_top_right,rgba(0,180,255,0.08),transparent_24%)]" />
           <div className="absolute inset-0 opacity-[0.12] bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
-          <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
-            <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-14 items-center">
-              <motion.div variants={fadeUp} initial="hidden" animate="show">
-                <p className="text-cyan-300 tracking-[4px] text-xs md:text-sm font-semibold mb-5 uppercase">
-                  Institutional Grade Tech
-                </p>
+          <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div variants={fadeUp} initial="hidden" animate="show">
+              <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-cyan-300 font-semibold mb-5">
+                Institutional Grade Tech
+              </p>
 
-                <h1 className="text-5xl md:text-7xl font-black leading-[0.95] tracking-[-0.04em]">
-                  About <span className="text-[#52ff1f]">Tredixo</span>
-                </h1>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.05] tracking-[-0.04em]">
+                Precision
+                <br />
+                <span className="text-[#52ff1f]">Performance.</span>
+              </h1>
 
-                <p className="mt-7 max-w-2xl text-gray-300 text-base md:text-xl leading-8 md:leading-9">
-                  Tredixo is built for one reason — to make global trading easier for
-                  everyone. We’re your gateway to the world’s financial markets with
-                  simplicity and power.
-                </p>
+              <p className="mt-6 max-w-2xl text-gray-300 text-base md:text-lg leading-8">
+                Tredixo is built for traders who want speed, clarity, and a better
+                digital trading experience. From modern tools to a clean interface,
+                every part of the platform is designed to help users trade smarter.
+              </p>
+
+              <div className="mt-9 flex flex-col sm:flex-row gap-4">
+                <a
+                  href="/why-tredixo"
+                  className="inline-flex items-center justify-center rounded-full bg-[#52ff1f] px-8 py-3.5 font-semibold text-black shadow-[0_0_35px_rgba(82,255,31,0.25)] transition hover:scale-105"
+                >
+                  Explore Platform
+                </a>
 
                 <a
                   href="https://crm.tredixo.co.in/auth-pages/create-account/step1?accountType=real"
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-9 inline-flex items-center justify-center min-w-[220px] h-[58px] rounded-full bg-[#52ff1f] text-black font-bold text-base hover:scale-105 transition-all duration-300 shadow-[0_0_35px_rgba(82,255,31,0.30)]"
+                  className="inline-flex items-center justify-center rounded-full border border-[#52ff1f]/40 bg-[#52ff1f]/10 px-8 py-3.5 font-semibold text-[#52ff1f] transition hover:bg-[#52ff1f] hover:text-black"
                 >
-                  Start Trading Now
+                  Get Started
                 </a>
-              </motion.div>
+              </div>
+            </motion.div>
 
-              <motion.div
-                variants={fadeUp}
-                initial="hidden"
-                animate="show"
-                custom={2}
-                className="relative hidden sm:flex items-center justify-center min-h-[430px] group"
-              >
-                <div className="absolute w-[580px] h-[300px] bg-[#52ff1f]/10 blur-[90px] rounded-full" />
-
-                <motion.div
-                  className="relative w-[650px]"
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  whileHover={{ scale: 1.035 }}
-                >
-                  <div className="relative rounded-[28px] border-[7px] border-[#242424] bg-[#050b0f] p-3 shadow-[0_35px_100px_rgba(0,0,0,0.75)] transition-all duration-500 group-hover:shadow-[0_35px_120px_rgba(82,255,31,0.20)]">
-                    <div className="rounded-[18px] overflow-hidden bg-[#02080b] border border-white/10">
-                      <TradingChartSvg className="w-full h-[310px]" />
-                    </div>
-
-                    <div className="absolute top-5 left-6 px-4 py-2 rounded-xl bg-black/55 backdrop-blur-md border border-white/10">
-                      <p className="text-white text-sm font-black">Tredixo</p>
-                    </div>
-                  </div>
-
-                  <div className="mx-auto h-5 w-[92%] bg-gradient-to-r from-[#2b2b2b] via-[#9b9b9b] to-[#2b2b2b] rounded-b-full shadow-[0_15px_35px_rgba(0,0,0,0.6)]" />
-                  <div className="mx-auto h-3 w-[22%] bg-[#4b4b4b] rounded-b-xl" />
-                </motion.div>
-              </motion.div>
-            </div>
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              animate="show"
+              custom={2}
+              className="relative hidden sm:flex items-center justify-center"
+            >
+              <motion.img
+                src={heroTrading}
+                alt="Tredixo Global Trading Platform"
+                className="w-full max-w-[620px] h-auto object-contain"
+                animate={{ y: [0, -8, 0] }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+            </motion.div>
           </div>
         </section>
 

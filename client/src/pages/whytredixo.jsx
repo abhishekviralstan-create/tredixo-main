@@ -81,18 +81,82 @@ const WhyTredixo = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Why Tredixo - Smarter Trading Experience with Powerful Tools and Reliable Access</title>
-        <meta
-          name="description"
-          content="Discover why Tredixo stands out as a modern trading platform with powerful tools, real-time market insights, reliable access, and a smooth experience for traders."
-        />
-        <meta
-          name="keywords"
-          content="Why Tredixo, Tredixo trading platform, modern trading platform, real-time market insights, trading tools, reliable trading access, smart trading experience"
-        />
-        <link rel="canonical" href="https://yourdomain.com/why-tredixo" />
-      </Helmet>
+   <Helmet>
+  <title>Why Tredixo | Smart Trading Platform with Powerful Tools</title>
+
+  <meta
+    name="description"
+    content="Discover why traders choose Tredixo for low brokerage, fast execution, real-time market insights, advanced trading tools."
+  />
+
+  <meta
+    name="keywords"
+    content="Why Tredixo, Tredixo trading platform, smart trading platform, low brokerage trading platform, real-time market insights, advanced trading tools, high leverage trading, fast execution trading platform, reliable trading access, global market trading"
+  />
+
+  <meta name="publisher" content="Tredixo" />
+  <meta name="author" content="Tredixo" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+  <link rel="canonical" href="https://www.tredixo.info/why-tredixo" />
+
+  <meta property="og:title" content="Why Tredixo | Smart Trading Platform with Powerful Tools" />
+  <meta
+    property="og:description"
+    content="See why Tredixo stands out with fast execution, low brokerage, advanced tools, real-time insights, and smooth access to global markets."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.tredixo.info/why-tredixo" />
+  <meta property="og:site_name" content="Tredixo" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Why Tredixo | Smart Trading Platform" />
+  <meta
+    name="twitter:description"
+    content="Trade smarter with Tredixo’s powerful tools, fast execution, low brokerage, and reliable market access."
+  />
+
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: "Why Tredixo",
+      url: "https://www.tredixo.info/why-tredixo",
+      description:
+        "Discover why traders choose Tredixo for low brokerage, fast execution, real-time market insights, advanced trading tools, high leverage, and reliable global market access.",
+      publisher: {
+        "@type": "Organization",
+        name: "Tredixo",
+        url: "https://www.tredixo.info/",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://www.tredixo.info/logo.png",
+        },
+      },
+    })}
+  </script>
+
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://www.tredixo.info/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Why Tredixo",
+          item: "https://www.tredixo.info/why-tredixo",
+        },
+      ],
+    })}
+  </script>
+</Helmet>
 
       <div className="w-full min-h-screen bg-[#05070b] text-white overflow-hidden">
         {/* HERO */}

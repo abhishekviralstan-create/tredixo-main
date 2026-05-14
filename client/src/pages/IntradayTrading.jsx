@@ -136,7 +136,7 @@ const IntradayTrading = () => {
 
         <meta
           name="description"
-          content="Master intraday trading with zero brokerage & 500X leverage. Learn day trading strategies, get real-time charts & alerts. Start intraday trading on Tredixo now."
+          content="Master intraday trading with zero brokerage & 500X leverage. Learn day trading strategies, get real-time charts & alerts."
         />
 
         <meta

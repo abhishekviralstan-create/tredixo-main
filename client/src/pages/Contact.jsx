@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
+import contactHero from "../assests/contact-us.png";
 import {
   FiMapPin,
   FiMail,
@@ -315,9 +316,9 @@ const Contact = () => {
   ];
 
   const socials = [
-    { label: 'Telegram', icon: <FaTelegramPlane />, href: '#' },
-    { label: 'Instagram', icon: <FaInstagram />, href: '#' },
-    { label: 'Facebook', icon: <FaFacebookF />, href: '#' },
+    { label: 'Telegram', icon: <FaTelegramPlane />, href: 'https://t.me/Tredixo_official' },
+    { label: 'Instagram', icon: <FaInstagram />, href: 'https://www.instagram.com/tredixo_official/' },
+    { label: 'Facebook', icon: <FaFacebookF />, href: 'https://www.facebook.com/tredixofb' },
   ];
 
   const inputClass =
@@ -327,71 +328,201 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Tredixo | 24/7 Support for Traders</title>
+        <title>Contact Tredixo | Trading Support, Email & WhatsApp Help</title>
+
         <meta
           name="description"
-          content="Need help? Contact Tredixo's 24/7 support team via live chat, WhatsApp, or email. We're here to assist you with all your trading needs."
+          content="Contact Tredixo for trading account support, platform guidance, market-related queries, WhatsApp assistance, email support and customer service."
         />
+
         <meta
           name="keywords"
-          content="contact Tredixo, trading platform support, 24/7 trading support, WhatsApp trading help, trading platform customer service"
+          content="contact Tredixo, Tredixo support, trading platform support, WhatsApp trading support, Tredixo email, trading customer service, online trading help, Tredixo contact number, trading account support"
         />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.tredixo.com/blogs" />
 
-        <meta property="og:title" content="Contact Tredixo | 24/7 Support for Traders" />
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
+
+        <meta name="author" content="Tredixo" />
+        <meta name="publisher" content="Tredixo" />
+
+        <link rel="canonical" href="https://tredixo.info/contact" />
+
+        <meta property="og:title" content="Contact Tredixo | Trading Support & Customer Assistance" />
         <meta
           property="og:description"
-          content="Need help? Contact Tredixo's 24/7 support team via live chat, WhatsApp, or email. We're here to assist you with all your trading needs."
+          content="Reach out to Tredixo for account guidance, platform support, WhatsApp help, email assistance and trading-related queries."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.tredixo.com/blogs" />
+        <meta property="og:url" content="https://tredixo.info/contact" />
+        <meta property="og:site_name" content="Tredixo" />
+        <meta property="og:image" content="https://tredixo.info/images/tredixo-contact-og.jpg" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact Tredixo | 24/7 Support for Traders" />
+        <meta name="twitter:title" content="Contact Tredixo | Trading Support & Assistance" />
         <meta
           name="twitter:description"
-          content="Need help? Contact Tredixo's 24/7 support team via live chat, WhatsApp, or email. We're here to assist you with all your trading needs."
+          content="Need help with Tredixo? Contact our team for trading platform support, account guidance, WhatsApp help and email assistance."
         />
+        <meta name="twitter:image" content="https://tredixo.info/images/tredixo-contact-og.jpg" />
+
+        {/* Contact Page Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            name: "Contact Tredixo",
+            url: "https://tredixo.info/contact-us",
+            description:
+              "Contact Tredixo for trading platform support, account guidance, market-related queries and customer assistance.",
+            inLanguage: "en-IN",
+            isPartOf: {
+              "@type": "WebSite",
+              name: "Tredixo",
+              url: "https://tredixo.info",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Tredixo",
+              url: "https://tredixo.info",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://tredixo.info/images/tredixo-logo.png",
+              },
+            },
+          })}
+        </script>
+
+        {/* Organization Contact Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Tredixo",
+            url: "https://tredixo.info",
+            logo: "https://tredixo.info/images/tredixo-logo.png",
+            email: "admin@tredixo.co.in",
+            telephone: "+44 7598 697995",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "2nd floor, College House, 17 King Edward's Road",
+              addressLocality: "Ruislip",
+              addressRegion: "London",
+              postalCode: "HA4 7AE",
+              addressCountry: "GB",
+            },
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+44 7598 697995",
+              contactType: "customer support",
+              email: "admin@tredixo.co.in",
+              availableLanguage: ["English", "Hindi"],
+            },
+          })}
+        </script>
+
+        {/* Breadcrumb Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://tredixo.info",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Contact Us",
+                item: "https://tredixo.info/contact",
+              },
+            ],
+          })}
+        </script>
       </Helmet>
 
-      <section className="relative overflow-hidden bg-[#05070b] text-white py-16 md:py-24 min-h-screen">
+      <section className="relative overflow-hidden bg-[#05070b] text-white pt-8 md:pt-12 pb-16 md:pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(57,255,20,0.08),_transparent_25%),radial-gradient(circle_at_top_right,_rgba(0,180,255,0.08),_transparent_20%)]" />
         <div className="absolute inset-0 opacity-20 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:60px_60px]" />
 
         <div className="relative max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
-          <div className="max-w-3xl mb-12">
-            <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-cyan-300 font-semibold mb-3">
-              Contact Tredixo
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-16 mb-12 md:mb-16">
+            {/* LEFT CONTENT */}
+            <div>
+              <div className="inline-flex items-center rounded-full border border-[#52ff1f]/30 bg-[#52ff1f]/5 px-5 py-2 mb-7">
+                <span className="text-[10px] md:text-xs font-semibold tracking-wide text-[#52ff1f]">
+                  Contact Tredixo
+                </span>
+              </div>
 
-            <h1 className="text-4xl md:text-6xl font-bold leading-[1.02]">
-              <span className="text-slate-100">Let’s Connect</span>
-              <br />
-              <span className="text-[#52ff1f]">With Our Team</span>
-            </h1>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] text-white">
+                Let’s Connect
+                <br />
+                <span className="text-[#52ff1f]">With Our Team</span>
+              </h1>
 
-            <p className="mt-5 text-white/70 text-base md:text-lg leading-8 max-w-2xl">
-              Reach out for account guidance, platform support, trading-related queries,
-              or general assistance.
-            </p>
+              <p className="mt-6 text-white/70 text-base md:text-lg leading-8 max-w-2xl">
+                Reach out for account guidance, platform support, trading-related queries,
+                or general assistance.
+              </p>
+
+              <div className="flex flex-wrap gap-3 mt-8">
+                <span className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-2 text-sm text-white">
+                  Account Support
+                </span>
+
+                <span className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-2 text-sm text-white">
+                  Platform Help
+                </span>
+
+                <span className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-2 text-sm text-white">
+                  Trading Queries
+                </span>
+              </div>
+            </div>
+
+            {/* RIGHT IMAGE */}
+            <div className="relative flex justify-center lg:justify-end">
+              <div className="absolute inset-0 m-auto h-[260px] w-[260px] md:h-[380px] md:w-[380px] rounded-full bg-[#52ff1f]/10 blur-[90px]" />
+
+              <img
+                src={contactHero}
+                alt="Tredixo contact support"
+                className="relative z-10 w-full max-w-[340px] md:max-w-[460px] lg:max-w-[520px] drop-shadow-[0_35px_80px_rgba(82,255,31,0.18)]"
+              />
+            </div>
           </div>
 
           <div className="grid lg:grid-cols-[1.05fr_1fr] gap-8 xl:gap-10">
             {/* LEFT SIDE */}
             <div className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {infoCards.map((item, index) => {
+                  const isAddress = item.title === "Address";
+                  const isWhatsapp = item.title === "WhatsApp";
+
                   const content = (
                     <div
-                      className={`group relative rounded-[24px] border border-white/10 bg-gradient-to-br ${item.accent} p-5 md:p-6 min-h-[170px] shadow-[0_14px_40px_rgba(0,0,0,0.25)] hover:-translate-y-1 transition-all duration-300`}
+                      className={`group relative h-full rounded-[24px] border border-white/10 bg-gradient-to-br ${item.accent} 
+        ${isAddress ? "sm:col-span-2 min-h-[150px]" : "min-h-[145px]"} 
+        p-5 md:p-6 shadow-[0_14px_40px_rgba(0,0,0,0.25)] hover:-translate-y-1 hover:border-[#52ff1f]/30 transition-all duration-300`}
                     >
-                      <div className="absolute inset-0 rounded-[24px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_45%)]" />
-                      <div className="relative z-10">
-                        <div className="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-[#52ff1f] text-xl mb-5">
+                      <div className="absolute inset-0 rounded-[24px] bg-[radial-gradient(circle_at_top,rgba(82,255,31,0.08),transparent_45%)]" />
+
+                      <div className="relative z-10 flex h-full flex-col">
+                        <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-[#52ff1f]/20 bg-[#52ff1f]/10 text-[#52ff1f] text-xl">
                           {item.icon}
                         </div>
-                        <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
+
+                        <h3 className="text-lg font-semibold text-white mb-2">
+                          {item.title}
+                        </h3>
+
                         <p className="text-white/70 leading-7 text-sm md:text-base break-words">
                           {item.value}
                         </p>
@@ -403,17 +534,22 @@ const Contact = () => {
                     <a
                       key={index}
                       href={item.href}
-                      target={item.href.startsWith('http') ? '_blank' : undefined}
-                      rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
+                      target={item.href.startsWith("http") ? "_blank" : undefined}
+                      rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                      className={`${isAddress ? "sm:col-span-2" : ""} ${isWhatsapp ? "sm:col-span-2 lg:col-span-1" : ""} block`}
                     >
                       {content}
                     </a>
                   ) : (
-                    <div key={index}>{content}</div>
+                    <div
+                      key={index}
+                      className={`${isAddress ? "sm:col-span-2" : ""} block`}
+                    >
+                      {content}
+                    </div>
                   );
                 })}
               </div>
-
               <div className="rounded-[28px] border border-white/10 bg-gradient-to-br from-[#10161d] to-[#0b1016] p-6 md:p-7 shadow-[0_14px_40px_rgba(0,0,0,0.25)]">
                 <h3 className="text-2xl font-bold mb-5">Follow Us</h3>
                 <div className="flex flex-wrap gap-4">
@@ -444,11 +580,10 @@ const Contact = () => {
 
               {submitStatus.message && (
                 <div
-                  className={`mb-5 rounded-2xl px-4 py-3 ${
-                    submitStatus.type === 'success'
-                      ? 'border border-[#52ff1f]/20 bg-[#52ff1f]/10 text-[#b8ff9c]'
-                      : 'border border-red-400/20 bg-red-500/10 text-red-300'
-                  }`}
+                  className={`mb-5 rounded-2xl px-4 py-3 ${submitStatus.type === 'success'
+                    ? 'border border-[#52ff1f]/20 bg-[#52ff1f]/10 text-[#b8ff9c]'
+                    : 'border border-red-400/20 bg-red-500/10 text-red-300'
+                    }`}
                 >
                   {submitStatus.message}
                 </div>

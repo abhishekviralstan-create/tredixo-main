@@ -36,6 +36,8 @@ const Footer = () => {
     { label: "Margin Trading", path: "/margin-trading" },
     { label: "Dabba Trading", path: "/dabba-trading" },
     { label: "Intraday Trading", path: "/intraday-trading" },
+    { label: "Comex Trading", path: "/comex-trading" },
+    { label: "US Stocks", path: "/us-stock" },
     { label: "Live Markets", path: "/live-markets" },
   ];
 

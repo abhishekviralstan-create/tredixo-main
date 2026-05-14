@@ -5,7 +5,7 @@ import axios from 'axios';
 import { FiChevronLeft, FiChevronRight, FiArrowRight } from 'react-icons/fi';
 import { Helmet } from 'react-helmet-async';
 import Spinner from '../assests/spinner/Spinner';
-
+import newsHero from "../assests/news-hero.png"; // apni image ka path yahan set karo
 const POSTS_PER_PAGE = 7;
 
 const Home = () => {
@@ -120,58 +120,187 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Tredixo Blog | Latest Market News & Insights
-        </title>
+        <title>Tredixo Blog | Market News, Trading Insights & Analysis</title>
+
         <meta
           name="description"
-          content="Stay updated with Tredixo's blog. Get the latest news, market trends, and trading tips to enhance your trading journey."
+          content="Read the latest Tredixo blogs on market news, trading insights, NSE updates, MCX commodity trends, forex analysis, crypto news, and expert trading tips."
         />
+
         <meta
           name="keywords"
-          content="Tredixo blogs, trading blogs, market news, stock market analysis, forex insights, commodity updates, crypto news, trading articles, trading news India, market insights blog, Nifty market news, MCX commodity news, forex trading tips, crypto market update"
+          content="Tredixo blog, trading blogs, market news, stock market analysis, NSE market news, Nifty market news, Bank Nifty updates, MCX commodity news, forex trading insights, crypto market updates, trading tips India, online trading articles, market insights blog"
         />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.tredixo.com/blogs" />
 
-        <meta property="og:title" content="Tredixo Blogs | Latest Market News & Trading Insights" />
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
+
+        <meta name="author" content="Tredixo" />
+        <meta name="publisher" content="Tredixo" />
+
+        <link rel="canonical" href="https://tredixo.info/blogs" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Tredixo Blog | Latest Market News & Trading Insights" />
         <meta
           property="og:description"
-          content="Stay updated with Tredixo's blog. Get the latest news, market trends, and trading tips to enhance your trading journey."
+          content="Explore Tredixo blogs for trading insights, market analysis, NSE updates, commodity trends, forex news, crypto updates, and trading education."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.tredixo.com/blogs" />
+        <meta property="og:url" content="https://tredixo.info/blogs" />
+        <meta property="og:site_name" content="Tredixo" />
+        <meta property="og:image" content="https://tredixo.info/images/tredixo-blog-og.jpg" />
 
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Tredixo Blogs | Latest Market News & Trading Insights" />
+        <meta name="twitter:title" content="Tredixo Blog | Market News & Trading Insights" />
         <meta
           name="twitter:description"
-          content="Read premium trading insights, market analysis, and latest news updates from Tredixo."
+          content="Read premium trading insights, latest market news, NSE analysis, crypto updates, commodity trends, and forex articles from Tredixo."
         />
-      </Helmet>
-        {/* BLOG HERO */}
-      <section className="relative w-full overflow-hidden pb-10 pt-6 md:pt-10">
+        <meta name="twitter:image" content="https://tredixo.info/images/tredixo-blog-og.jpg" />
 
+        {/* Normal WebPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "Tredixo Blog",
+            headline: "Tredixo Blog | Market News, Trading Insights & Analysis",
+            description:
+              "Read the latest Tredixo blogs on market news, trading insights, NSE updates, MCX commodity trends, forex analysis, crypto news, and expert trading tips.",
+            url: "https://tredixo.info/blogs",
+            inLanguage: "en-IN",
+            isPartOf: {
+              "@type": "WebSite",
+              name: "Tredixo",
+              url: "https://tredixo.info",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Tredixo",
+              url: "https://tredixo.info",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://tredixo.info/images/tredixo-logo.png",
+              },
+            },
+          })}
+        </script>
+
+        {/* Blog Schema without dynamic blogs.map */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            name: "Tredixo Trading Blog",
+            url: "https://tredixo.info/blogs",
+            description:
+              "Tredixo blog provides trading insights, latest market news, NSE updates, MCX commodity trends, forex analysis, crypto updates, and educational trading articles.",
+            inLanguage: "en-IN",
+            publisher: {
+              "@type": "Organization",
+              name: "Tredixo",
+              url: "https://tredixo.info",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://tredixo.info/images/tredixo-logo.png",
+              },
+            },
+          })}
+        </script>
+
+        {/* Breadcrumb Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://tredixo.info",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Blogs",
+                item: "https://tredixo.info/blogs",
+              },
+            ],
+          })}
+        </script>
+      </Helmet>
+      {/* BLOG HERO */}
+      <section className="relative w-full overflow-hidden bg-[#050b10] pb-8 pt-0">
         {/* background effects */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(82,255,31,0.14),transparent_30%),radial-gradient(circle_at_top_right,rgba(0,180,255,0.08),transparent_24%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(82,255,31,0.17),transparent_32%),radial-gradient(circle_at_top_right,rgba(0,180,255,0.10),transparent_28%),linear-gradient(90deg,rgba(82,255,31,0.05),rgba(0,0,0,0)_45%)]" />
+
         <div className="absolute inset-0 opacity-[0.08] bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-20">
+        <div className="absolute -right-24 top-0 h-[420px] w-[420px] rounded-full bg-[#52ff1f]/10 blur-[120px]" />
+        <div className="absolute -left-24 bottom-0 h-[320px] w-[320px] rounded-full bg-cyan-400/10 blur-[120px]" />
 
-          <p className="text-[10px] md:text-xs tracking-[0.28em] uppercase text-cyan-300 font-semibold mb-4">
-            Tredixo Market Hub
-          </p>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 pt-8 md:pt-12 pb-12 md:pb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-16">
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05]">
-            Latest Market
-            <br />
-            <span className="text-[#52ff1f]">News & Insights</span>
-          </h1>
+            {/* LEFT CONTENT */}
+            <div>
+              <div className="inline-flex items-center rounded-full border border-[#52ff1f]/30 bg-[#52ff1f]/5 px-5 py-2 mb-7">
+                <span className="text-[10px] md:text-xs font-semibold tracking-wide text-[#52ff1f]">
+                  Tredixo Market Hub
+                </span>
+              </div>
 
-          <p className="text-gray-300 mt-6 max-w-3xl leading-8 text-base md:text-lg">
-            Stay updated with trading insights, market trends, crypto updates,
-            NSE news, commodity movements and expert-style articles from Tredixo.
-          </p>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] text-white">
+                Latest Market
+                <br />
+                <span className="text-[#52ff1f]">News & Insights</span>
+              </h1>
 
+              <p className="text-gray-300 mt-6 max-w-2xl leading-8 text-base md:text-lg">
+                Stay updated with trading insights, market trends, crypto updates,
+                NSE news, commodity movements and expert-style articles from Tredixo.
+              </p>
+
+              <div className="flex flex-wrap gap-3 mt-9">
+                <span className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-2 text-sm text-white">
+                  Market News
+                </span>
+
+                <span className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-2 text-sm text-white">
+                  Trading Blogs
+                </span>
+
+                <span className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-2 text-sm text-white">
+                  Crypto Updates
+                </span>
+
+                <span className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-2 text-sm text-white">
+                  NSE Insights
+                </span>
+              </div>
+            </div>
+
+            {/* RIGHT IMAGE */}
+            <div className="relative flex justify-center lg:justify-end">
+              <div className="absolute inset-0 m-auto h-[280px] w-[280px] md:h-[380px] md:w-[380px]" />
+
+              <div className="relative">
+                <div className="absolute -inset-6 " />
+
+                <img
+                  src={newsHero}
+                  alt="Tredixo latest market news and trading insights"
+                  className="relative z-10 w-full max-w-[360px] md:max-w-[460px] lg:max-w-[520px] drop-shadow-[0_35px_80px_rgba(82,255,31,0.18)]"
+                />
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
       <div className="min-h-screen bg-black text-white px-4 md:px-6 lg:px-8 pb-20 pt-10">

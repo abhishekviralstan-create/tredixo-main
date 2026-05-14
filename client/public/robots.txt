@@ -1,0 +1,37 @@
+User-agent: *
+Allow: /
+
+# Main Pages
+Allow: /why-tredixo
+Allow: /brokerage-calculator
+Allow: /become-an-affiliate
+Allow: /privacy-policy
+Allow: /terms-conditions
+
+# Trading Pages
+Allow: /crypto-trading
+Allow: /nse-trading
+Allow: /mcx-trading
+Allow: /forex-trading
+Allow: /margin-trading
+Allow: /us-stock
+Allow: /comex-trading
+Allow: /dabba-trading
+Allow: /intraday-trading
+Allow: /live-markets
+
+# Blog & Contact
+Allow: /blogs
+Allow: /contact
+
+# Block Private/System Paths
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /private/
+
+# Crawl Delay
+Crawl-delay: 5
+
+# Sitemap
+Sitemap: https://www.tredixo.info/sitemap.xml

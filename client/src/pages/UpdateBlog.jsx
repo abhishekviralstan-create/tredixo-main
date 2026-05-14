@@ -8,8 +8,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { updateBlogStart, updateBlogFailure, updateBlogSuccess } from '../features/blogSlice';
 
-Quill.register('modules/imageResize', ImageResize);
-
+if (!Quill.imports["modules/imageResize"]) {
+  Quill.register("modules/imageResize", ImageResize);
+}
 const Font = Quill.import('formats/font');
 Font.whitelist = ['sans-serif', 'serif', 'monospace', 'roboto', 'poppins', 'inter'];
 Quill.register(Font, true);

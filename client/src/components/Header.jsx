@@ -88,7 +88,7 @@ const Header = () => {
                         <img
                             src={logo}
                             alt="Tredixo"
-                             className="h-6 md:h-8 w-auto object-contain"
+                            className="h-6 md:h-8 w-auto object-contain"
                             onError={(e) => {
                                 e.currentTarget.style.display = "none";
                             }}
@@ -153,12 +153,16 @@ const Header = () => {
                         {/* Desktop Knowledge */}
                         <div className="relative">
                             <div className="flex items-center">
-                                <NavLink
-                                    to="/trading"
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        setDesktopKnowledgeOpen(!desktopKnowledgeOpen);
+                                        setDesktopAboutOpen(false);
+                                    }}
                                     className={`${navBtnClass} ${isKnowledgeActive ? activeBtnClass : normalBtnClass}`}
                                 >
                                     Knowledge Center
-                                </NavLink>
+                                </button>
 
                                 <button
                                     type="button"
@@ -305,12 +309,16 @@ const Header = () => {
                         {/* Mobile Knowledge */}
                         <div className="border-b border-white/10 pb-2">
                             <div className="w-full flex items-center justify-between gap-2">
-                                <NavLink
-                                    to="/trading"
-                                    className={`font-semibold py-2 ${isKnowledgeActive ? "text-[#ff6b4a]" : "text-white"}`}
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        setMobileKnowledgeOpen(!mobileKnowledgeOpen);
+                                        setMobileAboutOpen(false);
+                                    }}
+                                    className={`font-semibold py-2 text-left ${isKnowledgeActive ? "text-[#ff6b4a]" : "text-white"}`}
                                 >
                                     Knowledge Center
-                                </NavLink>
+                                </button>
 
                                 <button
                                     type="button"
