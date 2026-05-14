@@ -1,4 +1,6 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -40,7 +42,79 @@ import MCX from './pages/MCXtrading';
 import US from './pages/Usstock';
 import Comex from './pages/comextrading';
 import WhatsAppWidget from "./components/WhatsAppWidget.jsx";
+import TradingPreloader from "./components/TradingPreloader.jsx";
+
 const persistor = persistStore(store);
+
+const AppContent = () => {
+  const location = useLocation();
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+
+    const timer = setTimeout(() => {
+      setLoading(false);
+    },400);
+
+    return () => clearTimeout(timer);
+  }, [location.pathname]);
+
+  return (
+    <>
+      <ScrollToTop />
+
+      <ThemeProvider>
+        <div className="min-h-screen bg-black text-white">
+          {loading && <TradingPreloader />}
+
+          <Header />
+
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/why-tredixo" element={<Whytredixo />} />
+            <Route path="/become-an-affiliate" element={<BecomeAnAffiliate />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-conditions" element={<TermsConditions />} />
+            <Route path="/crypto-trading" element={<CryptoTrading />} />
+            <Route path="/forex-trading" element={<ForexTrading />} />
+            <Route path="/dabba-trading" element={<DabbaTrading />} />
+            <Route path="/margin-trading" element={<MarginTrading />} />
+            <Route path="/intraday-trading" element={<IntradayTrading />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/tredixo-admin-login" element={<Login />} />
+            <Route path="/blog/:blogSlug" element={<ShowBlog />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/forget-password" element={<ForgetPassword />} />
+            <Route path="/risk-disclosure" element={<RiskDisclosure />} />
+            <Route path="/regulations" element={<Regulations />} />
+            <Route path="/brokerage-calculator" element={<BrokerageCalculator />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/live-markets" element={<LiveMarkets />} />
+            <Route path="/nse-trading" element={<NSE />} />
+            <Route path="/us-stock" element={<US />} />
+            <Route path="/comex-trading" element={<Comex />} />
+            <Route path="/mcx-trading" element={<MCX />} />
+
+            <Route element={<PrivateRoute />}>
+              <Route path="/dashboard" element={<Dashboard />} />
+            </Route>
+
+            <Route element={<AdminPrivateRoute />}>
+              <Route path="/create-blog" element={<CreateBlog />} />
+              <Route path="/update-blog/:blogId" element={<UpdateBlog />} />
+            </Route>
+          </Routes>
+
+          <WhatsAppWidget />
+          <Footer />
+        </div>
+      </ThemeProvider>
+    </>
+  );
+};
 
 const App = () => {
   return (
@@ -53,50 +127,7 @@ const App = () => {
               v7_relativeSplatPath: true,
             }}
           >
-            <ScrollToTop />
-            <ThemeProvider>
-              <div className="min-h-screen bg-black text-white">
-                <Header />
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/blogs" element={<Blogs />} />
-                  <Route path="/why-tredixo" element={<Whytredixo />} />
-                  <Route path="/become-an-affiliate" element={<BecomeAnAffiliate />} />
-                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                  <Route path="/terms-conditions" element={<TermsConditions />} />
-                  <Route path="/crypto-trading" element={<CryptoTrading />} />
-                  <Route path="/forex-trading" element={<ForexTrading />} />
-                  <Route path="/dabba-trading" element={<DabbaTrading />} />
-                  <Route path="/margin-trading" element={<MarginTrading />} />
-                  <Route path="/intraday-trading" element={<IntradayTrading />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/register" element={<Register />} />
-                  <Route path="/tredixo-admin-login" element={<Login />} />
-                  <Route path="/blog/:blogSlug" element={<ShowBlog />} />
-                  <Route path="/search" element={<Search />} />
-                  <Route path="/forget-password" element={<ForgetPassword />} />
-                  <Route path="/risk-disclosure" element={<RiskDisclosure />} />
-                  <Route path="/regulations" element={<Regulations />} />
-                  <Route path="/brokerage-calculator" element={<BrokerageCalculator />} />
-                  <Route path="/about-us" element={<AboutUs />} />
-                  <Route path="/live-markets" element={<LiveMarkets />} />
-                  <Route path="/nse-trading" element={<NSE />} />
-                  <Route path="/us-stock" element={<US />} />
-                  <Route path="/comex-trading" element={<Comex />} />
-                  <Route path="/mcx-trading" element={<MCX />} />
-                  <Route element={<PrivateRoute />}>
-                    <Route path="/dashboard" element={<Dashboard />} />
-                  </Route>
-
-                  <Route element={<AdminPrivateRoute />}>
-                    <Route path="/create-blog" element={<CreateBlog />} />
-                    <Route path="/update-blog/:blogId" element={<UpdateBlog />} />
-                  </Route>
-                </Routes>
-                <WhatsAppWidget />
-                <Footer />
-              </div>
-            </ThemeProvider>
+            <AppContent />
           </BrowserRouter>
         </PersistGate>
       </Provider>

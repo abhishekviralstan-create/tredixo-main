@@ -1,0 +1,63 @@
+.trading-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background:
+    radial-gradient(circle at top, rgba(82, 255, 31, 0.16), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(17, 152, 184, 0.12), transparent 35%),
+    #05070b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.trading-preloader::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 58px 58px;
+}
+
+.preloader-logo-box {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: logoPulse 1.2s ease-in-out infinite;
+}
+
+.preloader-logo {
+  width: 170px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 22px rgba(82, 255, 31, 0.35));
+}
+
+@keyframes logoPulse {
+  0% {
+    transform: scale(0.96);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.96);
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 480px) {
+  .preloader-logo {
+    width: 125px;
+  }
+}
